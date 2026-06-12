@@ -63,6 +63,12 @@ export function BookingSheet({
     }
   }, [isOpen, onClose])
 
+  // When the sheet swaps confirm <-> success content, the focused control
+  // unmounts; pull focus back into the dialog so the trap keeps working.
+  useEffect(() => {
+    if (isOpen) sheetRef.current?.focus()
+  }, [booked, isOpen])
+
   if (!booking) return null
   const { t, day, slot } = booking
 

@@ -25,9 +25,15 @@ describe('MilanApp booking flow', () => {
     ).toBeInTheDocument()
     expect(within(dialog).getByText(/with Sara Bianchi/)).toBeInTheDocument()
 
-    await user.click(
-      within(dialog).getByRole('button', { name: 'Confirm booking' }),
-    )
+    // Confirm is gated until a plausible phone number is entered.
+    const confirm = within(dialog).getByRole('button', {
+      name: 'Confirm booking',
+    })
+    expect(confirm).toBeDisabled()
+    await user.type(within(dialog).getByLabelText('Mobile number'), '3401234567')
+    expect(confirm).toBeEnabled()
+
+    await user.click(confirm)
     expect(screen.getByText("You're booked")).toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: 'Done' }))

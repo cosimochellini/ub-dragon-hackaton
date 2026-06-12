@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Avatar } from '@/components/ui/Avatar'
 import { Button } from '@/components/ui/Button'
 import { SlotSummary } from './SlotSummary'
@@ -18,6 +19,9 @@ export function BookingConfirm({
   onConfirm: () => void
   onClose: () => void
 }) {
+  const [phone, setPhone] = useState('')
+  const phoneValid = phone.replace(/\D/g, '').length >= 8
+
   return (
     <div>
       <div className="mb-4 flex items-center gap-3">
@@ -52,15 +56,24 @@ export function BookingConfirm({
         id="booking-phone"
         name="phone"
         type="tel"
+        inputMode="tel"
         autoComplete="tel"
         placeholder="+39 340 000 0012"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
         className="mb-1.5 w-full rounded-xl border border-grey-300 px-[14px] py-3 font-body text-[15px] text-grey-900 outline-none placeholder:text-grey-400 focus:border-candy-600"
       />
       <div className="mb-[18px] text-[12px] text-grey-600">
         We&apos;ll text you a reminder before the call.
       </div>
 
-      <Button variant="primary" size="lg" full onClick={onConfirm}>
+      <Button
+        variant="primary"
+        size="lg"
+        full
+        disabled={!phoneValid}
+        onClick={onConfirm}
+      >
         Confirm booking
       </Button>
       <Button variant="tertiary" size="md" full onClick={onClose} className="mt-1.5">
