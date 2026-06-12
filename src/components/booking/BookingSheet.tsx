@@ -24,9 +24,38 @@ export function BookingSheet({
     if (!isOpen) return
     previouslyFocused.current = document.activeElement as HTMLElement | null
     sheetRef.current?.focus()
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (e.key !== 'Tab') return
+      // Trap focus inside the dialog (aria-modal contract).
+      const sheet = sheetRef.current
+      if (!sheet) return
+      const focusable = sheet.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      )
+      if (focusable.length === 0) {
+        e.preventDefault()
+        sheet.focus()
+        return
+      }
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      const active = document.activeElement
+      if (e.shiftKey) {
+        if (active === first || active === sheet) {
+          e.preventDefault()
+          last.focus()
+        }
+      } else if (active === last) {
+        e.preventDefault()
+        first.focus()
+      }
     }
+
     document.addEventListener('keydown', onKey)
     return () => {
       document.removeEventListener('keydown', onKey)
@@ -51,8 +80,7 @@ export function BookingSheet({
         aria-modal="true"
         aria-labelledby="booking-sheet-title"
         tabIndex={-1}
-        className="absolute inset-x-0 bottom-0 rounded-t-[28px] bg-white px-5 pt-3 pb-[30px] shadow-[var(--shadow-bottom)] outline-none"
-        style={{ animation: 'sheetUp .24s ease-out' }}
+        className="animate-sheet absolute inset-x-0 bottom-0 rounded-t-[28px] bg-white px-5 pt-3 pb-[30px] shadow-[var(--shadow-bottom)] outline-none"
       >
         <div className="mx-auto mb-4 h-1 w-[38px] rounded-full bg-grey-300" />
         {booked ? (

@@ -103,6 +103,20 @@ body {
   }
 }
 
+.animate-sheet {
+  animation: sheetUp 0.24s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sheet {
+    animation: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Hide scrollbars on the in-app scrollers */
 .no-sb {
   scrollbar-width: none;
