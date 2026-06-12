@@ -12,8 +12,12 @@ describe('MilanApp booking flow', () => {
     // Live count for the default Individual + Any filters.
     expect(screen.getByText('6 found')).toBeInTheDocument()
 
-    // Sara Bianchi's first slot (15:00) is the only "15:00" visible initially.
-    await user.click(screen.getByRole('button', { name: '15:00' }))
+    // Book Sara Bianchi's first slot (15:00), scoped to her card so the test
+    // doesn't depend on slot times being globally unique.
+    const saraCard = screen
+      .getByText('Sara Bianchi')
+      .closest('[data-therapist="t1"]') as HTMLElement
+    await user.click(within(saraCard).getByRole('button', { name: '15:00' }))
 
     const dialog = screen.getByRole('dialog')
     expect(
@@ -42,7 +46,10 @@ describe('MilanApp booking flow', () => {
     const user = userEvent.setup()
     render(<MilanApp therapists={testTherapists} studios={testStudios} />)
 
-    await user.click(screen.getByRole('button', { name: '15:00' }))
+    const saraCard = screen
+      .getByText('Sara Bianchi')
+      .closest('[data-therapist="t1"]') as HTMLElement
+    await user.click(within(saraCard).getByRole('button', { name: '15:00' }))
     expect(screen.getByRole('dialog')).toBeInTheDocument()
 
     await user.keyboard('{Escape}')

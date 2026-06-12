@@ -150,4 +150,3 @@ vite.config.ts.timestamp-*
 .vinxi
 __unconfig*
 todos.json
-src/routeTree.gen.ts

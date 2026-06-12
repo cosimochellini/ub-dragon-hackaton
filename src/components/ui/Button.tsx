@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { ButtonHTMLAttributes } from 'react'
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'success'
 type Size = 'md' | 'lg'
@@ -20,14 +20,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant
   size?: Size
   full?: boolean
-  iconLeft?: ReactNode
 }
 
 export function Button({
   variant = 'primary',
   size = 'md',
   full,
-  iconLeft,
   children,
   className,
   disabled,
@@ -41,7 +39,6 @@ export function Button({
       className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border-0 font-body font-semibold transition-all duration-150 ease-out ${SIZE_CLASS[size]} ${VARIANT_CLASS[variant]} ${full ? 'w-full' : ''} ${disabled ? 'cursor-not-allowed opacity-55' : 'cursor-pointer'} ${className ?? ''}`}
       {...rest}
     >
-      {iconLeft}
       {children}
     </button>
   )

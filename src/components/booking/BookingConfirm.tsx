@@ -52,8 +52,9 @@ export function BookingConfirm({
         id="booking-phone"
         name="phone"
         type="tel"
-        defaultValue="+39 340 ••• ••12"
-        className="mb-1.5 w-full rounded-xl border border-grey-300 px-[14px] py-3 font-body text-[15px] text-grey-900 outline-none focus:border-candy-600"
+        autoComplete="tel"
+        placeholder="+39 340 000 0012"
+        className="mb-1.5 w-full rounded-xl border border-grey-300 px-[14px] py-3 font-body text-[15px] text-grey-900 outline-none placeholder:text-grey-400 focus:border-candy-600"
       />
       <div className="mb-[18px] text-[12px] text-grey-600">
         We&apos;ll text you a reminder before the call.

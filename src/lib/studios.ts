@@ -19,11 +19,12 @@ export function studioOf(
  */
 export function groupStudios(
   list: Therapist[],
-  studios: Record<string, Studio>,
+  studios: Record<string, Studio | undefined>,
 ): StudioGroup[] {
   const groups = new Map<string, StudioGroup>()
   for (const t of list) {
     const studio = studios[t.studio]
+    if (!studio) continue // skip therapists referencing an unknown studio
     const existing = groups.get(t.studio)
     if (existing) {
       existing.therapists.push(t)

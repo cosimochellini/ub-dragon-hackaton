@@ -14,7 +14,10 @@ export function TherapistCard({
   onPick: PickHandler
 }) {
   return (
-    <div className="rounded-[24px] border border-grey-200 bg-white p-4 shadow-xs">
+    <div
+      data-therapist={t.id}
+      className="rounded-[24px] border border-grey-200 bg-white p-4 shadow-xs"
+    >
       <CardHead t={t} />
       <StudioRow t={t} studios={studios} />
       <div className="mt-[14px] mb-3 h-px bg-grey-200" />
