@@ -13,6 +13,18 @@ export function studioOf(
 }
 
 /**
+ * The therapist a studio marker represents: the selected one if it belongs to
+ * this group, otherwise the group's first. Shared by the stylized and Leaflet
+ * markers so a click resolves to the same therapist in both.
+ */
+export function selectedTherapistOf(
+  group: StudioGroup,
+  selectedId: string | null,
+): Therapist {
+  return group.therapists.find((t) => t.id === selectedId) ?? group.therapists[0]
+}
+
+/**
  * Group a (filtered) therapist list by studio. Shared Unobravo studios cluster
  * several therapists; private studios stand alone. Insertion order follows the
  * input list, so the resulting map markers render deterministically.

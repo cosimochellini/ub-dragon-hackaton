@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { groupStudios, studioOf } from './studios'
+import { groupStudios, selectedTherapistOf, studioOf } from './studios'
 import { testStudios, testTherapists } from '@/test/fixtures'
 
 describe('groupStudios', () => {
@@ -37,5 +37,23 @@ describe('groupStudios', () => {
 describe('studioOf', () => {
   it('resolves a therapist to their studio', () => {
     expect(studioOf(testTherapists[0], testStudios)?.area).toBe('Porta Romana')
+  })
+})
+
+describe('selectedTherapistOf', () => {
+  const ub = groupStudios(testTherapists, testStudios).find(
+    (g) => g.studio.id === 'ub_romana',
+  )!
+
+  it('returns the selected member when it belongs to the group', () => {
+    expect(selectedTherapistOf(ub, 't3').id).toBe('t3')
+  })
+
+  it('falls back to the first member when the selection is elsewhere', () => {
+    expect(selectedTherapistOf(ub, 't2').id).toBe('t1')
+  })
+
+  it('falls back to the first member when nothing is selected', () => {
+    expect(selectedTherapistOf(ub, null).id).toBe('t1')
   })
 })

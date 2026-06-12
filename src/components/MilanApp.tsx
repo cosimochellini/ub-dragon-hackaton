@@ -3,7 +3,7 @@ import { Header } from './shell/Header'
 import { FloatingToggle } from './shell/FloatingToggle'
 import { EmptyState } from './shell/EmptyState'
 import { TherapistCard } from './therapist/TherapistCard'
-import { StylizedMap } from './map/StylizedMap'
+import { MapView } from './map/MapView'
 import { MapCarousel } from './MapCarousel'
 import { BookingSheet } from './booking/BookingSheet'
 import { filterTherapists } from '@/lib/filter'
@@ -98,7 +98,7 @@ export function MilanApp({
           </div>
         ) : (
           <>
-            <StylizedMap
+            <MapView
               therapists={list}
               studios={studios}
               selectedId={selectedMapId}
