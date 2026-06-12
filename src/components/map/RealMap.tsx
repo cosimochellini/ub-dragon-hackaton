@@ -1,5 +1,5 @@
 import 'leaflet/dist/leaflet.css'
-import { useEffect } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { divIcon } from 'leaflet'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
@@ -35,14 +35,20 @@ function RecenterOnSelect({
   studios,
 }: Omit<MapProps, 'onSelect'>) {
   const map = useMap()
+  // Read the latest data without making it a pan trigger: we want to pan only
+  // when the *selection* changes, not when the filtered list re-references on a
+  // filter change (which would discard a viewport the user had panned/zoomed).
+  const dataRef = useRef({ therapists, studios })
+  dataRef.current = { therapists, studios }
   useEffect(() => {
-    const coords = selectedStudioCoords(selectedId, therapists, studios)
+    const { therapists: ts, studios: ss } = dataRef.current
+    const coords = selectedStudioCoords(selectedId, ts, ss)
     if (!coords) return
     const reduceMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches
     map.panTo(coords, { animate: !reduceMotion })
-  }, [selectedId, therapists, studios, map])
+  }, [selectedId, map])
   return null
 }
 
@@ -58,8 +64,51 @@ export default function RealMap({
   selectedId,
   onSelect,
 }: MapProps) {
-  const groups = groupStudios(therapists, studios)
+  const groups = useMemo(
+    () => groupStudios(therapists, studios),
+    [therapists, studios],
+  )
+  // `center` is only read on mount by MapContainer; recomputing it per render is
+  // harmless (changing it later does not move the map).
   const center = selectedStudioCoords(selectedId, therapists, studios) ?? MILAN
+
+  // Rebuild markers only when the groups or the selection change, so unrelated
+  // re-renders (e.g. opening the booking sheet) don't tear down/recreate the
+  // Leaflet marker icons. `onSelect` is a stable state setter.
+  const markers = useMemo(
+    () =>
+      groups.map((g) => {
+        const { studio, therapists: members } = g
+        const count = members.length
+        const active = members.some((t) => t.id === selectedId)
+        const isUnobravo = studio.type === 'unobravo'
+        const size = studioMarkerSize(g, selectedId)
+        const label = `${isUnobravo ? 'Unobravo studio' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`
+        const icon = divIcon({
+          html: renderToStaticMarkup(
+            <StudioMarkerContent group={g} selectedId={selectedId} />,
+          ),
+          className: '',
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
+        })
+        return (
+          <Marker
+            key={studio.id}
+            position={[studio.coords.lat, studio.coords.lng]}
+            icon={icon}
+            keyboard
+            alt={label}
+            title={label}
+            zIndexOffset={active ? 1000 : 0}
+            eventHandlers={{
+              click: () => onSelect(selectedTherapistOf(g, selectedId).id),
+            }}
+          />
+        )
+      }),
+    [groups, selectedId, onSelect],
+  )
 
   return (
     <div className="absolute inset-0 z-0 isolate bg-cream">
@@ -75,36 +124,7 @@ export default function RealMap({
           maxZoom={20}
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         />
-        {groups.map((g) => {
-          const { studio, therapists: members } = g
-          const count = members.length
-          const active = members.some((t) => t.id === selectedId)
-          const isUnobravo = studio.type === 'unobravo'
-          const size = studioMarkerSize(g, selectedId)
-          const label = `${isUnobravo ? 'Unobravo studio' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`
-          const icon = divIcon({
-            html: renderToStaticMarkup(
-              <StudioMarkerContent group={g} selectedId={selectedId} />,
-            ),
-            className: '',
-            iconSize: [size, size],
-            iconAnchor: [size / 2, size / 2],
-          })
-          return (
-            <Marker
-              key={studio.id}
-              position={[studio.coords.lat, studio.coords.lng]}
-              icon={icon}
-              keyboard
-              alt={label}
-              title={label}
-              zIndexOffset={active ? 1000 : 0}
-              eventHandlers={{
-                click: () => onSelect(selectedTherapistOf(g, selectedId).id),
-              }}
-            />
-          )
-        })}
+        {markers}
         <RecenterOnSelect
           selectedId={selectedId}
           therapists={therapists}

@@ -12,7 +12,7 @@ export function StylizedMap({
 }: MapProps) {
   const groups = groupStudios(therapists, studios)
   return (
-    <div className="absolute inset-0 overflow-hidden bg-cream">
+    <div className="absolute inset-0 z-0 isolate overflow-hidden bg-cream">
       <MapBase />
       {groups.map((g) => (
         <StudioCircle
