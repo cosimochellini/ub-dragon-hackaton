@@ -1,0 +1,3 @@
+# Placeholder so the declared Netlify functions directory exists.
+# The TanStack Start SSR handler is emitted automatically by
+# @netlify/vite-plugin-tanstack-start and does not live here.
