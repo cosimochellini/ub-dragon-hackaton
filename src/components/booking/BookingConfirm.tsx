@@ -20,7 +20,7 @@ export function BookingConfirm({
   onClose: () => void
 }) {
   const [phone, setPhone] = useState('')
-  const phoneValid = phone.replace(/\D/g, '').length >= 8
+  const phoneValid = phone.replaceAll(/\D/g, '').length >= 8
 
   return (
     <div>
@@ -43,7 +43,8 @@ export function BookingConfirm({
 
       <p className="mx-0.5 mt-[14px] mb-4 text-[13px] leading-[1.5] text-grey-700">
         A free 50-minute introductory call to see if it&apos;s a good fit. The
-        exact studio address is shared by message once your booking is confirmed.
+        exact studio address is shared by message once your booking is
+        confirmed.
       </p>
 
       <label
@@ -76,7 +77,13 @@ export function BookingConfirm({
       >
         Confirm booking
       </Button>
-      <Button variant="tertiary" size="md" full onClick={onClose} className="mt-1.5">
+      <Button
+        variant="tertiary"
+        size="md"
+        full
+        onClick={onClose}
+        className="mt-1.5"
+      >
         Cancel
       </Button>
     </div>

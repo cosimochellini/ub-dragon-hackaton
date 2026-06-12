@@ -13,7 +13,7 @@ if (!elementProto.scrollTo) {
   elementProto.scrollTo = () => {}
 }
 
-const win = window as { matchMedia?: unknown }
+const win = globalThis as { matchMedia?: unknown }
 if (!win.matchMedia) {
   win.matchMedia = (query: string) => ({
     matches: false,

@@ -28,7 +28,11 @@ export function Header({
   return (
     <div className="z-[6] flex-none border-b border-grey-200 bg-white pt-[max(14px,env(safe-area-inset-top))]">
       <div className="flex items-center justify-between px-[18px] pt-1.5">
-        <img src="/logo-unobravo-black.svg" alt="Unobravo" className="block h-[15px]" />
+        <img
+          src="/logo-unobravo-black.svg"
+          alt="Unobravo"
+          className="block h-[15px]"
+        />
         <div className="flex items-center gap-1.5 text-[11.5px] font-medium text-grey-600">
           <Icon name="pin-filled" size={14} color="var(--color-candy-600)" />
           Milan

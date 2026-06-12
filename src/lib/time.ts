@@ -12,13 +12,17 @@ export interface RomeDayParts {
   day: number
 }
 
+// Hoisted: building an Intl.DateTimeFormat is expensive, and this one is
+// constant, so it is created once rather than on every call.
+const ROME_DAY_FORMAT = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'Europe/Rome',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+})
+
 export function romeDayParts(date: Date): RomeDayParts {
-  const parts = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'Europe/Rome',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).formatToParts(date)
+  const parts = ROME_DAY_FORMAT.formatToParts(date)
 
   const valueOf = (type: Intl.DateTimeFormatPartTypes): number =>
     Number(parts.find((p) => p.type === type)?.value)

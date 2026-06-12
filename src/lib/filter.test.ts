@@ -4,7 +4,9 @@ import { testTherapists } from '@/test/fixtures'
 
 describe('filterTherapists', () => {
   it('individual + any → all 6', () => {
-    expect(filterTherapists(testTherapists, 'individual', 'any')).toHaveLength(6)
+    expect(filterTherapists(testTherapists, 'individual', 'any')).toHaveLength(
+      6,
+    )
   })
 
   it('couples + any → t1, t3, t4, t6', () => {
@@ -24,6 +26,8 @@ describe('filterTherapists', () => {
 
   it('returns empty when nothing matches', () => {
     const maleIndividualOnly = testTherapists.filter((t) => t.id === 't2')
-    expect(filterTherapists(maleIndividualOnly, 'couples', 'female')).toHaveLength(0)
+    expect(
+      filterTherapists(maleIndividualOnly, 'couples', 'female'),
+    ).toHaveLength(0)
   })
 })

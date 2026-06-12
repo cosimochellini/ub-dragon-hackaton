@@ -12,8 +12,12 @@ describe('groupStudios', () => {
 
   it('keeps private studios as singletons', () => {
     const groups = groupStudios(testTherapists, testStudios)
-    expect(groups.find((g) => g.studio.id === 'brera')?.therapists).toHaveLength(1)
-    expect(groups.find((g) => g.studio.id === 'isola')?.therapists).toHaveLength(1)
+    expect(
+      groups.find((g) => g.studio.id === 'brera')?.therapists,
+    ).toHaveLength(1)
+    expect(
+      groups.find((g) => g.studio.id === 'isola')?.therapists,
+    ).toHaveLength(1)
     expect(
       groups.find((g) => g.studio.id === 'cittastudi')?.therapists,
     ).toHaveLength(1)

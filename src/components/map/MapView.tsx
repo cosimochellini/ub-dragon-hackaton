@@ -1,8 +1,13 @@
-import { Suspense, lazy, useEffect, useState } from 'react'
+import { Suspense, lazy, useSyncExternalStore } from 'react'
 import type { ComponentType } from 'react'
 import { StylizedMap } from './StylizedMap'
 import { MapErrorBoundary } from './MapErrorBoundary'
 import type { MapProps } from './props'
+
+// Stable no-op subscription: the "mounted" snapshot never changes after the
+// first client render, so there is nothing to subscribe to.
+const noop = () => {}
+const subscribe = () => noop
 
 // Leaflet has no SSR support — it touches window/document on import. Beyond not
 // rendering it on the server, the *server bundle must not reference the chunk at
@@ -24,8 +29,14 @@ const RealMap: ComponentType<MapProps> | null = import.meta.env.SSR
  * it loads (Suspense).
  */
 export function MapView(props: MapProps) {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
+  // Client-only gate without an effect-driven state flip: the server and the
+  // first hydration render see `false` (stylized SVG — no hydration mismatch),
+  // then the client re-renders with `true` and swaps in the real map.
+  const mounted = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  )
 
   if (!mounted || !RealMap) return <StylizedMap {...props} />
 

@@ -40,7 +40,11 @@ export function BookingSuccess({
   return (
     <div className="pt-1 text-center">
       <div className="mx-auto mb-3.5 grid h-16 w-16 place-items-center rounded-full bg-edamame-50">
-        <Icon name="check-in-circle" size={34} color="var(--color-edamame-600)" />
+        <Icon
+          name="check-in-circle"
+          size={34}
+          color="var(--color-edamame-600)"
+        />
       </div>
       <div
         id="booking-sheet-title"
@@ -56,7 +60,11 @@ export function BookingSuccess({
         <Row icon="calendar" label={`${day.dateLabel} · ${slot}`} />
         <Row
           icon={studio?.type === 'unobravo' ? 'office' : 'pin-empty'}
-          label={studio ? `${studio.name} · ${studio.area}, Milan` : 'Studio in Milan'}
+          label={
+            studio
+              ? `${studio.name} · ${studio.area}, Milan`
+              : 'Studio in Milan'
+          }
         />
         <Row icon="clock" label="50-minute introductory call" last />
       </div>

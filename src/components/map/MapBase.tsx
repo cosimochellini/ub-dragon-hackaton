@@ -30,8 +30,16 @@ export function MapBase() {
       className="absolute inset-0"
       aria-hidden="true"
     >
-      {BLOCKS.map(([x, y, w, h], i) => (
-        <rect key={i} x={x} y={y} width={w} height={h} rx="10" fill={block} />
+      {BLOCKS.map(([x, y, w, h]) => (
+        <rect
+          key={`${x}-${y}-${w}-${h}`}
+          x={x}
+          y={y}
+          width={w}
+          height={h}
+          rx="10"
+          fill={block}
+        />
       ))}
       <path
         d="M44 70 q60 -20 96 6 q24 40 -6 78 q-50 30 -96 4 q-22 -50 6 -88 Z"
@@ -51,9 +59,30 @@ export function MapBase() {
         strokeLinecap="round"
         opacity="0.5"
       />
-      <circle cx="205" cy="285" r="190" fill="none" stroke={road} strokeWidth="9" />
-      <circle cx="205" cy="285" r="120" fill="none" stroke={roadMain} strokeWidth="7" />
-      <circle cx="205" cy="285" r="58" fill="none" stroke={road} strokeWidth="5" />
+      <circle
+        cx="205"
+        cy="285"
+        r="190"
+        fill="none"
+        stroke={road}
+        strokeWidth="9"
+      />
+      <circle
+        cx="205"
+        cy="285"
+        r="120"
+        fill="none"
+        stroke={roadMain}
+        strokeWidth="7"
+      />
+      <circle
+        cx="205"
+        cy="285"
+        r="58"
+        fill="none"
+        stroke={road}
+        strokeWidth="5"
+      />
       {RADIAL_ANGLES.map((a) => {
         const r = (a * Math.PI) / 180
         return (
@@ -69,8 +98,24 @@ export function MapBase() {
           />
         )
       })}
-      <line x1="20" y1="180" x2="380" y2="120" stroke={road} strokeWidth="2.5" opacity="0.7" />
-      <line x1="30" y1="420" x2="390" y2="470" stroke={road} strokeWidth="2.5" opacity="0.7" />
+      <line
+        x1="20"
+        y1="180"
+        x2="380"
+        y2="120"
+        stroke={road}
+        strokeWidth="2.5"
+        opacity="0.7"
+      />
+      <line
+        x1="30"
+        y1="420"
+        x2="390"
+        y2="470"
+        stroke={road}
+        strokeWidth="2.5"
+        opacity="0.7"
+      />
     </svg>
   )
 }

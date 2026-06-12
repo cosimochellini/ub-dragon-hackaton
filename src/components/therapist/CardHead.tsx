@@ -20,7 +20,9 @@ export function CardHead({ t }: { t: Therapist }) {
           {t.name}
         </div>
         <div className="mt-0.5 text-[12.5px] text-grey-600">{t.title}</div>
-        <div className="mt-[5px] text-[12px] text-grey-600">{servicesLine(t)}</div>
+        <div className="mt-[5px] text-[12px] text-grey-600">
+          {servicesLine(t)}
+        </div>
       </div>
     </div>
   )

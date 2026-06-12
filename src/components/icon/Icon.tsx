@@ -13,7 +13,14 @@ interface IconProps {
   style?: CSSProperties
 }
 
-export function Icon({ name, size = 16, color, title, className, style }: IconProps) {
+export function Icon({
+  name,
+  size = 16,
+  color,
+  title,
+  className,
+  style,
+}: IconProps) {
   return (
     <svg
       viewBox="0 0 16 16"
@@ -28,12 +35,12 @@ export function Icon({ name, size = 16, color, title, className, style }: IconPr
       style={{ display: 'block', flexShrink: 0, color, ...style }}
     >
       {title ? <title>{title}</title> : null}
-      {ICON_PATHS[name].map((p, i) =>
+      {ICON_PATHS[name].map((p) =>
         p.filled ? (
-          <path key={i} d={p.d} fill="currentColor" />
+          <path key={p.d} d={p.d} fill="currentColor" />
         ) : (
           <path
-            key={i}
+            key={p.d}
             d={p.d}
             stroke="currentColor"
             strokeLinecap="round"

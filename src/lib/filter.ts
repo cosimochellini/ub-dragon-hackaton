@@ -12,7 +12,6 @@ export function filterTherapists(
 ): Therapist[] {
   return list.filter(
     (t) =>
-      t.services.includes(service) &&
-      (gender === 'any' || t.gender === gender),
+      t.services.includes(service) && (gender === 'any' || t.gender === gender),
   )
 }
