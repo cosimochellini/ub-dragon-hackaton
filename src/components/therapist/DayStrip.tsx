@@ -15,7 +15,15 @@ export function DayStrip({ t, onPick }: { t: Therapist; onPick: PickHandler }) {
   const [activeIndex, setActiveIndex] = useState(
     firstWithSlots < 0 ? 0 : firstWithSlots,
   )
-  const day = t.days[activeIndex]
+  const day = t.days.at(activeIndex) ?? t.days.at(0)
+
+  if (!day) {
+    return (
+      <span className="text-[12.5px] text-grey-500">
+        No availability this week.
+      </span>
+    )
+  }
 
   return (
     <div>
@@ -28,7 +36,7 @@ export function DayStrip({ t, onPick }: { t: Therapist; onPick: PickHandler }) {
               key={d.key}
               type="button"
               disabled={!has}
-              aria-pressed={on}
+              aria-pressed={has ? on : undefined}
               onClick={() => setActiveIndex(i)}
               className={`flex w-[50px] shrink-0 flex-col items-center gap-0.5 rounded-[14px] border-0 py-[7px] transition-all duration-[120ms] ease-out ${
                 on
