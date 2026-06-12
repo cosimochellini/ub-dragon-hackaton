@@ -55,17 +55,13 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
       },
       {
+        // Only Bold (700) is rendered — every `font-display` usage is bold.
+        // Regular (400) is registered via @font-face but never used, so it is
+        // intentionally not preloaded.
         rel: 'preload',
         as: 'font',
         type: 'font/woff',
         href: '/fonts/ESRebondGrotesque-Bold.woff',
-        crossOrigin: 'anonymous',
-      },
-      {
-        rel: 'preload',
-        as: 'font',
-        type: 'font/woff',
-        href: '/fonts/ESRebondGrotesque-Regular.woff',
         crossOrigin: 'anonymous',
       },
     ],
