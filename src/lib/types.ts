@@ -13,6 +13,8 @@ export interface Studio {
   area: string
   /** Position on the stylized map, in percentages (0–100). */
   map: { x: number; y: number }
+  /** Real-world location for the Leaflet map (approximate neighborhood centroid). */
+  coords: { lat: number; lng: number }
 }
 
 /** Raw therapist as stored in the mock JSON (production-swap point). */

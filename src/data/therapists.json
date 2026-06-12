@@ -5,28 +5,32 @@
       "type": "unobravo",
       "name": "Unobravo studio",
       "area": "Porta Romana",
-      "map": { "x": 50, "y": 38 }
+      "map": { "x": 50, "y": 38 },
+      "coords": { "lat": 45.4498, "lng": 9.203 }
     },
     "brera": {
       "id": "brera",
       "type": "private",
       "name": "Private studio",
       "area": "Brera",
-      "map": { "x": 27, "y": 20 }
+      "map": { "x": 27, "y": 20 },
+      "coords": { "lat": 45.4719, "lng": 9.1881 }
     },
     "isola": {
       "id": "isola",
       "type": "private",
       "name": "Private studio",
       "area": "Isola",
-      "map": { "x": 70, "y": 17 }
+      "map": { "x": 70, "y": 17 },
+      "coords": { "lat": 45.4869, "lng": 9.1888 }
     },
     "cittastudi": {
       "id": "cittastudi",
       "type": "private",
       "name": "Private studio",
       "area": "Città Studi",
-      "map": { "x": 78, "y": 44 }
+      "map": { "x": 78, "y": 44 },
+      "coords": { "lat": 45.4779, "lng": 9.227 }
     }
   },
   "therapists": [
