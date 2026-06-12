@@ -1,0 +1,16 @@
+# Netlify build settings for the TanStack Start (SSR) app.
+# The SSR server is bundled into a Netlify serverless function by
+# @netlify/vite-plugin-tanstack-start (configured in vite.config.ts);
+# `publish` serves the static client assets and the plugin wires the
+# catch-all redirect to the server function.
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22.12"
+
+# User-defined Netlify Functions (none yet). The SSR handler is emitted
+# automatically by the plugin and lives outside this directory.
+[functions]
+  directory = "netlify/functions"

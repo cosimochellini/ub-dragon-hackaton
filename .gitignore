@@ -145,5 +145,6 @@ vite.config.ts.timestamp-*
 .wrangler
 .output
 .vinxi
+.netlify
 __unconfig*
 todos.json
