@@ -43,6 +43,9 @@ export function StudioMarkerContent({
   const active = therapists.some((t) => t.id === selectedId)
   const selected = selectedTherapistOf(group, selectedId)
   const isUnobravo = studio.type === 'unobravo'
+  // Same value the Leaflet `iconSize`/`iconAnchor` use, so the box the ring and
+  // dot are centered within is exactly the box the pin is anchored by.
+  const size = studioMarkerSize(group, selectedId)
 
   const ringColor = active ? 'rgba(211,60,0,0.6)' : 'rgba(211,60,0,0.45)'
   const fill = active ? 'rgba(255,87,34,0.20)' : 'rgba(255,87,34,0.12)'
@@ -86,7 +89,11 @@ export function StudioMarkerContent({
   }
 
   return (
-    <div className="relative">
+    // Explicitly sized to `size` (= studioMarkerSize) so `top-1/2 left-1/2`
+    // resolves to the box centre regardless of how Leaflet sizes the host
+    // element; the ring and centre dot share that centre, and the Leaflet
+    // anchor `[size/2, size/2]` lands it on the studio coordinate.
+    <div className="relative grid place-items-center" style={{ width: size, height: size }}>
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ease-out"
         style={{ width: radius, height: radius, background: fill, border: `1.5px dashed ${ringColor}` }}
