@@ -1,0 +1,51 @@
+import { describe, expect, it } from 'vitest'
+import { render, screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { MilanApp } from './MilanApp'
+import { testStudios, testTherapists } from '@/test/fixtures'
+
+describe('MilanApp booking flow', () => {
+  it('books a slot end-to-end: slot → sheet → confirmed → done', async () => {
+    const user = userEvent.setup()
+    render(<MilanApp therapists={testTherapists} studios={testStudios} />)
+
+    // Live count for the default Individual + Any filters.
+    expect(screen.getByText('6 found')).toBeInTheDocument()
+
+    // Sara Bianchi's first slot (15:00) is the only "15:00" visible initially.
+    await user.click(screen.getByRole('button', { name: '15:00' }))
+
+    const dialog = screen.getByRole('dialog')
+    expect(
+      within(dialog).getByText('Book a free intro call'),
+    ).toBeInTheDocument()
+    expect(within(dialog).getByText(/with Sara Bianchi/)).toBeInTheDocument()
+
+    await user.click(
+      within(dialog).getByRole('button', { name: 'Confirm booking' }),
+    )
+    expect(screen.getByText("You're booked")).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Done' }))
+    expect(screen.queryByRole('dialog')).toBeNull()
+  })
+
+  it('updates the live count when filtering to Couples', async () => {
+    const user = userEvent.setup()
+    render(<MilanApp therapists={testTherapists} studios={testStudios} />)
+
+    await user.click(screen.getByRole('button', { name: 'Couples' }))
+    expect(screen.getByText('4 found')).toBeInTheDocument()
+  })
+
+  it('closes the sheet on Escape', async () => {
+    const user = userEvent.setup()
+    render(<MilanApp therapists={testTherapists} studios={testStudios} />)
+
+    await user.click(screen.getByRole('button', { name: '15:00' }))
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+
+    await user.keyboard('{Escape}')
+    expect(screen.queryByRole('dialog')).toBeNull()
+  })
+})

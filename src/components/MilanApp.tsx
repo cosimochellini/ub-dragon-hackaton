@@ -1,0 +1,132 @@
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { Header } from './shell/Header'
+import { FloatingToggle } from './shell/FloatingToggle'
+import { EmptyState } from './shell/EmptyState'
+import { TherapistCard } from './therapist/TherapistCard'
+import { StylizedMap } from './map/StylizedMap'
+import { MapCarousel } from './MapCarousel'
+import { BookingSheet } from './booking/BookingSheet'
+import { filterTherapists } from '@/lib/filter'
+import type {
+  Booking,
+  Day,
+  GenderFilter,
+  ServiceType,
+  Studio,
+  Therapist,
+} from '@/lib/types'
+
+type View = 'list' | 'map'
+
+/**
+ * The directory screen. Owns all ephemeral UI state (view, filters, selected
+ * map pin, transient booking). Data comes in as props so this is decoupled
+ * from the Query/SSR layer and easy to test.
+ */
+export function MilanApp({
+  therapists,
+  studios,
+}: {
+  therapists: Therapist[]
+  studios: Record<string, Studio>
+}) {
+  const [view, setView] = useState<View>('list')
+  const [service, setService] = useState<ServiceType>('individual')
+  const [gender, setGender] = useState<GenderFilter>('any')
+  const [selectedMapId, setSelectedMapId] = useState<string | null>(
+    therapists[0]?.id ?? null,
+  )
+  const [booking, setBooking] = useState<Booking | null>(null)
+  const [booked, setBooked] = useState(false)
+
+  const list = useMemo(
+    () => filterTherapists(therapists, service, gender),
+    [therapists, service, gender],
+  )
+
+  // Keep the highlighted map pin valid as the filtered list changes.
+  useEffect(() => {
+    if (list.length === 0) {
+      if (selectedMapId !== null) setSelectedMapId(null)
+      return
+    }
+    if (!list.some((t) => t.id === selectedMapId)) {
+      setSelectedMapId(list[0].id)
+    }
+  }, [list, selectedMapId])
+
+  const pick = useCallback((t: Therapist, day: Day, slot: string) => {
+    setBooked(false)
+    setBooking({ t, day, slot })
+  }, [])
+  const confirm = useCallback(() => setBooked(true), [])
+  const closeSheet = useCallback(() => {
+    setBooking(null)
+    setBooked(false)
+  }, [])
+
+  return (
+    <div className="relative flex h-full flex-col overflow-hidden bg-white">
+      <Header
+        service={service}
+        setService={setService}
+        gender={gender}
+        setGender={setGender}
+        count={list.length}
+      />
+
+      <div className="relative flex-1 overflow-hidden">
+        {view === 'list' ? (
+          <div className="no-sb h-full overflow-y-auto px-[18px] pt-3.5 pb-[120px]">
+            {list.length > 0 ? (
+              <div className="flex flex-col gap-3.5">
+                {list.map((t) => (
+                  <TherapistCard
+                    key={t.id}
+                    t={t}
+                    studios={studios}
+                    onPick={pick}
+                  />
+                ))}
+                <div className="py-1.5 text-center text-[12px] text-grey-500">
+                  That&apos;s everyone with a studio in Milan, for now.
+                </div>
+              </div>
+            ) : (
+              <EmptyState />
+            )}
+          </div>
+        ) : (
+          <>
+            <StylizedMap
+              therapists={list}
+              studios={studios}
+              selectedId={selectedMapId}
+              onSelect={setSelectedMapId}
+            />
+            {list.length > 0 ? (
+              <MapCarousel
+                list={list}
+                studios={studios}
+                selectedId={selectedMapId}
+                onPick={pick}
+              />
+            ) : null}
+          </>
+        )}
+      </div>
+
+      <FloatingToggle
+        view={view}
+        onToggle={() => setView((v) => (v === 'list' ? 'map' : 'list'))}
+      />
+      <BookingSheet
+        booking={booking}
+        booked={booked}
+        studios={studios}
+        onClose={closeSheet}
+        onConfirm={confirm}
+      />
+    </div>
+  )
+}
