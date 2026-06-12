@@ -1,0 +1,126 @@
+@import 'tailwindcss';
+
+/* ─────────────────────────────────────────────────────────────
+   Zenit 2.0 design tokens → Tailwind theme
+   Source of truth: Unobravo Zenit "colors_and_type.css"
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  /* Candy — brand (warm reds / orange) */
+  --color-candy-50: #fff3f0;
+  --color-candy-100: #ffe4dc;
+  --color-candy-200: #ffbfa9;
+  --color-candy-300: #ff8e6b;
+  --color-candy-400: #ff5722;
+  --color-candy-500: #e74d1b;
+  --color-candy-600: #d33c00;
+  --color-candy-700: #a22600;
+  --color-candy-800: #671212;
+  --color-candy-900: #4a0a0a;
+
+  /* Neutral / Grey */
+  --color-grey-50: #fafafa;
+  --color-grey-100: #f2f2f2;
+  --color-grey-200: #e5e5e5;
+  --color-grey-300: #cecece;
+  --color-grey-400: #b3b3b3;
+  --color-grey-500: #858585;
+  --color-grey-600: #6c6c6c;
+  --color-grey-700: #535353;
+  --color-grey-800: #3a3a3a;
+  --color-grey-900: #232323;
+
+  /* Edamame — success green */
+  --color-edamame-50: #eafbef;
+  --color-edamame-100: #ddfbe8;
+  --color-edamame-200: #bdf9d2;
+  --color-edamame-600: #168034;
+  --color-edamame-700: #186634;
+
+  /* Smurf — informative teal */
+  --color-smurf-100: #c7f4f8;
+  --color-smurf-300: #6edce4;
+  --color-smurf-700: #00838f;
+
+  /* Accent + brand cream */
+  --color-lime-400: #a3d154;
+  --color-cream: #fcf7e8;
+
+  /* Fonts */
+  --font-display: 'ES Rebond Grotesque', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Shadows (Zenit) — override Tailwind defaults */
+  --shadow-xs: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 16px -2px rgba(0, 0, 0, 0.08), 0 4px 8px -4px rgba(0, 0, 0, 0.08);
+  --shadow-bottom: 0 -4px 8px -1px rgba(0, 0, 0, 0.08), 0 -2px 4px -2px rgba(0, 0, 0, 0.08);
+}
+
+/* Self-hosted display font (ES Rebond Grotesque) */
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('/fonts/ESRebondGrotesque-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('/fonts/ESRebondGrotesque-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  font-family: var(--font-body);
+  color: var(--color-grey-900);
+}
+
+body {
+  margin: 0;
+  background: var(--color-grey-100);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Booking sheet entrance */
+@keyframes sheetUp {
+  from {
+    transform: translateY(18px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-sheet {
+  animation: sheetUp 0.24s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sheet {
+    animation: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hide scrollbars on the in-app scrollers */
+.no-sb {
+  scrollbar-width: none;
+}
+.no-sb::-webkit-scrollbar {
+  display: none;
+}
