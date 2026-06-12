@@ -43,14 +43,14 @@ function RecenterOnSelect({
   // us; a dynamic data source would need coords re-added as a trigger.
   const dataRef = useRef({ therapists, studios })
   dataRef.current = { therapists, studios }
-  // The initial viewport is already framed by MapContainer's `center` prop, so
-  // skip the mount run and pan only on subsequent selection changes.
-  const firstRun = useRef(true)
+  // Pan only when the selection actually changes value. Seeding the ref with the
+  // mount selection skips the redundant initial pan (MapContainer's `center`
+  // already frames it), and comparing values — rather than a one-shot flag —
+  // keeps this idempotent under React StrictMode's double effect invocation.
+  const prevSelectedId = useRef(selectedId)
   useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = false
-      return
-    }
+    if (selectedId === prevSelectedId.current) return
+    prevSelectedId.current = selectedId
     const { therapists: ts, studios: ss } = dataRef.current
     const coords = selectedStudioCoords(selectedId, ts, ss)
     if (!coords) return

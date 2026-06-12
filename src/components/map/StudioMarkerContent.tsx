@@ -5,17 +5,24 @@ import type { StudioGroup } from '@/lib/studios'
 import type { ReactNode } from 'react'
 
 /**
- * Pixel size of the marker's center element (the dot / count chip / avatar).
- * The decorative ring and the label overflow this box, so it doubles as the
- * Leaflet `iconSize`/`iconAnchor` basis for centering the pin on its coordinate.
+ * Pixel size of the marker's center element (the dot / count chip / avatar) per
+ * state. Single source of truth for both the rendered element and the Leaflet
+ * `iconSize`/`iconAnchor`, so the pin stays centered if a size is ever tweaked.
+ */
+const CENTER_PX = { active: 44, cluster: 34, single: 18 } as const
+
+/**
+ * Pixel size of the marker's center element. The decorative ring and the label
+ * overflow this box, so it doubles as the Leaflet `iconSize`/`iconAnchor` basis
+ * for centering the pin on its coordinate.
  */
 export function studioMarkerSize(
   group: StudioGroup,
   selectedId: string | null,
 ): number {
   const active = group.therapists.some((t) => t.id === selectedId)
-  if (active) return 44
-  return group.therapists.length > 1 ? 34 : 18
+  if (active) return CENTER_PX.active
+  return group.therapists.length > 1 ? CENTER_PX.cluster : CENTER_PX.single
 }
 
 /**
@@ -48,7 +55,11 @@ export function StudioMarkerContent({
         className="relative"
         style={{ filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.18))' }}
       >
-        <Avatar initials={selected.initials} variant={selected.avatar} size={44} />
+        <Avatar
+          initials={selected.initials}
+          variant={selected.avatar}
+          size={CENTER_PX.active}
+        />
         {count > 1 ? (
           <span className="absolute -right-1.5 -bottom-1 grid h-5 min-w-5 place-items-center rounded-full border-2 border-white bg-candy-600 px-[5px] text-[11px] font-bold text-white">
             +{count - 1}
@@ -58,13 +69,19 @@ export function StudioMarkerContent({
     )
   } else if (count > 1) {
     center = (
-      <div className="grid h-[34px] w-[34px] place-items-center rounded-full border-[2.5px] border-white bg-candy-600 font-display text-[15px] font-bold text-white shadow-sm">
+      <div
+        className="grid place-items-center rounded-full border-[2.5px] border-white bg-candy-600 font-display text-[15px] font-bold text-white shadow-sm"
+        style={{ width: CENTER_PX.cluster, height: CENTER_PX.cluster }}
+      >
         {count}
       </div>
     )
   } else {
     center = (
-      <div className="h-[18px] w-[18px] rounded-full border-[2.5px] border-white bg-candy-600 shadow-sm" />
+      <div
+        className="rounded-full border-[2.5px] border-white bg-candy-600 shadow-sm"
+        style={{ width: CENTER_PX.single, height: CENTER_PX.single }}
+      />
     )
   }
 
