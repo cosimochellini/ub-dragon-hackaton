@@ -17,7 +17,8 @@ const INITIAL_ZOOM = 13
 function selectedStudioCoords(
   selectedId: string | null,
   therapists: Therapist[],
-  studios: Record<string, Studio>,
+  // Widened like `groupStudios`: a therapist may reference an unknown studio.
+  studios: Record<string, Studio | undefined>,
 ): [number, number] | null {
   if (!selectedId) return null
   const t = therapists.find((x) => x.id === selectedId)
@@ -38,9 +39,18 @@ function RecenterOnSelect({
   // Read the latest data without making it a pan trigger: we want to pan only
   // when the *selection* changes, not when the filtered list re-references on a
   // filter change (which would discard a viewport the user had panned/zoomed).
+  // With the static mock data a selected studio's coords never change beneath
+  // us; a dynamic data source would need coords re-added as a trigger.
   const dataRef = useRef({ therapists, studios })
   dataRef.current = { therapists, studios }
+  // The initial viewport is already framed by MapContainer's `center` prop, so
+  // skip the mount run and pan only on subsequent selection changes.
+  const firstRun = useRef(true)
   useEffect(() => {
+    if (firstRun.current) {
+      firstRun.current = false
+      return
+    }
     const { therapists: ts, studios: ss } = dataRef.current
     const coords = selectedStudioCoords(selectedId, ts, ss)
     if (!coords) return

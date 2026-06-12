@@ -15,7 +15,9 @@ export function studioOf(
 /**
  * The therapist a studio marker represents: the selected one if it belongs to
  * this group, otherwise the group's first. Shared by the stylized and Leaflet
- * markers so a click resolves to the same therapist in both.
+ * markers so a click resolves to the same therapist in both. Groups are
+ * non-empty by construction (`groupStudios` creates a group only when adding
+ * its first member), so the `[0]` fallback is always defined.
  */
 export function selectedTherapistOf(
   group: StudioGroup,
