@@ -28,7 +28,13 @@ export function MapCarousel({
     const sc = scroller.current
     const el = cardRefs.current[selectedId]
     if (sc && el && typeof sc.scrollTo === 'function') {
-      sc.scrollTo({ left: Math.max(0, el.offsetLeft - 18), behavior: 'smooth' })
+      const reduceMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches
+      sc.scrollTo({
+        left: Math.max(0, el.offsetLeft - 18),
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      })
     }
   }, [selectedId])
 
