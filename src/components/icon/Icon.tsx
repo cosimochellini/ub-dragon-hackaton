@@ -37,10 +37,10 @@ export function Icon({
       {title ? <title>{title}</title> : null}
       {ICON_PATHS[name].map((p) =>
         p.filled ? (
-          <path key={p.d} d={p.d} fill="currentColor" />
+          <path key={`f-${p.d}`} d={p.d} fill="currentColor" />
         ) : (
           <path
-            key={p.d}
+            key={`s-${p.d}`}
             d={p.d}
             stroke="currentColor"
             strokeLinecap="round"
