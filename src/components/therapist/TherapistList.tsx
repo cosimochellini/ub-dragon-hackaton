@@ -41,6 +41,7 @@ export function TherapistList({
 
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return
+    if (shown >= total) return // everything revealed → no sentinel to watch
     const root = scrollRef.current
     const sentinel = sentinelRef.current
     if (!root || !sentinel) return
@@ -56,7 +57,10 @@ export function TherapistList({
     )
     observer.observe(sentinel)
     return () => observer.disconnect()
-  }, [total])
+    // Re-observing after each reveal re-checks intersection (IO only fires on
+    // transition), so the list keeps filling while the sentinel stays in view
+    // instead of stalling until the next manual scroll.
+  }, [shown, total])
 
   return (
     <div
