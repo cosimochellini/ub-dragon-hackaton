@@ -9,6 +9,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
 import appCss from '../styles.css?url'
+import { SITE_URL } from '@/lib/site'
 
 import type { QueryClient } from '@tanstack/react-query'
 
@@ -16,12 +17,6 @@ interface MyRouterContext {
   queryClient: QueryClient
 }
 
-// Absolute production origin for canonical + Open Graph/Twitter URLs. Set
-// `VITE_SITE_URL` in the Netlify environment to override; the fallback is the
-// default deploy URL. Trailing slashes are trimmed so we can append paths.
-const SITE_URL = (
-  import.meta.env.VITE_SITE_URL ?? 'https://ub-dragon.netlify.app'
-).replace(/\/+$/, '')
 const SITE_NAME = 'Unobravo'
 const PAGE_TITLE = 'Therapists in Milan · Unobravo'
 const PAGE_DESCRIPTION =
@@ -84,10 +79,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         rel: 'stylesheet',
         href: appCss,
       },
-      {
-        rel: 'canonical',
-        href: `${SITE_URL}/`,
-      },
+      // `canonical` is emitted per route (each page is its own canonical), not
+      // here — a single root canonical would point every route at `/`.
       // Favicons. The .ico (16/32/48) covers legacy browsers and Google Search;
       // the SVG is used by modern browsers and scales crisply.
       {

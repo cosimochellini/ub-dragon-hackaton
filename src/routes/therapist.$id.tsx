@@ -4,11 +4,7 @@ import { PhoneFrame } from '@/components/shell/PhoneFrame'
 import { ProfileScreen } from '@/components/profile/ProfileScreen'
 import { TherapistNotFound } from '@/components/profile/TherapistNotFound'
 import { profileMeta } from '@/components/profile/profileMeta'
-
-// Absolute origin for the per-therapist Open Graph URL; mirrors __root.tsx.
-const SITE_URL = (
-  import.meta.env.VITE_SITE_URL ?? 'https://ub-dragon.netlify.app'
-).replace(/\/+$/, '')
+import { SITE_URL } from '@/lib/site'
 
 export const Route = createFileRoute('/therapist/$id')({
   loader: async ({ context, params }) => {

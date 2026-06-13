@@ -25,7 +25,11 @@ describe('profileMeta', () => {
     expect(head.meta).toContainEqual({ name: 'twitter:image:alt', content: alt })
   })
 
-  it('emits no links, so the root keeps the single canonical', () => {
-    expect('links' in head).toBe(false)
+  it('emits a self-referential canonical link', () => {
+    expect(head.links).toContainEqual({
+      rel: 'canonical',
+      href: `https://example.test/therapist/${sara.id}`,
+    })
+    expect(head.links).toHaveLength(1)
   })
 })

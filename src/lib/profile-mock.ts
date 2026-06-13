@@ -67,8 +67,11 @@ const MASTER_TOPICS = [
  * never collapse onto the same generated profile.
  */
 function seedOf(id: string): number {
-  const n = Number.parseInt(id.replace(/^\D+/, ''), 10)
-  if (Number.isFinite(n)) return n - 1
+  // Only a clean "<prefix><digits>" id (e.g. "t7") maps to a numeric index;
+  // anything else (e.g. "t7x", a slug) folds its characters so distinct ids
+  // never collapse onto the same seed.
+  const digits = id.replace(/^\D+/, '')
+  if (/^\d+$/.test(digits)) return Number.parseInt(digits, 10) - 1
   let acc = 0
   for (const ch of id) acc = (acc * 31 + (ch.codePointAt(0) ?? 0)) >>> 0
   return acc
@@ -156,7 +159,9 @@ function buildEducation(
 
 export function buildProfile(
   record: TherapistRecord,
-  studios: Record<string, Studio>,
+  // Optional values: an id may reference a studio absent from the map (and the
+  // availability test passes `{}`), so the area fallback below is real.
+  studios: Record<string, Studio | undefined>,
 ): TherapistProfile {
   const seed = seedOf(record.id)
   const first = record.name.split(' ', 1)[0]
@@ -167,9 +172,7 @@ export function buildProfile(
   const yearsExperience = 3 + (hash(seed * 13 + 4) % Math.max(1, expCap - 2))
   const peopleHelped = 12 + (hash(seed * 19 + 5) % 238) // 12–249
   const orientation = ORIENTATIONS[hash(seed * 23 + 6) % ORIENTATIONS.length]
-  // `studios[key]` is typed as non-optional but can be absent at runtime (e.g.
-  // an unknown studio id); widen so the fallback is real, not dead code.
-  const area = (studios[record.studio] as Studio | undefined)?.area ?? 'Milan'
+  const area = studios[record.studio]?.area ?? 'Milan'
   const topics = buildTopics(record, seed)
 
   // Axis positions, 18–82, biased away from the extremes for a natural look.
