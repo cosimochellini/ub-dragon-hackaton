@@ -11,6 +11,7 @@ import type { MapProps } from './props'
 import { groupStudios, selectedTherapistOf } from '@/lib/studios'
 import type { StudioGroup } from '@/lib/studios'
 import { clusterGroups } from '@/lib/cluster'
+import type { MapCluster } from '@/lib/cluster'
 import type { Studio, Therapist } from '@/lib/types'
 
 /** Map centre when nothing is selected — roughly central Milan. */
@@ -89,6 +90,7 @@ function buttonIcon(content: ReactNode, label: string, size: number) {
       <button
         type="button"
         aria-label={label}
+        title={label}
         className="block cursor-pointer border-0 bg-transparent p-0"
       >
         {content}
@@ -122,7 +124,6 @@ function studioMarker(
         size,
       )}
       keyboard={false}
-      title={label}
       zIndexOffset={active ? 1000 : 0}
       eventHandlers={{
         click: () => onSelect(selectedTherapistOf(g, selectedId).id),
@@ -171,20 +172,34 @@ function ClusterLayer({
     [groups, map, zoom],
   )
 
-  const expand = useCallback(
-    (lat: number, lng: number) => {
+  // Expand a cluster on click: zoom in toward it. Once we can't zoom further
+  // (studios share near-identical coords), fall back to selecting a member so
+  // the click — and keyboard activation — is never a dead no-op.
+  const expandOrSelect = useCallback(
+    (cluster: MapCluster) => {
+      if (map.getZoom() >= EXPAND_MAX_ZOOM) {
+        onSelect(cluster.groups[0].therapists[0].id)
+        return
+      }
       const reduceMotion = globalThis.matchMedia(
         '(prefers-reduced-motion: reduce)',
       ).matches
       const targetZoom = Math.min(map.getZoom() + 2, EXPAND_MAX_ZOOM)
-      map.setView([lat, lng], targetZoom, { animate: !reduceMotion })
+      map.setView([cluster.lat, cluster.lng], targetZoom, {
+        animate: !reduceMotion,
+      })
     },
-    [map],
+    [map, onSelect],
   )
 
-  return (
-    <>
-      {clusters.map((cluster) => {
+  // Memoize the rendered markers so the divIcons (and their inner <button>s)
+  // are only rebuilt when the clusters or the selection actually change —
+  // unrelated re-renders (e.g. opening the booking sheet) must not call
+  // Leaflet's setIcon, which would rewrite the icon DOM and steal keyboard
+  // focus from a pin.
+  const markers = useMemo(
+    () =>
+      clusters.map((cluster) => {
         if (cluster.groups.length === 1) {
           return studioMarker(cluster.groups[0], selectedId, onSelect)
         }
@@ -208,14 +223,15 @@ function ClusterLayer({
               size,
             )}
             keyboard={false}
-            title={label}
             zIndexOffset={active ? 1000 : 0}
-            eventHandlers={{ click: () => expand(cluster.lat, cluster.lng) }}
+            eventHandlers={{ click: () => expandOrSelect(cluster) }}
           />
         )
-      })}
-    </>
+      }),
+    [clusters, selectedId, onSelect, expandOrSelect],
   )
+
+  return <>{markers}</>
 }
 
 /**
