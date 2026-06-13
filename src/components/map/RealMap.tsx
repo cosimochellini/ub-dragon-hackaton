@@ -1,17 +1,24 @@
 import 'leaflet/dist/leaflet.css'
-import { useEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { divIcon } from 'leaflet'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
 import { MapDisclaimer } from './MapDisclaimer'
 import { StudioMarkerContent, studioMarkerSize } from './StudioMarkerContent'
+import { ClusterMarkerContent, clusterMarkerSize } from './ClusterMarkerContent'
 import type { MapProps } from './props'
 import { groupStudios, selectedTherapistOf } from '@/lib/studios'
+import type { StudioGroup } from '@/lib/studios'
+import { clusterGroups } from '@/lib/cluster'
 import type { Studio, Therapist } from '@/lib/types'
 
 /** Map centre when nothing is selected — roughly central Milan. */
 const MILAN: [number, number] = [45.4668, 9.1905]
 const INITIAL_ZOOM = 13
+/** Studios whose pins fall within this screen-space radius merge into a cluster. */
+const CLUSTER_RADIUS_PX = 72
+/** Max zoom a cluster click expands to (CARTO tiles go to 20). */
+const EXPAND_MAX_ZOOM = 18
 
 /** Coordinates of the selected therapist's studio, or null if none resolves. */
 function selectedStudioCoords(
@@ -66,11 +73,140 @@ function RecenterOnSelect({
   return null
 }
 
+/** A single studio's marker (selectable), identical to the pre-cluster pin. */
+function studioMarker(
+  g: StudioGroup,
+  selectedId: string | null,
+  onSelect: (id: string) => void,
+) {
+  const { studio, therapists: members } = g
+  const count = members.length
+  const active = members.some((t) => t.id === selectedId)
+  const isUnobravo = studio.type === 'unobravo'
+  const size = studioMarkerSize(g, selectedId)
+  const label = `${isUnobravo ? 'Unobravo studio' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`
+  const icon = divIcon({
+    html: renderToStaticMarkup(
+      <StudioMarkerContent group={g} selectedId={selectedId} />,
+    ),
+    className: '',
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  })
+  return (
+    <Marker
+      key={studio.id}
+      position={[studio.coords.lat, studio.coords.lng]}
+      icon={icon}
+      keyboard
+      alt={label}
+      title={label}
+      zIndexOffset={active ? 1000 : 0}
+      eventHandlers={{
+        click: () => onSelect(selectedTherapistOf(g, selectedId).id),
+      }}
+    />
+  )
+}
+
+/**
+ * Renders the studio pins, dynamically merging nearby studios into cluster pins
+ * at the current zoom. Clusters are recomputed on `zoomend` (projecting each
+ * studio to pixel space at the live zoom), so zooming out accretes pins and
+ * zooming in splits them — they're never static. A cluster pin click zooms in
+ * to expand it; a single-studio pin selects, exactly as before.
+ */
+function ClusterLayer({
+  groups,
+  selectedId,
+  onSelect,
+}: {
+  groups: StudioGroup[]
+  selectedId: string | null
+  onSelect: (id: string) => void
+}) {
+  const map = useMap()
+  const [zoom, setZoom] = useState(() => map.getZoom())
+
+  useEffect(() => {
+    const onZoomEnd = () => setZoom(map.getZoom())
+    map.on('zoomend', onZoomEnd)
+    return () => {
+      map.off('zoomend', onZoomEnd)
+    }
+  }, [map])
+
+  const clusters = useMemo(
+    () =>
+      clusterGroups(
+        groups,
+        (lat, lng) => {
+          const pt = map.project([lat, lng], zoom)
+          return { x: pt.x, y: pt.y }
+        },
+        CLUSTER_RADIUS_PX,
+      ),
+    [groups, map, zoom],
+  )
+
+  const expand = useCallback(
+    (lat: number, lng: number) => {
+      const reduceMotion = globalThis.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches
+      const targetZoom = Math.min(map.getZoom() + 2, EXPAND_MAX_ZOOM)
+      map.setView([lat, lng], targetZoom, { animate: !reduceMotion })
+    },
+    [map],
+  )
+
+  return (
+    <>
+      {clusters.map((cluster) => {
+        if (cluster.groups.length === 1) {
+          return studioMarker(cluster.groups[0], selectedId, onSelect)
+        }
+        const studioCount = cluster.groups.length
+        const active = cluster.groups.some((g) =>
+          g.therapists.some((t) => t.id === selectedId),
+        )
+        const size = clusterMarkerSize(active)
+        const label = `${studioCount} studios — ${cluster.therapistCount} therapists`
+        const icon = divIcon({
+          html: renderToStaticMarkup(
+            <ClusterMarkerContent
+              studioCount={studioCount}
+              therapistCount={cluster.therapistCount}
+              active={active}
+            />,
+          ),
+          className: '',
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
+        })
+        return (
+          <Marker
+            key={cluster.key}
+            position={[cluster.lat, cluster.lng]}
+            icon={icon}
+            keyboard
+            alt={label}
+            title={label}
+            zIndexOffset={active ? 1000 : 0}
+            eventHandlers={{ click: () => expand(cluster.lat, cluster.lng) }}
+          />
+        )
+      })}
+    </>
+  )
+}
+
 /**
  * Realistic, interactive Leaflet map (CARTO Positron tiles, no API key). Renders
  * the same custom studio markers as the stylized map via `divIcon`, keeping the
- * marker↔carousel selection sync. Client-only — loaded lazily by `MapView`
- * because Leaflet touches `window`/`document` on import (no SSR).
+ * marker↔carousel selection sync, and merges nearby studios into cluster pins
+ * that re-form on zoom. Client-only — loaded lazily by `MapView` because Leaflet
+ * touches `window`/`document` on import (no SSR).
  */
 export default function RealMap({
   therapists,
@@ -86,44 +222,6 @@ export default function RealMap({
   // harmless (changing it later does not move the map).
   const center = selectedStudioCoords(selectedId, therapists, studios) ?? MILAN
 
-  // Rebuild markers only when the groups or the selection change, so unrelated
-  // re-renders (e.g. opening the booking sheet) don't tear down/recreate the
-  // Leaflet marker icons. `onSelect` is a stable state setter.
-  const markers = useMemo(
-    () =>
-      groups.map((g) => {
-        const { studio, therapists: members } = g
-        const count = members.length
-        const active = members.some((t) => t.id === selectedId)
-        const isUnobravo = studio.type === 'unobravo'
-        const size = studioMarkerSize(g, selectedId)
-        const label = `${isUnobravo ? 'Unobravo studio' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`
-        const icon = divIcon({
-          html: renderToStaticMarkup(
-            <StudioMarkerContent group={g} selectedId={selectedId} />,
-          ),
-          className: '',
-          iconSize: [size, size],
-          iconAnchor: [size / 2, size / 2],
-        })
-        return (
-          <Marker
-            key={studio.id}
-            position={[studio.coords.lat, studio.coords.lng]}
-            icon={icon}
-            keyboard
-            alt={label}
-            title={label}
-            zIndexOffset={active ? 1000 : 0}
-            eventHandlers={{
-              click: () => onSelect(selectedTherapistOf(g, selectedId).id),
-            }}
-          />
-        )
-      }),
-    [groups, selectedId, onSelect],
-  )
-
   return (
     <div className="absolute inset-0 z-0 isolate bg-cream">
       <MapContainer
@@ -138,7 +236,11 @@ export default function RealMap({
           maxZoom={20}
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         />
-        {markers}
+        <ClusterLayer
+          groups={groups}
+          selectedId={selectedId}
+          onSelect={onSelect}
+        />
         <RecenterOnSelect
           selectedId={selectedId}
           therapists={therapists}

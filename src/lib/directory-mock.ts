@@ -20,12 +20,17 @@ import type {
  * instant; only the offset-based availability *pattern* is generated here.
  */
 
-/** ~11 extra Milan studios so 60 therapists spread across the map and carousel. */
+/**
+ * ~11 extra Milan studios so 60 therapists spread across the map and carousel.
+ * These are all private studios: Unobravo runs a single hub studio (the seed
+ * `ub_romana`), so we don't litter the map with repeated "Unobravo studio"
+ * pins — every studio here reads as its own neighbourhood.
+ */
 const NEW_STUDIOS: Record<string, Studio> = {
   navigli: {
     id: 'navigli',
-    type: 'unobravo',
-    name: 'Unobravo studio',
+    type: 'private',
+    name: 'Private studio',
     area: 'Navigli',
     map: { x: 38, y: 62 },
     coords: { lat: 45.449, lng: 9.175 },
@@ -48,8 +53,8 @@ const NEW_STUDIOS: Record<string, Studio> = {
   },
   loreto: {
     id: 'loreto',
-    type: 'unobravo',
-    name: 'Unobravo studio',
+    type: 'private',
+    name: 'Private studio',
     area: 'Loreto',
     map: { x: 84, y: 30 },
     coords: { lat: 45.4855, lng: 9.215 },
@@ -64,8 +69,8 @@ const NEW_STUDIOS: Record<string, Studio> = {
   },
   porta_venezia: {
     id: 'porta_venezia',
-    type: 'unobravo',
-    name: 'Unobravo studio',
+    type: 'private',
+    name: 'Private studio',
     area: 'Porta Venezia',
     map: { x: 66, y: 30 },
     coords: { lat: 45.475, lng: 9.205 },
@@ -80,8 +85,8 @@ const NEW_STUDIOS: Record<string, Studio> = {
   },
   bicocca: {
     id: 'bicocca',
-    type: 'unobravo',
-    name: 'Unobravo studio',
+    type: 'private',
+    name: 'Private studio',
     area: 'Bicocca',
     map: { x: 74, y: 8 },
     coords: { lat: 45.518, lng: 9.212 },
@@ -104,8 +109,8 @@ const NEW_STUDIOS: Record<string, Studio> = {
   },
   centrale: {
     id: 'centrale',
-    type: 'unobravo',
-    name: 'Unobravo studio',
+    type: 'private',
+    name: 'Private studio',
     area: 'Centrale',
     map: { x: 72, y: 22 },
     coords: { lat: 45.486, lng: 9.205 },
