@@ -1,0 +1,152 @@
+{
+  "studios": {
+    "ub_romana": {
+      "id": "ub_romana",
+      "type": "unobravo",
+      "name": "Unobravo studio",
+      "area": "Porta Romana",
+      "map": { "x": 50, "y": 38 },
+      "coords": { "lat": 45.4498, "lng": 9.203 }
+    },
+    "brera": {
+      "id": "brera",
+      "type": "private",
+      "name": "Private studio",
+      "area": "Brera",
+      "map": { "x": 27, "y": 20 },
+      "coords": { "lat": 45.4719, "lng": 9.1881 }
+    },
+    "isola": {
+      "id": "isola",
+      "type": "private",
+      "name": "Private studio",
+      "area": "Isola",
+      "map": { "x": 70, "y": 17 },
+      "coords": { "lat": 45.4869, "lng": 9.1888 }
+    },
+    "cittastudi": {
+      "id": "cittastudi",
+      "type": "private",
+      "name": "Private studio",
+      "area": "Città Studi",
+      "map": { "x": 78, "y": 44 },
+      "coords": { "lat": 45.4779, "lng": 9.227 }
+    }
+  },
+  "therapists": [
+    {
+      "id": "t1",
+      "name": "Sara Bianchi",
+      "initials": "SB",
+      "title": "Psicologa",
+      "gender": "female",
+      "services": ["individual", "couples"],
+      "studio": "ub_romana",
+      "avatar": "candy8",
+      "availability": [
+        ["15:00", "16:30"],
+        ["09:30", "11:00", "18:00"],
+        [],
+        ["10:00", "17:30"],
+        ["15:00"],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "Marco De Santis",
+      "initials": "MD",
+      "title": "Psicologo",
+      "gender": "male",
+      "services": ["individual"],
+      "studio": "brera",
+      "avatar": "smurf",
+      "availability": [
+        [],
+        ["17:00", "18:30"],
+        ["09:00", "10:30"],
+        [],
+        ["16:00", "17:30"],
+        ["11:00"],
+        []
+      ]
+    },
+    {
+      "id": "t3",
+      "name": "Giulia Ferrari",
+      "initials": "GF",
+      "title": "Psicologa",
+      "gender": "female",
+      "services": ["individual", "couples"],
+      "studio": "ub_romana",
+      "avatar": "candy4",
+      "availability": [
+        ["18:30"],
+        ["12:00", "19:00"],
+        ["09:30"],
+        ["14:00", "15:30", "19:00"],
+        [],
+        ["10:00"],
+        []
+      ]
+    },
+    {
+      "id": "t4",
+      "name": "Luca Moretti",
+      "initials": "LM",
+      "title": "Psicologo",
+      "gender": "male",
+      "services": ["individual", "couples"],
+      "studio": "isola",
+      "avatar": "candy8",
+      "availability": [
+        [],
+        [],
+        ["11:30", "17:00"],
+        ["09:00", "18:00"],
+        ["16:30"],
+        ["10:30", "12:00"],
+        []
+      ]
+    },
+    {
+      "id": "t5",
+      "name": "Elena Conti",
+      "initials": "EC",
+      "title": "Psicologa",
+      "gender": "female",
+      "services": ["individual"],
+      "studio": "cittastudi",
+      "avatar": "smurf",
+      "availability": [
+        ["09:00", "10:30"],
+        ["15:00"],
+        [],
+        ["11:00", "16:00"],
+        ["09:30", "18:30"],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "t6",
+      "name": "Davide Riva",
+      "initials": "DR",
+      "title": "Psicologo",
+      "gender": "male",
+      "services": ["individual", "couples"],
+      "studio": "ub_romana",
+      "avatar": "candy4",
+      "availability": [
+        [],
+        ["10:00", "11:30", "17:00"],
+        ["18:30"],
+        [],
+        ["15:00", "16:30"],
+        ["09:00"],
+        []
+      ]
+    }
+  ]
+}
