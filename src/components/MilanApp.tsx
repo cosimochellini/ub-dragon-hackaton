@@ -90,7 +90,7 @@ export function MilanApp({
               onPick={pick}
             />
           ) : (
-            <div className="no-sb h-full overflow-y-auto px-[18px] pt-3.5">
+            <div className="no-sb h-full overflow-y-auto px-[18px] pt-3.5 pb-[120px]">
               <EmptyState />
             </div>
           )

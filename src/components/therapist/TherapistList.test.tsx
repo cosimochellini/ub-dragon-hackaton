@@ -1,26 +1,87 @@
-import { describe, expect, it, vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { TherapistList } from './TherapistList'
 import { testStudios, testTherapists } from '@/test/fixtures'
 import type { Therapist } from '@/lib/types'
 
-// 12 valid therapists: clone a real fixture (so days/services/studio are valid)
-// and give each a unique id/name. jsdom has no IntersectionObserver, so reveal
-// is driven by clicking the fallback button — exactly the keyboard/no-IO path.
+// Clone a real fixture (so days/services/studio are valid) and give each a
+// unique id/name. jsdom has no IntersectionObserver, so most tests drive reveal
+// via the fallback button — exactly the keyboard/no-IO path.
 const base = testTherapists[0]
-const many: Therapist[] = Array.from({ length: 12 }, (_, i) => ({
-  ...base,
-  id: `gen-${i}`,
-  name: `Therapist ${i}`,
-  initials: `T${i}`,
-}))
+function cloneMany(count: number): Therapist[] {
+  return Array.from({ length: count }, (_, i) => ({
+    ...base,
+    id: `gen-${i}`,
+    name: `Therapist ${i}`,
+    initials: `T${i}`,
+  }))
+}
+const many = cloneMany(12)
+const lots = cloneMany(25)
 
 function cardCount(): number {
   return document.querySelectorAll('[data-therapist]').length
 }
 
 describe('TherapistList progressive reveal', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('auto-reveals via IntersectionObserver until everything is shown', () => {
+    class ControllableIO {
+      readonly cb: IntersectionObserverCallback
+      readonly root = null
+      readonly rootMargin = ''
+      readonly thresholds: ReadonlyArray<number> = []
+      constructor(cb: IntersectionObserverCallback) {
+        this.cb = cb
+        instances.push(this)
+      }
+      observe(): void {}
+      unobserve(): void {}
+      disconnect(): void {
+        disconnects += 1
+      }
+      takeRecords(): IntersectionObserverEntry[] {
+        return []
+      }
+    }
+    const instances: ControllableIO[] = []
+    let disconnects = 0
+    vi.stubGlobal('IntersectionObserver', ControllableIO)
+
+    function fireLatest(): void {
+      const io = instances.at(-1)!
+      act(() => {
+        io.cb(
+          [{ isIntersecting: true } as unknown as IntersectionObserverEntry],
+          io as unknown as IntersectionObserver,
+        )
+      })
+    }
+
+    render(<TherapistList list={lots} studios={testStudios} onPick={vi.fn()} />)
+    expect(cardCount()).toBe(10)
+
+    // Sentinel in view → reveal a page; the component re-observes a fresh
+    // sentinel each time so it keeps filling rather than stalling.
+    fireLatest()
+    expect(cardCount()).toBe(20)
+    fireLatest()
+    expect(cardCount()).toBe(25) // clamped at total
+
+    // All shown: the sentinel button is gone and the observer was torn down.
+    expect(
+      screen.queryByRole('button', { name: 'Show more therapists' }),
+    ).toBeNull()
+    expect(
+      screen.getByText(/That's everyone with a studio in Milan/),
+    ).toBeInTheDocument()
+    expect(disconnects).toBeGreaterThanOrEqual(2)
+  })
+
   it('renders the first page, then reveals more on click', async () => {
     const user = userEvent.setup()
     render(<TherapistList list={many} studios={testStudios} onPick={vi.fn()} />)

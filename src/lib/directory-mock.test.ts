@@ -41,6 +41,11 @@ describe('expandDirectory', () => {
     expect(new Set(ids).size).toBe(ids.length)
   })
 
+  it('produces no duplicate display names at this directory size', () => {
+    const names = out.therapists.map((t) => t.name)
+    expect(new Set(names).size).toBe(names.length)
+  })
+
   it('points every therapist at a known studio', () => {
     for (const t of out.therapists) {
       expect(studioIds.has(t.studio)).toBe(true)
