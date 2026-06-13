@@ -208,8 +208,9 @@ function hash(n: number): number {
 }
 
 function initialsOf(name: string): string {
-  const [first, last] = name.split(' ')
-  return (first[0] + last[0]).toUpperCase()
+  const parts = name.split(' ')
+  const last = parts.at(-1) ?? parts[0]
+  return (parts[0][0] + last[0]).toUpperCase()
 }
 
 /**
@@ -218,7 +219,7 @@ function initialsOf(name: string): string {
  * chronologically (zero-padded "HH:MM" sorts lexicographically = by time).
  */
 function availabilityFor(index: number): string[][] {
-  return Array.from({ length: 7 }, (_, day) => {
+  const days = Array.from({ length: 7 }, (_, day) => {
     const r = hash(index * 101 + day)
     if (r % 10 < 3) return []
     const count = 1 + (hash(r + 1) % 3)
@@ -232,6 +233,13 @@ function availabilityFor(index: number): string[][] {
     // keeps slots sorted by time without an extra (mutating) sort.
     return SLOT_POOL.filter((_slot, i) => picks.has(i))
   })
+  // Guarantee a bookable slot so every card can offer a time (and never shows
+  // an empty week), regardless of directory size.
+  if (days.every((slots) => slots.length === 0)) {
+    const r = hash(index * 13 + 5)
+    days[r % 7] = [SLOT_POOL[r % SLOT_POOL.length]]
+  }
+  return days
 }
 
 /**

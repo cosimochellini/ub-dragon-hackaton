@@ -64,6 +64,12 @@ describe('expandDirectory', () => {
     }
   })
 
+  it('gives every therapist at least one bookable slot', () => {
+    for (const t of out.therapists) {
+      expect(t.availability.some((day) => day.length > 0)).toBe(true)
+    }
+  })
+
   it('keeps the filters meaningful (healthy gender and service mix)', () => {
     const females = out.therapists.filter((t) => t.gender === 'female').length
     const males = out.therapists.filter((t) => t.gender === 'male').length
