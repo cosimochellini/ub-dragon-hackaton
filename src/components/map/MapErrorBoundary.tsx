@@ -17,7 +17,11 @@ export class MapErrorBoundary extends Component<
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('Leaflet map failed, falling back to stylized map', error, info)
+    console.error(
+      'Leaflet map failed, falling back to stylized map',
+      error,
+      info,
+    )
   }
 
   render() {

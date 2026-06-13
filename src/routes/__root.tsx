@@ -20,12 +20,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   head: () => ({
     meta: [
       {
+        // eslint-disable-next-line unicorn/text-encoding-identifier-case -- "utf-8" is the canonical HTML charset value
         charSet: 'utf-8',
       },
       {
         name: 'viewport',
-        content:
-          'width=device-width, initial-scale=1, viewport-fit=cover',
+        content: 'width=device-width, initial-scale=1, viewport-fit=cover',
       },
       {
         name: 'description',

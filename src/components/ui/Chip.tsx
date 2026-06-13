@@ -6,7 +6,13 @@ interface ChipProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 /** Filter pill — grey by default, green when active (Zenit "filter" chip). */
-export function Chip({ active, children, className, type = 'button', ...rest }: ChipProps) {
+export function Chip({
+  active,
+  children,
+  className,
+  type = 'button',
+  ...rest
+}: ChipProps) {
   return (
     <button
       type={type}

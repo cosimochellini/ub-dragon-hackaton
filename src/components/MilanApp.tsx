@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Header } from './shell/Header'
 import { FloatingToggle } from './shell/FloatingToggle'
 import { EmptyState } from './shell/EmptyState'
@@ -17,6 +17,21 @@ import type {
 } from '@/lib/types'
 
 type View = 'list' | 'map'
+
+/**
+ * The effective highlighted map pin: the user's pick while it's still in the
+ * current filtered list, otherwise the first result (or none when the list is
+ * empty). Derived during render so we never store a selection the list
+ * contradicts — no syncing effect, no extra render.
+ */
+function effectiveSelection(
+  list: Therapist[],
+  rawId: string | null,
+): string | null {
+  if (list.length === 0) return null
+  if (list.some((t) => t.id === rawId)) return rawId
+  return list[0].id
+}
 
 /**
  * The directory screen. Owns all ephemeral UI state (view, filters, selected
@@ -43,17 +58,7 @@ export function MilanApp({
     () => filterTherapists(therapists, service, gender),
     [therapists, service, gender],
   )
-
-  // Keep the highlighted map pin valid as the filtered list changes.
-  useEffect(() => {
-    if (list.length === 0) {
-      if (selectedMapId !== null) setSelectedMapId(null)
-      return
-    }
-    if (!list.some((t) => t.id === selectedMapId)) {
-      setSelectedMapId(list[0].id)
-    }
-  }, [list, selectedMapId])
+  const effectiveSelectedId = effectiveSelection(list, selectedMapId)
 
   const pick = useCallback((t: Therapist, day: Day, slot: string) => {
     setBooked(false)
@@ -101,14 +106,14 @@ export function MilanApp({
             <MapView
               therapists={list}
               studios={studios}
-              selectedId={selectedMapId}
+              selectedId={effectiveSelectedId}
               onSelect={setSelectedMapId}
             />
             {list.length > 0 ? (
               <MapCarousel
                 list={list}
                 studios={studios}
-                selectedId={selectedMapId}
+                selectedId={effectiveSelectedId}
                 onPick={pick}
               />
             ) : null}

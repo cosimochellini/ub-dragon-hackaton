@@ -30,7 +30,13 @@ export function Avatar({
   return (
     <div
       className={`grid shrink-0 place-items-center rounded-full border border-[rgba(35,35,35,0.08)] font-display font-bold ${VARIANT_CLASS[variant]} ${className ?? ''}`}
-      style={{ width: px, height: px, fontSize: px * 0.36, letterSpacing: '-0.02em', ...style }}
+      style={{
+        width: px,
+        height: px,
+        fontSize: px * 0.36,
+        letterSpacing: '-0.02em',
+        ...style,
+      }}
     >
       {initials}
     </div>

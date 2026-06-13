@@ -17,12 +17,12 @@ export function BookingSheet({
   onConfirm: () => void
 }) {
   const sheetRef = useRef<HTMLDivElement | null>(null)
-  const previouslyFocused = useRef<HTMLElement | null>(null)
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null)
   const isOpen = booking !== null
 
   useEffect(() => {
     if (!isOpen) return
-    previouslyFocused.current = document.activeElement as HTMLElement | null
+    previouslyFocusedRef.current = document.activeElement as HTMLElement | null
     sheetRef.current?.focus()
 
     const onKey = (e: KeyboardEvent) => {
@@ -34,21 +34,23 @@ export function BookingSheet({
       // Trap focus inside the dialog (aria-modal contract).
       const sheet = sheetRef.current
       if (!sheet) return
-      const focusable = sheet.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
-      )
+      const focusable = [
+        ...sheet.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ]
       if (focusable.length === 0) {
         e.preventDefault()
         sheet.focus()
         return
       }
       const first = focusable[0]
-      const last = focusable[focusable.length - 1]
+      const last = focusable.at(-1)
       const active = document.activeElement
       if (e.shiftKey) {
         if (active === first || active === sheet) {
           e.preventDefault()
-          last.focus()
+          last?.focus()
         }
       } else if (active === last) {
         e.preventDefault()
@@ -59,7 +61,7 @@ export function BookingSheet({
     document.addEventListener('keydown', onKey)
     return () => {
       document.removeEventListener('keydown', onKey)
-      previouslyFocused.current?.focus()
+      previouslyFocusedRef.current?.focus()
     }
   }, [isOpen, onClose])
 

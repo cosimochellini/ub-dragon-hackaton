@@ -42,19 +42,23 @@ function RecenterOnSelect({
   // With the static mock data a selected studio's coords never change beneath
   // us; a dynamic data source would need coords re-added as a trigger.
   const dataRef = useRef({ therapists, studios })
-  dataRef.current = { therapists, studios }
+  // Keep the latest data in the ref without touching it during render (refs are
+  // a commit-phase concern): this runs after every commit.
+  useEffect(() => {
+    dataRef.current = { therapists, studios }
+  })
   // Pan only when the selection actually changes value. Seeding the ref with the
   // mount selection skips the redundant initial pan (MapContainer's `center`
   // already frames it), and comparing values — rather than a one-shot flag —
   // keeps this idempotent under React StrictMode's double effect invocation.
-  const prevSelectedId = useRef(selectedId)
+  const prevSelectedIdRef = useRef(selectedId)
   useEffect(() => {
-    if (selectedId === prevSelectedId.current) return
-    prevSelectedId.current = selectedId
+    if (selectedId === prevSelectedIdRef.current) return
+    prevSelectedIdRef.current = selectedId
     const { therapists: ts, studios: ss } = dataRef.current
     const coords = selectedStudioCoords(selectedId, ts, ss)
     if (!coords) return
-    const reduceMotion = window.matchMedia(
+    const reduceMotion = globalThis.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches
     map.panTo(coords, { animate: !reduceMotion })

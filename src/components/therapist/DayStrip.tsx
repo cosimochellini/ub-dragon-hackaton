@@ -11,10 +11,11 @@ function dayShortLabel(day: Day): string {
 }
 
 export function DayStrip({ t, onPick }: { t: Therapist; onPick: PickHandler }) {
-  const firstWithSlots = t.days.findIndex((d) => d.slots.length > 0)
-  const [activeIndex, setActiveIndex] = useState(
-    firstWithSlots < 0 ? 0 : firstWithSlots,
-  )
+  // Lazy initial state: compute the first day-with-slots once, not every render.
+  const [activeIndex, setActiveIndex] = useState(() => {
+    const firstWithSlots = t.days.findIndex((d) => d.slots.length > 0)
+    return Math.max(firstWithSlots, 0)
+  })
   const day = t.days.at(activeIndex) ?? t.days.at(0)
 
   if (!day) {

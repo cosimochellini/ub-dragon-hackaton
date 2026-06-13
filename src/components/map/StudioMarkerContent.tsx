@@ -93,17 +93,27 @@ export function StudioMarkerContent({
     // resolves to the box centre regardless of how Leaflet sizes the host
     // element; the ring and centre dot share that centre, and the Leaflet
     // anchor `[size/2, size/2]` lands it on the studio coordinate.
-    <div className="relative grid place-items-center" style={{ width: size, height: size }}>
+    <div
+      className="relative grid place-items-center"
+      style={{ width: size, height: size }}
+    >
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ease-out"
-        style={{ width: radius, height: radius, background: fill, border: `1.5px dashed ${ringColor}` }}
+        style={{
+          width: radius,
+          height: radius,
+          background: fill,
+          border: `1.5px dashed ${ringColor}`,
+        }}
       />
       <div className="relative">{center}</div>
       <div
         className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full bg-white/90 px-[7px] py-0.5 text-[10.5px] font-semibold whitespace-nowrap shadow-xs"
         style={{
           top: active ? 30 : 16,
-          color: isUnobravo ? 'var(--color-candy-700)' : 'var(--color-grey-700)',
+          color: isUnobravo
+            ? 'var(--color-candy-700)'
+            : 'var(--color-grey-700)',
         }}
       >
         <Icon name={isUnobravo ? 'office' : 'pin-empty'} size={11} />

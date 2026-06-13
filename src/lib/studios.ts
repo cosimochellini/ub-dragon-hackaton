@@ -23,7 +23,9 @@ export function selectedTherapistOf(
   group: StudioGroup,
   selectedId: string | null,
 ): Therapist {
-  return group.therapists.find((t) => t.id === selectedId) ?? group.therapists[0]
+  return (
+    group.therapists.find((t) => t.id === selectedId) ?? group.therapists[0]
+  )
 }
 
 /**

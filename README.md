@@ -16,8 +16,8 @@ confirmed. Built to be wired to a real booking backend (Calendly) later.
 ## Stack
 
 React 19 · TanStack Start (SSR + file routing) · TanStack Query · Tailwind CSS v4 ·
-TypeScript · ESLint · Vitest + Testing Library. Design tokens from Unobravo's
-**Zenit 2.0** system.
+TypeScript · ESLint (hardened — see [Linting](#linting)) · Vitest + Testing
+Library. Design tokens from Unobravo's **Zenit 2.0** system.
 
 ## Requirements
 
@@ -30,9 +30,35 @@ npm install
 npm run dev        # dev server at http://localhost:3000
 npm run build      # production build (client + SSR)
 npm run typecheck  # tsc --noEmit
-npm run lint       # eslint
+npm run lint       # eslint (see Linting below)
 npm run test       # vitest (unit + booking-flow integration)
+npm run react-doctor  # full React Doctor scan (scoring + report), on demand
 ```
+
+## Linting
+
+ESLint is configured for **strong, React-aware correctness**, not just style. On
+top of the TanStack base config (`typescript-eslint`, `import-x`, `n`,
+`@stylistic`) the flat config (`eslint.config.js`) layers four React-focused
+plugins, each at its recommended preset:
+
+| Plugin | What it enforces |
+| --- | --- |
+| [`eslint-plugin-react-doctor`](https://react.doctor) | Security / performance / a11y / architecture, plus the **TanStack Start** and **TanStack Query** rule packs. |
+| [`eslint-plugin-react-hooks`](https://react.dev/reference/eslint-plugin-react-hooks) (v7) | Rules of Hooks + the React Compiler lints. |
+| [`@eslint-react/eslint-plugin`](https://eslint-react.xyz) | Deep, type-aware React 19 correctness rules. |
+| [`eslint-plugin-unicorn`](https://github.com/sindresorhus/eslint-plugin-unicorn) | Strong, framework-agnostic JS/TS hardening. |
+
+A small set of rules is deliberately turned off (each with an inline rationale in
+`eslint.config.js`) where it fights this project's idioms — e.g. `unicorn/no-null`
+(`null` is idiomatic for refs/DOM/JSON), `unicorn/no-nested-ternary` (Prettier owns
+ternary formatting), and the React-Compiler memoization rule (the compiler isn't
+enabled here). React rules lint `src/**/*.{ts,tsx}`; the generated `routeTree.gen.ts`
+is ignored.
+
+`react-doctor` is the same rule set as a full CLI scan (scoring + report);
+`npm run react-doctor` runs it on demand. CI (`.github/workflows/ci.yml`) gates every
+PR on `lint` + `typecheck` + `test`.
 
 ## Architecture
 

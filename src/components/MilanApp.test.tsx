@@ -30,7 +30,10 @@ describe('MilanApp booking flow', () => {
       name: 'Confirm booking',
     })
     expect(confirm).toBeDisabled()
-    await user.type(within(dialog).getByLabelText('Mobile number'), '3401234567')
+    await user.type(
+      within(dialog).getByLabelText('Mobile number'),
+      '3401234567',
+    )
     expect(confirm).toBeEnabled()
 
     await user.click(confirm)

@@ -55,7 +55,7 @@ export function buildDays(
 /** The earliest day with at least one free slot, or null if none this week. */
 export function nextAvailable(t: Therapist): { day: Day; slot: string } | null {
   for (const d of t.days) {
-    if (d.slots.length) return { day: d, slot: d.slots[0] }
+    if (d.slots.length > 0) return { day: d, slot: d.slots[0] }
   }
   return null
 }
