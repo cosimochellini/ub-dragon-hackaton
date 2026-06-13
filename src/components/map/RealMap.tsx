@@ -1,5 +1,6 @@
 import 'leaflet/dist/leaflet.css'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { divIcon } from 'leaflet'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
@@ -73,6 +74,32 @@ function RecenterOnSelect({
   return null
 }
 
+/**
+ * A Leaflet `divIcon` whose content is wrapped in a real `<button>`. Leaflet's
+ * own `keyboard` option advertises `role="button"` but only activates markers
+ * that bind a popup — ours don't, so a native button is what makes them truly
+ * keyboard-operable: Enter/Space dispatch a click that bubbles to Leaflet's icon
+ * click handler. It also carries the accessible name (Leaflet drops `alt` on
+ * non-image icons). Markers therefore pass `keyboard={false}` so the button is
+ * the single focusable control.
+ */
+function buttonIcon(content: ReactNode, label: string, size: number) {
+  return divIcon({
+    html: renderToStaticMarkup(
+      <button
+        type="button"
+        aria-label={label}
+        className="block cursor-pointer border-0 bg-transparent p-0"
+      >
+        {content}
+      </button>,
+    ),
+    className: '',
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  })
+}
+
 /** A single studio's marker (selectable), identical to the pre-cluster pin. */
 function studioMarker(
   g: StudioGroup,
@@ -85,21 +112,16 @@ function studioMarker(
   const isUnobravo = studio.type === 'unobravo'
   const size = studioMarkerSize(g, selectedId)
   const label = `${isUnobravo ? 'Unobravo studio' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`
-  const icon = divIcon({
-    html: renderToStaticMarkup(
-      <StudioMarkerContent group={g} selectedId={selectedId} />,
-    ),
-    className: '',
-    iconSize: [size, size],
-    iconAnchor: [size / 2, size / 2],
-  })
   return (
     <Marker
       key={studio.id}
       position={[studio.coords.lat, studio.coords.lng]}
-      icon={icon}
-      keyboard
-      alt={label}
+      icon={buttonIcon(
+        <StudioMarkerContent group={g} selectedId={selectedId} />,
+        label,
+        size,
+      )}
+      keyboard={false}
       title={label}
       zIndexOffset={active ? 1000 : 0}
       eventHandlers={{
@@ -171,26 +193,21 @@ function ClusterLayer({
           g.therapists.some((t) => t.id === selectedId),
         )
         const size = clusterMarkerSize(active)
-        const label = `${studioCount} studios — ${cluster.therapistCount} therapists`
-        const icon = divIcon({
-          html: renderToStaticMarkup(
-            <ClusterMarkerContent
-              studioCount={studioCount}
-              therapistCount={cluster.therapistCount}
-              active={active}
-            />,
-          ),
-          className: '',
-          iconSize: [size, size],
-          iconAnchor: [size / 2, size / 2],
-        })
+        const label = `${studioCount} studios — ${cluster.therapistCount} therapists, zoom in to expand`
         return (
           <Marker
             key={cluster.key}
             position={[cluster.lat, cluster.lng]}
-            icon={icon}
-            keyboard
-            alt={label}
+            icon={buttonIcon(
+              <ClusterMarkerContent
+                studioCount={studioCount}
+                therapistCount={cluster.therapistCount}
+                active={active}
+              />,
+              label,
+              size,
+            )}
+            keyboard={false}
             title={label}
             zIndexOffset={active ? 1000 : 0}
             eventHandlers={{ click: () => expand(cluster.lat, cluster.lng) }}
