@@ -68,8 +68,8 @@ const MASTER_TOPICS = [
  */
 function seedOf(id: string): number {
   // Only a clean "<prefix><digits>" id (e.g. "t7") maps to a numeric index;
-  // anything else (e.g. "t7x", a slug) folds its characters so distinct ids
-  // never collapse onto the same seed.
+  // anything else (e.g. "t7x", a slug) folds its characters into a stable,
+  // well-spread seed (deterministic per id; not a collision-free namespace).
   const digits = id.replace(/^\D+/, '')
   if (/^\d+$/.test(digits)) return Number.parseInt(digits, 10) - 1
   let acc = 0

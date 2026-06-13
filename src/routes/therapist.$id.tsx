@@ -19,7 +19,14 @@ export const Route = createFileRoute('/therapist/$id')({
   },
   head: ({ loaderData, params }) => {
     const therapist = loaderData?.therapist
-    if (!therapist) return {}
+    // On the not-found branch there's no therapist: set a distinct title so the
+    // 404 doesn't masquerade as the home page (the root `<title>`/og:title).
+    if (!therapist) {
+      const title = 'Therapist not found · Unobravo'
+      return {
+        meta: [{ title }, { property: 'og:title', content: title }],
+      }
+    }
     return profileMeta(therapist, params.id, SITE_URL)
   },
   notFoundComponent: TherapistNotFound,

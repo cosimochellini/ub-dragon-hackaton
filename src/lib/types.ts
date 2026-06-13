@@ -86,7 +86,7 @@ export interface TherapistProfile {
   peopleHelped: number
   /** Therapeutic orientation, e.g. "Cognitive-behavioural". */
   orientation: string
-  /** Working setting line, e.g. "In person · Navigli". */
+  /** Working setting line, lower-cased for mid-sentence use, e.g. "in person · Navigli". */
   setting: string
   /** Specialization topics (3–4). */
   topics: string[]
