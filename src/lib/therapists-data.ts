@@ -1,6 +1,7 @@
 import { createServerFn } from '@tanstack/react-start'
 import { buildDays } from './availability'
 import { expandDirectory } from './directory-mock'
+import { buildProfile } from './profile-mock'
 import source from '@/data/therapists.json'
 import type { DirectoryData, DirectorySource, Therapist } from './types'
 
@@ -25,7 +26,11 @@ export const getTherapists = createServerFn({ method: 'GET' }).handler(
 
     const therapists: Therapist[] = data.therapists.map((record) => {
       const { availability, ...rest } = record
-      return { ...rest, days: buildDays(availability, referenceDate) }
+      return {
+        ...rest,
+        days: buildDays(availability, referenceDate),
+        profile: buildProfile(record, data.studios),
+      }
     })
 
     return { studios: data.studios, therapists }

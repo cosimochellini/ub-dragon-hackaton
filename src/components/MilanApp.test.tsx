@@ -1,13 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { render, screen, within } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MilanApp } from './MilanApp'
+import { renderWithRouter } from '@/test/render'
 import { testStudios, testTherapists } from '@/test/fixtures'
 
 describe('MilanApp booking flow', () => {
   it('books a slot end-to-end: slot → sheet → confirmed → done', async () => {
     const user = userEvent.setup()
-    render(<MilanApp therapists={testTherapists} studios={testStudios} />)
+    renderWithRouter(<MilanApp therapists={testTherapists} studios={testStudios} />)
 
     // Live count for the default Individual + Any filters.
     expect(screen.getByText('6 found')).toBeInTheDocument()
@@ -45,7 +46,7 @@ describe('MilanApp booking flow', () => {
 
   it('updates the live count when filtering to Couples', async () => {
     const user = userEvent.setup()
-    render(<MilanApp therapists={testTherapists} studios={testStudios} />)
+    renderWithRouter(<MilanApp therapists={testTherapists} studios={testStudios} />)
 
     await user.click(screen.getByRole('button', { name: 'Couples' }))
     expect(screen.getByText('4 found')).toBeInTheDocument()
@@ -53,7 +54,7 @@ describe('MilanApp booking flow', () => {
 
   it('closes the sheet on Escape', async () => {
     const user = userEvent.setup()
-    render(<MilanApp therapists={testTherapists} studios={testStudios} />)
+    renderWithRouter(<MilanApp therapists={testTherapists} studios={testStudios} />)
 
     const saraCard = screen
       .getByText('Sara Bianchi')

@@ -1,19 +1,13 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Header } from './shell/Header'
 import { FloatingToggle } from './shell/FloatingToggle'
 import { TherapistList } from './therapist/TherapistList'
 import { MapView } from './map/MapView'
 import { MapCarousel } from './MapCarousel'
 import { BookingSheet } from './booking/BookingSheet'
+import { useBooking } from '@/hooks/useBooking'
 import { filterTherapists } from '@/lib/filter'
-import type {
-  Booking,
-  Day,
-  GenderFilter,
-  ServiceType,
-  Studio,
-  Therapist,
-} from '@/lib/types'
+import type { GenderFilter, ServiceType, Studio, Therapist } from '@/lib/types'
 
 type View = 'list' | 'map'
 
@@ -50,24 +44,13 @@ export function MilanApp({
   const [selectedMapId, setSelectedMapId] = useState<string | null>(
     therapists[0]?.id ?? null,
   )
-  const [booking, setBooking] = useState<Booking | null>(null)
-  const [booked, setBooked] = useState(false)
+  const { booking, booked, pick, confirm, closeSheet } = useBooking()
 
   const list = useMemo(
     () => filterTherapists(therapists, service, gender),
     [therapists, service, gender],
   )
   const effectiveSelectedId = effectiveSelection(list, selectedMapId)
-
-  const pick = useCallback((t: Therapist, day: Day, slot: string) => {
-    setBooked(false)
-    setBooking({ t, day, slot })
-  }, [])
-  const confirm = useCallback(() => setBooked(true), [])
-  const closeSheet = useCallback(() => {
-    setBooking(null)
-    setBooked(false)
-  }, [])
 
   return (
     <div className="relative flex h-full flex-col overflow-hidden bg-white">
