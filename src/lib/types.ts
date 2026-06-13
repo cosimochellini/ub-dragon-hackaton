@@ -47,8 +47,63 @@ export interface Day {
   slots: string[]
 }
 
-/** Therapist with availability resolved to concrete `Day`s. */
-export type Therapist = Omit<TherapistRecord, 'availability'> & { days: Day[] }
+/**
+ * A personality/session-style spectrum shown as a labelled bar on the profile,
+ * e.g. Formal ←→ Informal. `value` is the position on the axis, 0–100, where 0
+ * sits hard against `left` and 100 hard against `right`.
+ */
+export interface StyleAxis {
+  left: string
+  right: string
+  value: number
+}
+
+/** One entry in a therapist's education/qualifications timeline. */
+export interface EducationEntry {
+  kind: 'registration' | 'degree' | 'specialization' | 'master'
+  /** Short row title, e.g. "Degree". */
+  title: string
+  /** Free-text detail, e.g. the institution and year. */
+  detail: string
+}
+
+/**
+ * The rich, profile-page-only fields. Derived deterministically per therapist
+ * by `buildProfile` (mock POC data) rather than stored in the JSON seed, so the
+ * seed shape stays a clean production-swap point.
+ */
+export interface TherapistProfile {
+  /** Display headline, e.g. "Psychologist & Psychotherapist". */
+  headline: string
+  /** Region of the professional register (Ordine degli Psicologi). */
+  alboRegion: string
+  /** Registration number on that register. */
+  alboNumber: string
+  age: number
+  city: string
+  yearsExperience: number
+  /** People supported on Unobravo. */
+  peopleHelped: number
+  /** Therapeutic orientation, e.g. "Cognitive-behavioural". */
+  orientation: string
+  /** Working setting line, lower-cased for mid-sentence use, e.g. "in person · Navigli". */
+  setting: string
+  /** Specialization topics (3–4). */
+  topics: string[]
+  /** Personality-style axes (Formal↔Informal, Reflective↔Rational). */
+  styleAxes: StyleAxis[]
+  /** Session-conduct axes (flow↔plan, follows↔leads). */
+  sessionAxes: StyleAxis[]
+  /** Self-description paragraph. */
+  bio: string
+  education: EducationEntry[]
+}
+
+/** Therapist with availability resolved to concrete `Day`s and profile attached. */
+export type Therapist = Omit<TherapistRecord, 'availability'> & {
+  days: Day[]
+  profile: TherapistProfile
+}
 
 export interface Booking {
   t: Therapist

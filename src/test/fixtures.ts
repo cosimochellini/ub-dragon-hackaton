@@ -1,4 +1,5 @@
 import { buildDays } from '@/lib/availability'
+import { buildProfile } from '@/lib/profile-mock'
 import source from './fixtures-data.json'
 import type { DirectorySource, Therapist } from '@/lib/types'
 
@@ -20,5 +21,6 @@ export const testTherapists: Therapist[] = data.therapists.map(
   ({ availability, ...rest }) => ({
     ...rest,
     days: buildDays(availability, TEST_REFERENCE),
+    profile: buildProfile({ ...rest, availability }, data.studios),
   }),
 )

@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import { Avatar } from '@/components/ui/Avatar'
 import { Icon } from '@/components/icon/Icon'
 import { DayStrip } from './DayStrip'
@@ -18,7 +19,12 @@ export function MapCard({
   const studio = studioOf(t, studios)
   return (
     <div className="box-border w-full rounded-[22px] border border-grey-200 bg-white p-[14px] shadow-md">
-      <div className="flex items-center gap-[11px]">
+      <Link
+        to="/therapist/$id"
+        params={{ id: t.id }}
+        aria-label={`View ${t.name}'s profile`}
+        className="-m-1 flex items-center gap-[11px] rounded-[14px] p-1 transition-colors hover:bg-grey-50"
+      >
         <Avatar initials={t.initials} variant={t.avatar} size="md" />
         <div className="min-w-0 flex-1">
           <div className="font-display text-[15.5px] font-bold leading-[1.1] text-grey-900">
@@ -37,7 +43,7 @@ export function MapCard({
             </div>
           ) : null}
         </div>
-      </div>
+      </Link>
       <div className="mt-3">
         <DayStrip t={t} onPick={onPick} />
       </div>

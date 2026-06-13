@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { buildDays, nextAvailable } from './availability'
-import type { Therapist } from './types'
+import { buildProfile } from './profile-mock'
+import type { Therapist, TherapistRecord } from './types'
 
 const PATTERN = [['09:00'], [], ['10:00', '11:00'], [], [], [], []]
 // Thu 11 Jun 2026, 09:00 Rome time.
@@ -51,7 +52,7 @@ describe('buildDays', () => {
 })
 
 describe('nextAvailable', () => {
-  const make = (availability: string[][]): Therapist => ({
+  const base: Omit<TherapistRecord, 'availability'> = {
     id: 'x',
     name: 'X',
     initials: 'X',
@@ -60,7 +61,11 @@ describe('nextAvailable', () => {
     services: ['individual'],
     studio: 'ub_romana',
     avatar: 'candy8',
+  }
+  const make = (availability: string[][]): Therapist => ({
+    ...base,
     days: buildDays(availability, REF),
+    profile: buildProfile({ ...base, availability }, {}),
   })
 
   it('returns the first day and slot with availability', () => {

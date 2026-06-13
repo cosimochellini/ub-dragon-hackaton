@@ -1,7 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { act, render, screen } from '@testing-library/react'
+import { act, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { TherapistList } from './TherapistList'
+import { renderWithRouter } from '@/test/render'
 import { testStudios, testTherapists } from '@/test/fixtures'
 import type { Therapist } from '@/lib/types'
 
@@ -62,7 +63,7 @@ describe('TherapistList progressive reveal', () => {
       })
     }
 
-    render(<TherapistList list={lots} studios={testStudios} onPick={vi.fn()} />)
+    renderWithRouter(<TherapistList list={lots} studios={testStudios} onPick={vi.fn()} />)
     expect(cardCount()).toBe(10)
 
     // Sentinel in view → reveal a page; the component re-observes a fresh
@@ -84,7 +85,7 @@ describe('TherapistList progressive reveal', () => {
 
   it('renders the first page, then reveals more on click', async () => {
     const user = userEvent.setup()
-    render(<TherapistList list={many} studios={testStudios} onPick={vi.fn()} />)
+    renderWithRouter(<TherapistList list={many} studios={testStudios} onPick={vi.fn()} />)
 
     // First paint: only the initial 10 of 12.
     expect(cardCount()).toBe(10)
@@ -110,7 +111,7 @@ describe('TherapistList progressive reveal', () => {
 
   it('resets the visible window when remounted under a new key (filter change)', async () => {
     const user = userEvent.setup()
-    const { rerender } = render(
+    const { rerender } = renderWithRouter(
       <TherapistList key="a" list={many} studios={testStudios} onPick={vi.fn()} />,
     )
 
@@ -128,7 +129,7 @@ describe('TherapistList progressive reveal', () => {
   })
 
   it('renders the empty state (no button/footer) for an empty list', () => {
-    render(<TherapistList list={[]} studios={testStudios} onPick={vi.fn()} />)
+    renderWithRouter(<TherapistList list={[]} studios={testStudios} onPick={vi.fn()} />)
 
     expect(cardCount()).toBe(0)
     expect(screen.getByText('No therapists match')).toBeInTheDocument()
@@ -141,7 +142,7 @@ describe('TherapistList progressive reveal', () => {
   })
 
   it('shows everyone immediately when the list fits the first page', () => {
-    render(
+    renderWithRouter(
       <TherapistList
         list={testTherapists}
         studios={testStudios}
