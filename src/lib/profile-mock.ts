@@ -61,10 +61,17 @@ const MASTER_TOPICS = [
   'Mindfulness-Based Interventions',
 ]
 
-/** Stable per-therapist seed from the id ("t7" → 6); falls back to 0. */
+/**
+ * Stable per-therapist seed from the id ("t7" → 6). For a non-numeric id (e.g.
+ * a future slug), fold its characters into a distinct seed so different ids
+ * never collapse onto the same generated profile.
+ */
 function seedOf(id: string): number {
   const n = Number.parseInt(id.replace(/^\D+/, ''), 10)
-  return Number.isFinite(n) ? n - 1 : 0
+  if (Number.isFinite(n)) return n - 1
+  let acc = 0
+  for (const ch of id) acc = (acc * 31 + (ch.codePointAt(0) ?? 0)) >>> 0
+  return acc
 }
 
 /** Join into natural English: ["a","b","c"] → "a, b and c". */
@@ -84,10 +91,15 @@ function pickDistinct(pool: string[], count: number, seed: number): string[] {
   return [...picks].map((i) => pool[i])
 }
 
+const COUPLES_TOPIC = 'Couples therapy'
+
 function buildTopics(record: TherapistRecord, seed: number): string[] {
   const offersCouples = record.services.includes('couples')
-  const fromPool = pickDistinct(TOPIC_POOL, offersCouples ? 2 : 3, seed * 17 + 3)
-  return offersCouples ? ['Couples therapy', ...fromPool] : fromPool
+  // Exclude the couples label from the pool so prepending it can never duplicate
+  // even if it is later added to TOPIC_POOL.
+  const pool = TOPIC_POOL.filter((topic) => topic !== COUPLES_TOPIC)
+  const fromPool = pickDistinct(pool, offersCouples ? 2 : 3, seed * 17 + 3)
+  return offersCouples ? [COUPLES_TOPIC, ...fromPool] : fromPool
 }
 
 function buildBio(

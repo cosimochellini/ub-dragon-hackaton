@@ -25,9 +25,11 @@ export const Route = createFileRoute('/therapist/$id')({
     if (!therapist) return {}
     const title = `${therapist.name} · Therapist in Milan · Unobravo`
     const description = `${therapist.name}, ${therapist.profile.headline.toLowerCase()} in Milan with a ${therapist.profile.orientation.toLowerCase()} approach. Book a free intro call.`
+    const imageAlt = `${therapist.name} — therapist in Milan on Unobravo`
     // Override only deduped meta (by name/property). The root's `noindex` robots
     // tag and the single `canonical` link are intentionally left untouched —
     // duplicating the canonical <link> (links aren't deduped) would be a bug.
+    // The shared OG image is inherited from the root; only its alt is per-person.
     return {
       meta: [
         { title },
@@ -35,8 +37,10 @@ export const Route = createFileRoute('/therapist/$id')({
         { property: 'og:title', content: title },
         { property: 'og:description', content: description },
         { property: 'og:url', content: `${SITE_URL}/therapist/${params.id}` },
+        { property: 'og:image:alt', content: imageAlt },
         { name: 'twitter:title', content: title },
         { name: 'twitter:description', content: description },
+        { name: 'twitter:image:alt', content: imageAlt },
       ],
     }
   },
