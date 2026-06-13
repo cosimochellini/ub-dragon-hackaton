@@ -26,3 +26,21 @@ if (!win.matchMedia) {
     dispatchEvent: () => false,
   })
 }
+
+// jsdom has no IntersectionObserver; the progressive-reveal list constructs one
+// in an effect. A no-op stub lets that effect set up and tear down cleanly. It
+// never invokes its callback, so reveal in tests is driven by the button click.
+const ioHost = globalThis as { IntersectionObserver?: unknown }
+if (!ioHost.IntersectionObserver) {
+  ioHost.IntersectionObserver = class {
+    readonly root = null
+    readonly rootMargin = ''
+    readonly thresholds: ReadonlyArray<number> = []
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+    takeRecords() {
+      return []
+    }
+  }
+}

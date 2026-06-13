@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { Header } from './shell/Header'
 import { FloatingToggle } from './shell/FloatingToggle'
 import { EmptyState } from './shell/EmptyState'
-import { TherapistCard } from './therapist/TherapistCard'
+import { TherapistList } from './therapist/TherapistList'
 import { MapView } from './map/MapView'
 import { MapCarousel } from './MapCarousel'
 import { BookingSheet } from './booking/BookingSheet'
@@ -82,25 +82,16 @@ export function MilanApp({
 
       <div className="relative flex-1 overflow-hidden">
         {view === 'list' ? (
-          <div className="no-sb h-full overflow-y-auto px-[18px] pt-3.5 pb-[120px]">
-            {list.length > 0 ? (
-              <div className="flex flex-col gap-3.5">
-                {list.map((t) => (
-                  <TherapistCard
-                    key={t.id}
-                    t={t}
-                    studios={studios}
-                    onPick={pick}
-                  />
-                ))}
-                <div className="py-1.5 text-center text-[12px] text-grey-500">
-                  That&apos;s everyone with a studio in Milan, for now.
-                </div>
-              </div>
-            ) : (
-              <EmptyState />
-            )}
-          </div>
+          list.length > 0 ? (
+            <TherapistList
+              key={`${service}-${gender}`}
+              list={list}
+              studios={studios}
+              onPick={pick}
+            />
+          ) : (
+            <EmptyState />
+          )
         ) : (
           <>
             <MapView

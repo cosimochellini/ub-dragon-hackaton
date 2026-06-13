@@ -1,6 +1,13 @@
 import { buildDays } from '@/lib/availability'
-import source from '@/data/therapists.json'
+import source from './fixtures-data.json'
 import type { DirectorySource, Therapist } from '@/lib/types'
+
+/**
+ * Frozen snapshot of the original 4 studios + 6 therapists. Tests assert exact
+ * counts/ids against this, so it is intentionally decoupled from the live
+ * `@/data/therapists.json` seed — which the runtime generator expands to ~60
+ * therapists / 15 studios. Growing production data must never break the suite.
+ */
 
 /** Fixed reference: Thu 11 Jun 2026 (matches the prototype's mock "today"). */
 export const TEST_REFERENCE = new Date('2026-06-11T09:00:00+02:00')
