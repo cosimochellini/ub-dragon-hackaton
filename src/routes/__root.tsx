@@ -67,6 +67,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       { property: 'og:description', content: PAGE_DESCRIPTION },
       { property: 'og:url', content: `${SITE_URL}/` },
       { property: 'og:image', content: OG_IMAGE },
+      { property: 'og:image:type', content: 'image/png' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
       { property: 'og:image:alt', content: OG_IMAGE_ALT },
@@ -92,7 +93,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       {
         rel: 'icon',
         href: '/favicon.ico',
-        sizes: '48x48',
+        sizes: '16x16 32x32 48x48',
       },
       {
         rel: 'icon',
