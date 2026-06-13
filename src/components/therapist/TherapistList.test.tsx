@@ -127,6 +127,19 @@ describe('TherapistList progressive reveal', () => {
     expect(cardCount()).toBe(10)
   })
 
+  it('renders the empty state (no button/footer) for an empty list', () => {
+    render(<TherapistList list={[]} studios={testStudios} onPick={vi.fn()} />)
+
+    expect(cardCount()).toBe(0)
+    expect(screen.getByText('No therapists match')).toBeInTheDocument()
+    expect(
+      screen.queryByRole('button', { name: 'Show more therapists' }),
+    ).toBeNull()
+    expect(
+      screen.queryByText(/That's everyone with a studio in Milan/),
+    ).toBeNull()
+  })
+
   it('shows everyone immediately when the list fits the first page', () => {
     render(
       <TherapistList

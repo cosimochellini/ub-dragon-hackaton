@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { TherapistCard } from './TherapistCard'
+import { EmptyState } from '@/components/shell/EmptyState'
 import type { PickHandler } from './DayStrip'
 import type { Studio, Therapist } from '@/lib/types'
 
@@ -67,30 +68,39 @@ export function TherapistList({
       ref={scrollRef}
       className="no-sb h-full overflow-y-auto px-[18px] pt-3.5 pb-[120px]"
     >
-      <div className="flex flex-col gap-3.5">
-        {list.slice(0, shown).map((t) => (
-          <TherapistCard key={t.id} t={t} studios={studios} onPick={onPick} />
-        ))}
+      {total === 0 ? (
+        <EmptyState />
+      ) : (
+        <div className="flex flex-col gap-3.5">
+          {list.slice(0, shown).map((t) => (
+            <TherapistCard
+              key={t.id}
+              t={t}
+              studios={studios}
+              onPick={onPick}
+            />
+          ))}
 
-        <span aria-live="polite" className="sr-only">
-          Showing {shown} of {total} therapists
-        </span>
+          <span aria-live="polite" className="sr-only">
+            Showing {shown} of {total} therapists
+          </span>
 
-        {allShown ? (
-          <div className="py-1.5 text-center text-[12px] text-grey-500">
-            That&apos;s everyone with a studio in Milan, for now.
-          </div>
-        ) : (
-          <button
-            ref={sentinelRef}
-            type="button"
-            onClick={revealMore}
-            className="rounded-full py-1.5 text-center text-[12px] font-semibold text-candy-600 underline-offset-2 hover:underline"
-          >
-            Show more therapists
-          </button>
-        )}
-      </div>
+          {allShown ? (
+            <div className="py-1.5 text-center text-[12px] text-grey-500">
+              That&apos;s everyone with a studio in Milan, for now.
+            </div>
+          ) : (
+            <button
+              ref={sentinelRef}
+              type="button"
+              onClick={revealMore}
+              className="rounded-full py-1.5 text-center text-[12px] font-semibold text-candy-600 underline-offset-2 hover:underline"
+            >
+              Show more therapists
+            </button>
+          )}
+        </div>
+      )}
     </div>
   )
 }

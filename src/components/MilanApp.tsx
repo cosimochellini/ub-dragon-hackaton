@@ -1,7 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 import { Header } from './shell/Header'
 import { FloatingToggle } from './shell/FloatingToggle'
-import { EmptyState } from './shell/EmptyState'
 import { TherapistList } from './therapist/TherapistList'
 import { MapView } from './map/MapView'
 import { MapCarousel } from './MapCarousel'
@@ -82,18 +81,12 @@ export function MilanApp({
 
       <div className="relative flex-1 overflow-hidden">
         {view === 'list' ? (
-          list.length > 0 ? (
-            <TherapistList
-              key={`${service}-${gender}`}
-              list={list}
-              studios={studios}
-              onPick={pick}
-            />
-          ) : (
-            <div className="no-sb h-full overflow-y-auto px-[18px] pt-3.5 pb-[120px]">
-              <EmptyState />
-            </div>
-          )
+          <TherapistList
+            key={`${service}-${gender}`}
+            list={list}
+            studios={studios}
+            onPick={pick}
+          />
         ) : (
           <>
             <MapView
