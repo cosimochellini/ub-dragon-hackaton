@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { expandDirectory } from './directory-mock'
 import seed from '@/data/therapists.json'
+import frozenFixture from '@/test/fixtures-data.json'
 import type { DirectorySource } from './types'
 
 const SEED = seed as unknown as DirectorySource
@@ -27,6 +28,12 @@ describe('expandDirectory', () => {
   it('does not mutate the seed source', () => {
     expect(SEED.therapists).toHaveLength(6)
     expect(Object.keys(SEED.studios)).toHaveLength(4)
+  })
+
+  it('keeps the frozen test fixture a faithful copy of the live seed', () => {
+    // The tests assert exact seed ids/counts against the frozen snapshot, so it
+    // must stay identical to the live seed; this guard fails loudly on desync.
+    expect(frozenFixture).toEqual(seed)
   })
 
   it('gives every therapist a unique id and no collision with the seed', () => {

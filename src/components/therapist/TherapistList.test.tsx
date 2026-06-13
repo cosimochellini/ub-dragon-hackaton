@@ -47,6 +47,25 @@ describe('TherapistList progressive reveal', () => {
     ).toBeInTheDocument()
   })
 
+  it('resets the visible window when remounted under a new key (filter change)', async () => {
+    const user = userEvent.setup()
+    const { rerender } = render(
+      <TherapistList key="a" list={many} studios={testStudios} onPick={vi.fn()} />,
+    )
+
+    await user.click(
+      screen.getByRole('button', { name: 'Show more therapists' }),
+    )
+    expect(cardCount()).toBe(12)
+
+    // A new key is how the parent reacts to a filter change: remount, which
+    // must drop the window back to the first page (and scroll to top).
+    rerender(
+      <TherapistList key="b" list={many} studios={testStudios} onPick={vi.fn()} />,
+    )
+    expect(cardCount()).toBe(10)
+  })
+
   it('shows everyone immediately when the list fits the first page', () => {
     render(
       <TherapistList
