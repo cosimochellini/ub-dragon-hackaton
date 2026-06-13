@@ -3,10 +3,13 @@ import type { StyleAxis as StyleAxisData } from '@/lib/types'
 // Stable keys for the 5 track segments (not derived from the map index, so the
 // no-array-index-key lint rule stays satisfied).
 const SEGMENT_KEYS = ['s1', 's2', 's3', 's4', 's5']
+const CENTER_INDEX = (SEGMENT_KEYS.length - 1) / 2
 
-function leanLabel(axis: StyleAxisData): string {
-  if (axis.value < 40) return `leans ${axis.left.toLowerCase()}`
-  if (axis.value > 60) return `leans ${axis.right.toLowerCase()}`
+// Describe the lean from the *highlighted segment*, so the screen-reader label
+// and the visual always agree (the two must never use independent thresholds).
+function leanLabel(axis: StyleAxisData, activeIndex: number): string {
+  if (activeIndex < CENTER_INDEX) return `leans ${axis.left.toLowerCase()}`
+  if (activeIndex > CENTER_INDEX) return `leans ${axis.right.toLowerCase()}`
   return 'balanced'
 }
 
@@ -23,7 +26,7 @@ export function StyleAxis({ axis }: { axis: StyleAxisData }) {
   return (
     <div
       role="img"
-      aria-label={`${axis.left} to ${axis.right}: ${leanLabel(axis)}`}
+      aria-label={`${axis.left} to ${axis.right}: ${leanLabel(axis, activeIndex)}`}
     >
       <div className="flex items-center justify-between text-[12px] font-medium text-grey-600">
         <span>{axis.left}</span>

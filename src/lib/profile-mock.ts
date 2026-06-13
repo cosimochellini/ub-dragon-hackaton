@@ -83,7 +83,7 @@ function joinList(items: string[]): string {
 /** `count` distinct members of `pool`, chosen deterministically from `seed`. */
 function pickDistinct(pool: string[], count: number, seed: number): string[] {
   const picks = new Set<number>()
-  let k = hash(seed)
+  let k = seed
   while (picks.size < count && picks.size < pool.length) {
     k = hash(k)
     picks.add(k % pool.length)

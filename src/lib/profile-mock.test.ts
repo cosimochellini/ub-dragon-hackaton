@@ -66,4 +66,13 @@ describe('buildProfile', () => {
     const p = buildProfile(record('t9', ['individual', 'couples']), testStudios)
     expect(p.topics).toContain('Couples therapy')
   })
+
+  it('gives non-numeric ids distinct but stable profiles', () => {
+    const a = buildProfile(record('dr-sara-rossi'), testStudios)
+    const b = buildProfile(record('dr-marco-bianchi'), testStudios)
+    // Stable for the same id...
+    expect(buildProfile(record('dr-sara-rossi'), testStudios)).toEqual(a)
+    // ...and distinct between different slugs (no collapse onto one seed).
+    expect(a).not.toEqual(b)
+  })
 })
