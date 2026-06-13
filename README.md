@@ -39,9 +39,12 @@ PWA/touch icons (`logo192.png`, `logo512.png`, `apple-touch-icon.png`), and the
 generated from the Unobravo brand mark in `public/logo-unobravo-black.svg`.
 
 Because this POC is seeded with **mock** therapist data, it is marked
-`noindex, nofollow` (page meta + `X-Robots-Tag` in `netlify.toml`) so it is not
-indexed under the real Unobravo brand. `robots.txt` stays crawlable on purpose
-so the `noindex` directive is actually read; social link previews still work.
+`noindex, nofollow` via a page-level robots `<meta>` tag so it is not indexed
+under the real Unobravo brand. (A Netlify `X-Robots-Tag` header is deliberately
+avoided: `[[headers]]` rules don't apply to the catch-all-redirect HTML served
+by the SSR function, so the meta tag — rendered into every SSR response — is the
+authoritative signal.) `robots.txt` stays crawlable on purpose so the `noindex`
+directive is actually read; social link previews still work.
 
 ## Scripts
 

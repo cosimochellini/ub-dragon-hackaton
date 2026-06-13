@@ -15,11 +15,9 @@
 [functions]
   directory = "netlify/functions"
 
-# This POC ships mock therapist data, so it must not be indexed under the
-# real Unobravo brand. `X-Robots-Tag` reinforces the page-level `noindex`
-# meta tag at the HTTP layer (it suppresses indexing without blocking
-# crawling, so social scrapers can still fetch the Open Graph image).
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
+# NOTE: indexing is suppressed via the page-level `<meta name="robots"
+# content="noindex, nofollow">` in src/routes/__root.tsx, which is rendered
+# into every SSR HTML response and is the authoritative signal for crawlers.
+# A `[[headers]]` X-Robots-Tag is intentionally NOT used: these rules do not
+# apply to the catch-all-redirect HTML served by the SSR function (they would
+# only tag static assets — e.g. the OG image, which must stay fetchable).

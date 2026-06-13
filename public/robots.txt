@@ -1,10 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
 #
 # Crawling is intentionally allowed so search engines can read the page-level
-# `noindex` directive set in the HTML <head> (and the `X-Robots-Tag` header).
-# This POC ships mock therapist data, so indexing is suppressed via those
-# signals rather than a `Disallow` rule — a blanket Disallow would prevent
-# crawlers from ever seeing the `noindex` tag and could stop social scrapers
-# from fetching the Open Graph image.
+# `noindex` directive set in the HTML <head>. This POC ships mock therapist
+# data, so indexing is suppressed via that meta tag rather than a `Disallow`
+# rule — a blanket Disallow would prevent crawlers from ever seeing the
+# `noindex` tag and could stop social scrapers from fetching the Open Graph
+# image.
 User-agent: *
 Disallow:
