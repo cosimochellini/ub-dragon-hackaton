@@ -23,6 +23,26 @@ Library. Design tokens from Unobravo's **Zenit 2.0** system.
 
 Node **≥ 22.12** (see `.nvmrc`).
 
+### Environment
+
+| Variable        | Default                        | Purpose                                                                       |
+| --------------- | ------------------------------ | ----------------------------------------------------------------------------- |
+| `VITE_SITE_URL` | `https://ub-dragon.netlify.app` | Absolute origin for the canonical URL and Open Graph / Twitter image. Set it in the Netlify site environment to match the deployed domain. |
+
+## SEO & favicon
+
+The HTML `<head>` (in `src/routes/__root.tsx`) carries the title, description,
+canonical URL, favicons, theme color, web-app manifest, and the full Open
+Graph + Twitter card set. The favicon (`favicon.svg` / `favicon.ico`),
+PWA/touch icons (`logo192.png`, `logo512.png`, `apple-touch-icon.png`), and the
+1200×630 social-share image (`og-image.png`) all live in `public/` and are
+generated from the Unobravo brand mark in `public/logo-unobravo-black.svg`.
+
+Because this POC is seeded with **mock** therapist data, it is marked
+`noindex, nofollow` (page meta + `X-Robots-Tag` in `netlify.toml`) so it is not
+indexed under the real Unobravo brand. `robots.txt` stays crawlable on purpose
+so the `noindex` directive is actually read; social link previews still work.
+
 ## Scripts
 
 ```bash

@@ -14,3 +14,12 @@
 # automatically by the plugin and lives outside this directory.
 [functions]
   directory = "netlify/functions"
+
+# This POC ships mock therapist data, so it must not be indexed under the
+# real Unobravo brand. `X-Robots-Tag` reinforces the page-level `noindex`
+# meta tag at the HTTP layer (it suppresses indexing without blocking
+# crawling, so social scrapers can still fetch the Open Graph image).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
