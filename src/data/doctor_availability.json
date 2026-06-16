@@ -1,0 +1,6974 @@
+[
+  {
+    "doctor_id": 11555,
+    "email": "psi.federico.bianchi@gmail.com",
+    "name": "Federico Bianchi",
+    "calendly_user_uri": "https://api.calendly.com/users/6504defa-8a56-4a63-91f1-fd9ea35a1f1e",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "18:00",
+                "to": "21:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "18:00",
+                "to": "21:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/2263e687-9ffd-47f9-bec9-6e9243119116",
+        "user": "https://api.calendly.com/users/6504defa-8a56-4a63-91f1-fd9ea35a1f1e"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11922,
+    "email": "c.cla.corti@gmail.com",
+    "name": "Claudia Corti",
+    "calendly_user_uri": "https://api.calendly.com/users/68495dbe-5142-4684-8300-ae30c7aa2a5a",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/8eedc70b-8169-45b5-89ee-66ecd35cdec1",
+        "user": "https://api.calendly.com/users/68495dbe-5142-4684-8300-ae30c7aa2a5a"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11290,
+    "email": "dottoressagretarossi@gmail.com",
+    "name": "Greta Nastassja Alessia Rossi",
+    "calendly_user_uri": "https://api.calendly.com/users/b2f7c127-549c-4286-ac09-a03641f27867",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/44ee4abb-5192-4304-a2f2-acd9dd96bd07",
+        "user": "https://api.calendly.com/users/b2f7c127-549c-4286-ac09-a03641f27867"
+      }
+    ]
+  },
+  {
+    "doctor_id": 2440,
+    "email": "lucia.sciascia@gmail.com",
+    "name": "Lucia Sciascia",
+    "calendly_user_uri": "https://api.calendly.com/users/41bd2c45-3759-4fdd-b0e6-4cd7c6a18f6f",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "21:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/da40287b-e3cd-4660-bd08-47ce52f5623c",
+        "user": "https://api.calendly.com/users/41bd2c45-3759-4fdd-b0e6-4cd7c6a18f6f"
+      }
+    ]
+  },
+  {
+    "doctor_id": 2361,
+    "email": "simoncellicat@gmail.com",
+    "name": "Caterina Simoncelli",
+    "calendly_user_uri": "https://api.calendly.com/users/eaa76318-e41b-4f9e-bb4c-83ff1362a599",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-18",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-19",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-20",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-21",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-22",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-23",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-24",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-25",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-02",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-03",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-04",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-05",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-06",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-07",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-08",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-09",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-10",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-11",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-12",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-13",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-14",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-15",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-16",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-17",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-18",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-19",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-20",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-21",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-22",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-23",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/6d7502d8-c594-499c-a67b-0acda57f45ae",
+        "user": "https://api.calendly.com/users/eaa76318-e41b-4f9e-bb4c-83ff1362a599"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11838,
+    "email": "fabiovolpe2910@gmail.com",
+    "name": "Fabio Volpe",
+    "calendly_user_uri": "https://api.calendly.com/users/88bd0bda-7721-42d0-9b8b-4f8c5314a9c4",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "14:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": [
+              {
+                "from": "17:00",
+                "to": "20:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-18",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-20",
+            "intervals": [
+              {
+                "from": "19:00",
+                "to": "20:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-25",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-27",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/3567bf63-9541-4e9d-8eb7-9588c8974e85",
+        "user": "https://api.calendly.com/users/88bd0bda-7721-42d0-9b8b-4f8c5314a9c4"
+      }
+    ]
+  },
+  {
+    "doctor_id": 5115,
+    "email": "francesca.coretti1@gmail.com",
+    "name": "Francesca Coretti",
+    "calendly_user_uri": "https://api.calendly.com/users/9fe516de-9145-45a2-9b61-6cff0399c49e",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-18",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-25",
+            "intervals": [
+              {
+                "from": "11:00",
+                "to": "12:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/db04fbd1-389a-4d0e-94d6-b9b6caede71c",
+        "user": "https://api.calendly.com/users/9fe516de-9145-45a2-9b61-6cff0399c49e"
+      }
+    ]
+  },
+  {
+    "doctor_id": 3558,
+    "email": "depaola.annamaria@gmail.com",
+    "name": "Annamaria De Paola",
+    "calendly_user_uri": "https://api.calendly.com/users/0d090d80-5b8d-4691-b379-f92b49fc9c33",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/e0d761fc-3791-4ca1-96db-91cc63be9eac",
+        "user": "https://api.calendly.com/users/0d090d80-5b8d-4691-b379-f92b49fc9c33"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11727,
+    "email": "carolina.luciani2@gmail.com",
+    "name": "Carolina Maria Cristina Luciani",
+    "calendly_user_uri": "https://api.calendly.com/users/ad9b53d8-06c2-48bb-ad72-769d95982b65",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/382fcfd3-4003-425d-a58b-2378f2cbac97",
+        "user": "https://api.calendly.com/users/ad9b53d8-06c2-48bb-ad72-769d95982b65"
+      }
+    ]
+  },
+  {
+    "doctor_id": 3150,
+    "email": "silvia.recchione@gmail.com",
+    "name": "Silvia Maria Recchione",
+    "calendly_user_uri": "https://api.calendly.com/users/4edd09fa-f1e3-4b86-a873-c58ad3b4e5a0",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "21:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/069a87fb-4229-4f3c-a662-4e35e5aa1c09",
+        "user": "https://api.calendly.com/users/4edd09fa-f1e3-4b86-a873-c58ad3b4e5a0"
+      }
+    ]
+  },
+  {
+    "doctor_id": 2438,
+    "email": "tonolini.tiziana@gmail.com",
+    "name": "Tiziana Tonolini",
+    "calendly_user_uri": "https://api.calendly.com/users/48f61dce-516d-4949-b621-b61fd6b55b84",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "08:30",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/53554e9c-a33d-4446-958b-e0b0aa29ebd6",
+        "user": "https://api.calendly.com/users/48f61dce-516d-4949-b621-b61fd6b55b84"
+      }
+    ]
+  },
+  {
+    "doctor_id": 1837,
+    "email": "valeria.leo.psi@gmail.com",
+    "name": "Valeria Leo",
+    "calendly_user_uri": "https://api.calendly.com/users/022e264e-18c6-4f21-bdce-b01c0320e8f9",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/cb645c75-ddca-4cb0-a1b8-cda1adeffa56",
+        "user": "https://api.calendly.com/users/022e264e-18c6-4f21-bdce-b01c0320e8f9"
+      }
+    ]
+  },
+  {
+    "doctor_id": 2238,
+    "email": "mg.piazzolla74@gmail.com",
+    "name": "Maria Grazia Piazzolla",
+    "calendly_user_uri": "https://api.calendly.com/users/ea2ddc1c-6f21-44d0-9afb-887f6859b06a",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": [
+              {
+                "from": "10:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-20",
+            "intervals": [
+              {
+                "from": "11:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-27",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-04",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-11",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "16:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/964c2a94-bae5-4710-83eb-34d8b4e68cc6",
+        "user": "https://api.calendly.com/users/ea2ddc1c-6f21-44d0-9afb-887f6859b06a"
+      },
+      {
+        "default": false,
+        "name": "non disponibile ",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Rome",
+        "uri": "https://api.calendly.com/user_availability_schedules/cc5537be-b4f4-4058-9f5c-a91b01e9edb5",
+        "user": "https://api.calendly.com/users/ea2ddc1c-6f21-44d0-9afb-887f6859b06a"
+      },
+      {
+        "default": false,
+        "name": "disponibilità febbraio ",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Rome",
+        "uri": "https://api.calendly.com/user_availability_schedules/6ef55928-dc46-498f-9841-aeb6e3e2ebce",
+        "user": "https://api.calendly.com/users/ea2ddc1c-6f21-44d0-9afb-887f6859b06a"
+      },
+      {
+        "default": false,
+        "name": "non disponibile ",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Rome",
+        "uri": "https://api.calendly.com/user_availability_schedules/92bf2e3b-6c45-45d0-8381-6ed82364ece1",
+        "user": "https://api.calendly.com/users/ea2ddc1c-6f21-44d0-9afb-887f6859b06a"
+      },
+      {
+        "default": false,
+        "name": "disponibile ",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": [
+              {
+                "from": "10:00",
+                "to": "18:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Rome",
+        "uri": "https://api.calendly.com/user_availability_schedules/92cdf922-762d-4b0e-8140-8dd424d757a5",
+        "user": "https://api.calendly.com/users/ea2ddc1c-6f21-44d0-9afb-887f6859b06a"
+      }
+    ]
+  },
+  {
+    "doctor_id": 9567,
+    "email": "dottoressa.alessandrasperanza@gmail.com",
+    "name": "Alessandra Speranza",
+    "calendly_user_uri": "https://api.calendly.com/users/23a309f3-6046-4b9f-9938-5e8f7156ff45",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/19af0733-b1e9-44a7-9688-7abeb195ec1d",
+        "user": "https://api.calendly.com/users/23a309f3-6046-4b9f-9938-5e8f7156ff45"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7726,
+    "email": "d.crivelli94@gmail.com",
+    "name": "Damiano Crivelli",
+    "calendly_user_uri": "https://api.calendly.com/users/14a9eca8-9400-4117-a5ac-60e2584cc288",
+    "availability_schedules": [
+      {
+        "default": false,
+        "name": "colloquio conoscitivo online",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "16:00"
+              },
+              {
+                "from": "17:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/612c2091-03cc-40c4-bceb-bb8d7d9fcf29",
+        "user": "https://api.calendly.com/users/14a9eca8-9400-4117-a5ac-60e2584cc288"
+      },
+      {
+        "default": false,
+        "name": "seduta terapia presenza",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/394370f2-3ace-470d-96e9-e9bf2ded23aa",
+        "user": "https://api.calendly.com/users/14a9eca8-9400-4117-a5ac-60e2584cc288"
+      },
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/1abc805f-e56e-4a62-bf05-f32bf95f3c7f",
+        "user": "https://api.calendly.com/users/14a9eca8-9400-4117-a5ac-60e2584cc288"
+      }
+    ]
+  },
+  {
+    "doctor_id": 1183,
+    "email": "nicole.cabrini@gmail.com",
+    "name": "Nicoletta Cabrini",
+    "calendly_user_uri": "https://api.calendly.com/users/906e7725-d9c8-4431-8aeb-6cbf5a05b6ec",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-16",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-23",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/df18115c-c36e-4ff6-aad4-214f4057494e",
+        "user": "https://api.calendly.com/users/906e7725-d9c8-4431-8aeb-6cbf5a05b6ec"
+      }
+    ]
+  },
+  {
+    "doctor_id": 6993,
+    "email": "robertasarlo.psi@gmail.com",
+    "name": "Roberta Sarlo",
+    "calendly_user_uri": "https://api.calendly.com/users/f6c874c5-393a-41c7-a72c-38bb480f5c9f",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/91b7d8c5-5461-4223-a16a-910ad66ea55c",
+        "user": "https://api.calendly.com/users/f6c874c5-393a-41c7-a72c-38bb480f5c9f"
+      }
+    ]
+  },
+  {
+    "doctor_id": 9579,
+    "email": "ferrariorosalba@gmail.com",
+    "name": "Rosalba Ferrario",
+    "calendly_user_uri": "https://api.calendly.com/users/253be8df-f20b-4506-9c72-2b032d92c29a",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/cc936d71-ea32-4075-b788-5bf1c1c06da1",
+        "user": "https://api.calendly.com/users/253be8df-f20b-4506-9c72-2b032d92c29a"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10379,
+    "email": "biancamarchesi96@gmail.com",
+    "name": "Bianca Lucrezia Marchesi",
+    "calendly_user_uri": "https://api.calendly.com/users/34b7d2ce-03b2-4dc7-a282-0a2d099c9fa2",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/f55d55c0-6755-4437-8d68-5726ab64d706",
+        "user": "https://api.calendly.com/users/34b7d2ce-03b2-4dc7-a282-0a2d099c9fa2"
+      }
+    ]
+  },
+  {
+    "doctor_id": 5788,
+    "email": "elena.longari.psy@gmail.com",
+    "name": "Elena Longari",
+    "calendly_user_uri": "https://api.calendly.com/users/d8210e46-aefd-4dcc-8e11-c5a0d06fc803",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-15",
+            "intervals": [
+              {
+                "from": "12:00",
+                "to": "14:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-17",
+            "intervals": [
+              {
+                "from": "16:00",
+                "to": "17:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/9cd7e2aa-71a2-4b32-9e6c-145a2f1a28f9",
+        "user": "https://api.calendly.com/users/d8210e46-aefd-4dcc-8e11-c5a0d06fc803"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10522,
+    "email": "martinafedericamerlini@gmail.com",
+    "name": "Martina Federica Merlini",
+    "calendly_user_uri": "https://api.calendly.com/users/2f172a5e-45cc-473c-a4bc-113cec2160ce",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "08:30",
+                "to": "13:30"
+              },
+              {
+                "from": "14:30",
+                "to": "20:30"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "08:30",
+                "to": "13:30"
+              },
+              {
+                "from": "14:30",
+                "to": "20:30"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/8589e00a-62e4-4299-a3b3-ba4917c3efa4",
+        "user": "https://api.calendly.com/users/2f172a5e-45cc-473c-a4bc-113cec2160ce"
+      }
+    ]
+  },
+  {
+    "doctor_id": 5429,
+    "email": "elena.arca.89@gmail.com",
+    "name": "Elena Arca",
+    "calendly_user_uri": "https://api.calendly.com/users/56636a7a-c0a0-40dc-90d5-e63a5fe9a866",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/ea9c03ab-b9fe-47e3-94a3-73d5c1e51e3a",
+        "user": "https://api.calendly.com/users/56636a7a-c0a0-40dc-90d5-e63a5fe9a866"
+      }
+    ]
+  },
+  {
+    "doctor_id": 2719,
+    "email": "mariachiara.guanti@gmail.com",
+    "name": "Maria Chiara Guanti",
+    "calendly_user_uri": "https://api.calendly.com/users/8b596d27-3d58-4329-99ad-df7a2f05c5cd",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "16:00",
+                "to": "20:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-17",
+            "intervals": [
+              {
+                "from": "17:00",
+                "to": "18:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/0b85940a-a0e5-4b39-a6c1-d309dae49816",
+        "user": "https://api.calendly.com/users/8b596d27-3d58-4329-99ad-df7a2f05c5cd"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11383,
+    "email": "beatrice.leva@gmail.com",
+    "name": "Beatrice Leva",
+    "calendly_user_uri": "https://api.calendly.com/users/9201c76f-34c0-4690-ab8b-4d37ffdc655c",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/aca6ae82-2365-42cf-90aa-8d71414dec29",
+        "user": "https://api.calendly.com/users/9201c76f-34c0-4690-ab8b-4d37ffdc655c"
+      }
+    ]
+  },
+  {
+    "doctor_id": 2797,
+    "email": "francescaquattrini7@gmail.com",
+    "name": "Francesca Quattrini",
+    "calendly_user_uri": "https://api.calendly.com/users/6f4b7df9-caac-414b-9976-53b174f8cd02",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/4e79b580-7f30-4cb2-9f00-218837134d2c",
+        "user": "https://api.calendly.com/users/6f4b7df9-caac-414b-9976-53b174f8cd02"
+      }
+    ]
+  },
+  {
+    "doctor_id": 4825,
+    "email": "giuliasamore.psicologa@gmail.com",
+    "name": "Giulia Samoré",
+    "calendly_user_uri": "https://api.calendly.com/users/35f927ef-7777-453a-8458-1def4b3b229b",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              },
+              {
+                "from": "14:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/6e78e8d7-3d4f-46aa-a926-711b3912cbcc",
+        "user": "https://api.calendly.com/users/35f927ef-7777-453a-8458-1def4b3b229b"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7261,
+    "email": "doris.cisternino@gmail.com",
+    "name": "Doris Cisternino",
+    "calendly_user_uri": "https://api.calendly.com/users/98999ed1-15de-43f0-b805-5497e509d1a1",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "12:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-19",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "11:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-03",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "11:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/2490d6b9-7eee-4b67-a743-e0ee64c24b78",
+        "user": "https://api.calendly.com/users/98999ed1-15de-43f0-b805-5497e509d1a1"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10080,
+    "email": "lally.90r@gmail.com",
+    "name": "Laura Raco",
+    "calendly_user_uri": "https://api.calendly.com/users/f2772da8-7764-4adc-ba4d-0f5bdfe8708e",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "22:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/a67a18b4-08c2-4a1a-ae07-05ba90363fae",
+        "user": "https://api.calendly.com/users/f2772da8-7764-4adc-ba4d-0f5bdfe8708e"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10762,
+    "email": "chiaracanali.psy@gmail.com",
+    "name": "Chiara Canali",
+    "calendly_user_uri": "https://api.calendly.com/users/23d622a5-8063-4474-ac1c-4f6c74bba7ec",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "14:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/5cc3e5ca-e49a-413c-923a-8e0087c906fa",
+        "user": "https://api.calendly.com/users/23d622a5-8063-4474-ac1c-4f6c74bba7ec"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11630,
+    "email": "sofia.ceresani.psi@gmail.com",
+    "name": "Sofia Ceresani",
+    "calendly_user_uri": "https://api.calendly.com/users/e8490a6c-9ac1-43bf-852e-e8cd3c333ea9",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "11:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "18:00",
+                "to": "22:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/5404c05a-e930-4b17-beca-266594dcccbd",
+        "user": "https://api.calendly.com/users/e8490a6c-9ac1-43bf-852e-e8cd3c333ea9"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11929,
+    "email": "silviamontalto7@gmail.com",
+    "name": "Silvia Montalto",
+    "calendly_user_uri": "https://api.calendly.com/users/c74759bd-b48d-4fbd-9d6e-d6a533e0aa32",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-19",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/b8c9435b-9255-4a41-8b71-afbc6109ab95",
+        "user": "https://api.calendly.com/users/c74759bd-b48d-4fbd-9d6e-d6a533e0aa32"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11429,
+    "email": "brizziann@gmail.com",
+    "name": "Annarita Brizzi",
+    "calendly_user_uri": "https://api.calendly.com/users/1827c677-d753-459e-a23d-d79b5e1b78ea",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/f6648cec-147d-4aa3-b2c7-12ab533d3188",
+        "user": "https://api.calendly.com/users/1827c677-d753-459e-a23d-d79b5e1b78ea"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11689,
+    "email": "f.stroppa94@gmail.com",
+    "name": "Federico Stroppa",
+    "calendly_user_uri": "https://api.calendly.com/users/bc0fd328-57a0-44d0-9efe-d82102ddff6d",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/07ea5e19-7e94-48c7-8b44-5b8a2fe20085",
+        "user": "https://api.calendly.com/users/bc0fd328-57a0-44d0-9efe-d82102ddff6d"
+      }
+    ]
+  },
+  {
+    "doctor_id": 12678,
+    "email": "mindfulclay.lab@gmail.com",
+    "name": "Elena Ceccaroni",
+    "calendly_user_uri": "https://api.calendly.com/users/3305c8b2-914c-40f2-9392-a92d32d20ad7",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/802d57e3-74bf-4981-b41a-f4344f963916",
+        "user": "https://api.calendly.com/users/3305c8b2-914c-40f2-9392-a92d32d20ad7"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10366,
+    "email": "gaiaga.sacco@gmail.com",
+    "name": "Gaia Giulia Angela Sacco",
+    "calendly_user_uri": "https://api.calendly.com/users/6cf6bd63-5aa7-45d9-86e3-ee00b4da874b",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-16",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "21:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-08-18",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-25",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-09-01",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/20984722-9b7d-409e-bd72-df7cbc2d1707",
+        "user": "https://api.calendly.com/users/6cf6bd63-5aa7-45d9-86e3-ee00b4da874b"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10093,
+    "email": "francesca.gastaldo97@gmail.com",
+    "name": "Francesca Gastaldo",
+    "calendly_user_uri": "https://api.calendly.com/users/a50851f1-b351-472c-9854-0c66f28117e2",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "13:30",
+                "to": "20:30"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/a944cdca-3dbd-4788-b4e8-9ab015d1d6eb",
+        "user": "https://api.calendly.com/users/a50851f1-b351-472c-9854-0c66f28117e2"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7783,
+    "email": "katia.iervolino.psy@gmail.com",
+    "name": "Katia Iervolino",
+    "calendly_user_uri": "https://api.calendly.com/users/1ba747f9-55c2-43c6-b649-81a81989b8cc",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "10:00",
+                "to": "13:00"
+              },
+              {
+                "from": "14:00",
+                "to": "15:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "10:00",
+                "to": "15:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-16",
+            "intervals": [
+              {
+                "from": "11:00",
+                "to": "13:00"
+              },
+              {
+                "from": "14:00",
+                "to": "15:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/220b096b-f2f2-4e7a-94c9-a0289664b7f4",
+        "user": "https://api.calendly.com/users/1ba747f9-55c2-43c6-b649-81a81989b8cc"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11885,
+    "email": "ireneorlandelli.psicologa@gmail.com",
+    "name": "Irene Orlandelli",
+    "calendly_user_uri": "https://api.calendly.com/users/12b47e98-7ad1-4d53-8167-31f4bd2cc292",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "15:00"
+              },
+              {
+                "from": "18:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/f841bfc7-252a-4621-b0df-2bbfa43c0b10",
+        "user": "https://api.calendly.com/users/12b47e98-7ad1-4d53-8167-31f4bd2cc292"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7995,
+    "email": "micoltrombini.psi@gmail.com",
+    "name": "Micol Trombini",
+    "calendly_user_uri": "https://api.calendly.com/users/3befd66b-f31b-4ed6-94ea-65f04684de00",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-16",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/70158223-60c4-4bc6-a779-5542274645da",
+        "user": "https://api.calendly.com/users/3befd66b-f31b-4ed6-94ea-65f04684de00"
+      }
+    ]
+  },
+  {
+    "doctor_id": 12663,
+    "email": "dozzinisara@gmail.com",
+    "name": "Sara Dozzini",
+    "calendly_user_uri": "https://api.calendly.com/users/4a75a6ab-5000-47ee-959d-fb67e7e21d28",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              },
+              {
+                "from": "14:00",
+                "to": "20:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "14:00",
+                "to": "20:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/8bd4745f-2f2f-4c86-85df-65fb886acd6d",
+        "user": "https://api.calendly.com/users/4a75a6ab-5000-47ee-959d-fb67e7e21d28"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11965,
+    "email": "luca.mugni@gmail.com",
+    "name": "Luca Mugni",
+    "calendly_user_uri": "https://api.calendly.com/users/7cdb122c-da0f-42bc-9ae9-d3eb4abafb27",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/d50e4cb2-c144-40f0-8aa8-ec49c188c1a1",
+        "user": "https://api.calendly.com/users/7cdb122c-da0f-42bc-9ae9-d3eb4abafb27"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7646,
+    "email": "dottssalongo.cristina@gmail.com",
+    "name": "Cristina Longo",
+    "calendly_user_uri": "https://api.calendly.com/users/553fd06b-7357-47e7-ae57-ff1a4ebe694c",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/291a34e3-722d-4e0a-81c7-e1b5ebde214a",
+        "user": "https://api.calendly.com/users/553fd06b-7357-47e7-ae57-ff1a4ebe694c"
+      }
+    ]
+  },
+  {
+    "doctor_id": 4559,
+    "email": "marcella.garciaordonez@gmail.com",
+    "name": "Marcella Garcia Ordonez",
+    "calendly_user_uri": "https://api.calendly.com/users/235ff697-b1c1-411a-839e-d80748d3dd7e",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "20:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/71f1bf2f-56b5-43d5-a961-b13bc1d5ddaf",
+        "user": "https://api.calendly.com/users/235ff697-b1c1-411a-839e-d80748d3dd7e"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7266,
+    "email": "giselda.logiudice@gmail.com",
+    "name": "Giselda Lo Giudice",
+    "calendly_user_uri": "https://api.calendly.com/users/211e81d7-59bd-4ae8-a517-867786d6edc5",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/72e7b25c-bab6-4a25-a237-322f5364cc90",
+        "user": "https://api.calendly.com/users/211e81d7-59bd-4ae8-a517-867786d6edc5"
+      }
+    ]
+  },
+  {
+    "doctor_id": 9235,
+    "email": "lorettavfg@gmail.com",
+    "name": "Grazia Chianetta",
+    "calendly_user_uri": "https://api.calendly.com/users/df321a2e-e352-4f14-b945-c285db548b12",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-19",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "10:00"
+              },
+              {
+                "from": "15:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-26",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-03",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-10",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-17",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-24",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-08-07",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-09-04",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-09-11",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-09-18",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-09-25",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-10-02",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-10-09",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-10-16",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-10-23",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-10-30",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-11-06",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-11-13",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-12-04",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-12-11",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-12-18",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-01-08",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-01-15",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-01-22",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-01-29",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-02-05",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-02-12",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-02-19",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-02-26",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-03-05",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-03-12",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-03-19",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-03-26",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-04-02",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-04-09",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-04-16",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-04-23",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-04-30",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-05-07",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-05-14",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-05-21",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-05-28",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-06-04",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-06-11",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-06-18",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-06-25",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-07-02",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-07-09",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-07-16",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-07-23",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-07-30",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-08-06",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-08-13",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-09-03",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-09-10",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-09-17",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-09-24",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-10-01",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-10-08",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-10-15",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-10-22",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-10-29",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-11-05",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-11-12",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-11-19",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-11-26",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-12-03",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-12-10",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-12-17",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2027-12-31",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/b5169eb6-38d5-4004-9eab-559264b65ae9",
+        "user": "https://api.calendly.com/users/df321a2e-e352-4f14-b945-c285db548b12"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11379,
+    "email": "virginia.borsa@gmail.com",
+    "name": "Virginia Maria Borsa",
+    "calendly_user_uri": "https://api.calendly.com/users/8dc0aae9-f270-408d-aec4-c91360b9202e",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "13:00",
+                "to": "15:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/6dfb273a-18e2-4607-ad1f-e80d5fd9ca04",
+        "user": "https://api.calendly.com/users/8dc0aae9-f270-408d-aec4-c91360b9202e"
+      }
+    ]
+  },
+  {
+    "doctor_id": 3635,
+    "email": "psicologa.giuliagalbiati@gmail.com",
+    "name": "Giulia Alice Martina Galbiati",
+    "calendly_user_uri": "https://api.calendly.com/users/6d0db683-d86d-4553-8d28-6dff4314f018",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/766d1993-2ef6-477a-8c05-d414a0996204",
+        "user": "https://api.calendly.com/users/6d0db683-d86d-4553-8d28-6dff4314f018"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10689,
+    "email": "elena.cc969@gmail.com",
+    "name": "Elena Colombo",
+    "calendly_user_uri": "https://api.calendly.com/users/57fdce62-a308-49c6-989a-7972f2eae325",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              },
+              {
+                "from": "14:00",
+                "to": "19:30"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "19:30"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "19:30"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "19:30"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/1969b7ce-e72c-4184-96d0-ecdc751ea824",
+        "user": "https://api.calendly.com/users/57fdce62-a308-49c6-989a-7972f2eae325"
+      }
+    ]
+  },
+  {
+    "doctor_id": 3096,
+    "email": "simona.calia.psi@gmail.com",
+    "name": "Simona Calia",
+    "calendly_user_uri": "https://api.calendly.com/users/0f5205bd-391c-4613-8146-8fd53f18a040",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/f5859213-f2a7-41aa-a0a8-b50c9c9b1728",
+        "user": "https://api.calendly.com/users/0f5205bd-391c-4613-8146-8fd53f18a040"
+      }
+    ]
+  },
+  {
+    "doctor_id": 2432,
+    "email": "francesca.belotti92@gmail.com",
+    "name": "Francesca Belotti",
+    "calendly_user_uri": "https://api.calendly.com/users/9445c9be-f6f2-4ee0-b9b4-ee6ecfed0d70",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Coloquio conoscitivo online",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "12:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/4e3c3a74-8adb-4c3b-aa42-85d2266445ac",
+        "user": "https://api.calendly.com/users/9445c9be-f6f2-4ee0-b9b4-ee6ecfed0d70"
+      },
+      {
+        "default": false,
+        "name": "Colloquio conoscitivo ",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/fad769db-b538-409c-bb6d-c521d605fb3a",
+        "user": "https://api.calendly.com/users/9445c9be-f6f2-4ee0-b9b4-ee6ecfed0d70"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10979,
+    "email": "alfredo.vaccaro3012@gmail.com",
+    "name": "Alfredo Vaccaro",
+    "calendly_user_uri": "https://api.calendly.com/users/bbf66e7b-9562-467a-a064-4bea139feb6a",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/77fceaf9-7afd-40e7-8d5a-c7feb994853c",
+        "user": "https://api.calendly.com/users/bbf66e7b-9562-467a-a064-4bea139feb6a"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10713,
+    "email": "giuliamzanchi@gmail.com",
+    "name": "Giulia Marialaura Zanchi",
+    "calendly_user_uri": "https://api.calendly.com/users/2ed9d81c-145e-4515-8717-eec1b1bc97f7",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-23",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-26",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-10",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/9cd9852b-0eda-49f1-953c-5aeac0b9a44a",
+        "user": "https://api.calendly.com/users/2ed9d81c-145e-4515-8717-eec1b1bc97f7"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11938,
+    "email": "loiodice.greta@gmail.com",
+    "name": "Greta Loiodice",
+    "calendly_user_uri": "https://api.calendly.com/users/413f3516-5b18-4437-876c-c85901a3f1a6",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "08:15",
+                "to": "12:30"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/8c62ab96-c4fb-4bd6-ae67-c921982af7aa",
+        "user": "https://api.calendly.com/users/413f3516-5b18-4437-876c-c85901a3f1a6"
+      }
+    ]
+  },
+  {
+    "doctor_id": 12307,
+    "email": "bconte1997@gmail.com",
+    "name": "Beatrice Conte",
+    "calendly_user_uri": "https://api.calendly.com/users/6eb5a2e8-0a0b-42b7-aa13-5bf7dbc45928",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/ab582ebf-d20b-40e6-820e-0894832bb464",
+        "user": "https://api.calendly.com/users/6eb5a2e8-0a0b-42b7-aa13-5bf7dbc45928"
+      }
+    ]
+  },
+  {
+    "doctor_id": 12688,
+    "email": "dott.nicolavaia@gmail.com",
+    "name": "Nicola Vaia",
+    "calendly_user_uri": "https://api.calendly.com/users/2eced00d-77a1-4712-a9a1-38edadbac65b",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "11:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "15:00"
+              },
+              {
+                "from": "16:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "11:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": [
+              {
+                "from": "14:00",
+                "to": "16:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/18a72a81-db11-43ee-bdd1-0baff24faf04",
+        "user": "https://api.calendly.com/users/2eced00d-77a1-4712-a9a1-38edadbac65b"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7026,
+    "email": "emanuela.morelli.27@gmail.com",
+    "name": "Emanuela Morelli",
+    "calendly_user_uri": "https://api.calendly.com/users/4d3ab244-f2d9-44d2-b382-003aa48a52d5",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/7b5b0828-9337-4ad5-b040-f1b973a4e54c",
+        "user": "https://api.calendly.com/users/4d3ab244-f2d9-44d2-b382-003aa48a52d5"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11478,
+    "email": "mariannalc@hotmail.it",
+    "name": "Marianna Lo Castro",
+    "calendly_user_uri": "https://api.calendly.com/users/917ef351-f138-4119-ba2d-17262d5ea92c",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/1377f014-5ec0-441d-aeb2-72d630d445c4",
+        "user": "https://api.calendly.com/users/917ef351-f138-4119-ba2d-17262d5ea92c"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11954,
+    "email": "ac.corda@libero.it",
+    "name": "Alessandro Corda",
+    "calendly_user_uri": "https://api.calendly.com/users/8ea86fff-9210-4533-93aa-5bed6b489ed1",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/dbc1e501-19fe-42b9-8b93-bb2b5625c490",
+        "user": "https://api.calendly.com/users/8ea86fff-9210-4533-93aa-5bed6b489ed1"
+      }
+    ]
+  },
+  {
+    "doctor_id": 152,
+    "email": "emily.luciani1@gmail.com",
+    "name": "Emily Luciani",
+    "calendly_user_uri": "https://api.calendly.com/users/9e2464b7-3b4a-4316-a563-a755d8c01ed4",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "10:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/7a09d755-f093-40c2-be3d-b1c979c5ff41",
+        "user": "https://api.calendly.com/users/9e2464b7-3b4a-4316-a563-a755d8c01ed4"
+      },
+      {
+        "default": false,
+        "name": "Holiday ",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Rome",
+        "uri": "https://api.calendly.com/user_availability_schedules/1c4d49fb-f432-4d52-b6ef-0b9d7565979d",
+        "user": "https://api.calendly.com/users/9e2464b7-3b4a-4316-a563-a755d8c01ed4"
+      },
+      {
+        "default": false,
+        "name": "Holiday ",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Rome",
+        "uri": "https://api.calendly.com/user_availability_schedules/7e30a9e0-6a48-490d-bb8b-6bdc953f991e",
+        "user": "https://api.calendly.com/users/9e2464b7-3b4a-4316-a563-a755d8c01ed4"
+      },
+      {
+        "default": false,
+        "name": "No pazienti",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "17:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Rome",
+        "uri": "https://api.calendly.com/user_availability_schedules/05cdd5ce-a320-459a-afe5-ffc8d6b915fc",
+        "user": "https://api.calendly.com/users/9e2464b7-3b4a-4316-a563-a755d8c01ed4"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11262,
+    "email": "vicanegallo@hotmail.com",
+    "name": "Virginia Canegallo",
+    "calendly_user_uri": "https://api.calendly.com/users/24979bd3-8e64-41b8-a13e-bdf6eca318e7",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-19",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-17",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-21",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-28",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-09-04",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/72985260-1619-4b0a-a3b0-246577444c72",
+        "user": "https://api.calendly.com/users/24979bd3-8e64-41b8-a13e-bdf6eca318e7"
+      }
+    ]
+  },
+  {
+    "doctor_id": 12356,
+    "email": "virginiacvitali@gmail.com",
+    "name": "Virginia Celeste Vitali",
+    "calendly_user_uri": "https://api.calendly.com/users/5f0e9e9a-f5f1-4e0f-b891-ebaea33b55b4",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "14:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "10:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-15",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-17",
+            "intervals": [
+              {
+                "from": "12:00",
+                "to": "14:00"
+              },
+              {
+                "from": "17:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-22",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "18:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/fb5e6b13-5b73-4ddf-9f96-8f540daa31ca",
+        "user": "https://api.calendly.com/users/5f0e9e9a-f5f1-4e0f-b891-ebaea33b55b4"
+      }
+    ]
+  },
+  {
+    "doctor_id": 5636,
+    "email": "stefania.desanctis.psicologa@gmail.com",
+    "name": "Stefania De Sanctis",
+    "calendly_user_uri": "https://api.calendly.com/users/41cea011-c826-4d65-b723-2263b650da71",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              },
+              {
+                "from": "18:00",
+                "to": "20:00"
+              },
+              {
+                "from": "20:00",
+                "to": "22:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/5b34cfa3-e5e8-4b25-8363-a956389a5481",
+        "user": "https://api.calendly.com/users/41cea011-c826-4d65-b723-2263b650da71"
+      }
+    ]
+  },
+  {
+    "doctor_id": 5630,
+    "email": "dottoressa.sani@gmail.com",
+    "name": "Valentina Sani",
+    "calendly_user_uri": "https://api.calendly.com/users/7cd6a880-b8d0-417e-bf2a-1ae2bbb2c6d2",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/e9eb92a3-2324-4ddb-9a23-efcf2ed13825",
+        "user": "https://api.calendly.com/users/7cd6a880-b8d0-417e-bf2a-1ae2bbb2c6d2"
+      }
+    ]
+  },
+  {
+    "doctor_id": 12425,
+    "email": "deborah.dezorzi@gmail.com",
+    "name": "Deborah De Zorzi",
+    "calendly_user_uri": "https://api.calendly.com/users/f24c49a4-1662-4de4-8023-4327cb9c8a3c",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              },
+              {
+                "from": "14:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/853c6625-ed5a-46da-8aef-24db4fd86e18",
+        "user": "https://api.calendly.com/users/f24c49a4-1662-4de4-8023-4327cb9c8a3c"
+      }
+    ]
+  },
+  {
+    "doctor_id": 3559,
+    "email": "psicologa.mangionevaleria@gmail.com",
+    "name": "Valeria Mangione",
+    "calendly_user_uri": "https://api.calendly.com/users/3fe3138f-489b-40cd-b1c9-7367c4bc7df6",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-25",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-02",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-06",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-13",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-20",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-27",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/77000b1e-9676-489b-9774-06b6a2719351",
+        "user": "https://api.calendly.com/users/3fe3138f-489b-40cd-b1c9-7367c4bc7df6"
+      }
+    ]
+  },
+  {
+    "doctor_id": 5903,
+    "email": "f.devecchi3@campus.unimib.it",
+    "name": "Federica Devecchi",
+    "calendly_user_uri": "https://api.calendly.com/users/53266239-a9a8-482c-b83f-3d0b132b023c",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "18:00"
+              },
+              {
+                "from": "19:00",
+                "to": "20:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              },
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-16",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-23",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "19:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-30",
+            "intervals": [
+              {
+                "from": "15:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-07",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-10",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-14",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-17",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-21",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-24",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-28",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-31",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/3b73fc71-eb81-41e2-8ae6-fe1d6f615018",
+        "user": "https://api.calendly.com/users/53266239-a9a8-482c-b83f-3d0b132b023c"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11442,
+    "email": "federica.9480@gmail.com",
+    "name": "Federica De Santis",
+    "calendly_user_uri": "https://api.calendly.com/users/f558ef82-8bdd-4de8-8dc4-e6f09c6e2957",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "18:30",
+                "to": "21:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/b57d9471-b180-46ae-87de-dd7c7cae6fcc",
+        "user": "https://api.calendly.com/users/f558ef82-8bdd-4de8-8dc4-e6f09c6e2957"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10936,
+    "email": "ottavia.pasini1@gmail.com",
+    "name": "Ottavia Alice Pasini",
+    "calendly_user_uri": "https://api.calendly.com/users/e214df7c-930f-4e31-9175-0f1ad53dc1ef",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              },
+              {
+                "from": "14:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-16",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "10:00"
+              },
+              {
+                "from": "14:00",
+                "to": "18:00"
+              }
+            ]
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/37919d34-896e-4544-b66a-7e66eb23eac2",
+        "user": "https://api.calendly.com/users/e214df7c-930f-4e31-9175-0f1ad53dc1ef"
+      }
+    ]
+  },
+  {
+    "doctor_id": 876,
+    "email": "martina.vivanti@gmail.com",
+    "name": "Martina Vivanti",
+    "calendly_user_uri": "https://api.calendly.com/users/c0589bc3-76c4-4e1c-b9ad-1ebf5ae41650",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "11:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/438a3e02-72cd-4318-bad4-4134ce9cb68c",
+        "user": "https://api.calendly.com/users/c0589bc3-76c4-4e1c-b9ad-1ebf5ae41650"
+      }
+    ]
+  },
+  {
+    "doctor_id": 1347,
+    "email": "silviaturri.psicologa@gmail.com",
+    "name": "Silvia Turri",
+    "calendly_user_uri": "https://api.calendly.com/users/226987f3-e694-4a0a-be72-8c50a9e743bc",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "11:00"
+              },
+              {
+                "from": "14:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/f03a8e5b-cbc8-4ac3-96ba-a63e02f112e9",
+        "user": "https://api.calendly.com/users/226987f3-e694-4a0a-be72-8c50a9e743bc"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7755,
+    "email": "dr.federicadambrosio@gmail.com",
+    "name": "Federica D'Ambrosio",
+    "calendly_user_uri": "https://api.calendly.com/users/fe0bf1e4-6c52-41f9-b834-3786dd219569",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/e11374b6-f001-4b7d-8c25-6a61c4c05022",
+        "user": "https://api.calendly.com/users/fe0bf1e4-6c52-41f9-b834-3786dd219569"
+      }
+    ]
+  },
+  {
+    "doctor_id": 490,
+    "email": "marianna.iacona@gmail.com",
+    "name": "Marianna Iacona",
+    "calendly_user_uri": "https://api.calendly.com/users/86796bc4-4dfb-4b2e-87ae-414dd93965ea",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/629cf320-0954-4cc2-8f03-43e86e41a556",
+        "user": "https://api.calendly.com/users/86796bc4-4dfb-4b2e-87ae-414dd93965ea"
+      }
+    ]
+  },
+  {
+    "doctor_id": 12493,
+    "email": "valentina.scapucci.slop@gmail.com",
+    "name": "Valentina Scapucci",
+    "calendly_user_uri": "https://api.calendly.com/users/a781c785-3aba-4ede-ba1f-6c7b2a01bc12",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-15",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-07-22",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/46808d1f-cbff-4801-9893-b2d8e800d602",
+        "user": "https://api.calendly.com/users/a781c785-3aba-4ede-ba1f-6c7b2a01bc12"
+      }
+    ]
+  },
+  {
+    "doctor_id": 10785,
+    "email": "dottoressarizza@gmail.com",
+    "name": "Roberta Rizza",
+    "calendly_user_uri": "https://api.calendly.com/users/2ecf67f3-8e47-433b-944b-53d256566694",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "14:00",
+                "to": "21:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "14:00",
+                "to": "21:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-18",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-23",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-25",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/109be852-d14d-4ebb-aac2-902e12d94dd8",
+        "user": "https://api.calendly.com/users/2ecf67f3-8e47-433b-944b-53d256566694"
+      }
+    ]
+  },
+  {
+    "doctor_id": 4174,
+    "email": "albano.elena01@gmail.com",
+    "name": "Elena Albano",
+    "calendly_user_uri": "https://api.calendly.com/users/b7377d28-f0ea-4a4f-8eda-3c194260ed5c",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-06-15",
+            "intervals": [
+              {
+                "from": "13:00",
+                "to": "15:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-22",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "11:00"
+              },
+              {
+                "from": "14:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-06-29",
+            "intervals": [
+              {
+                "from": "14:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-06",
+            "intervals": [
+              {
+                "from": "10:00",
+                "to": "12:00"
+              },
+              {
+                "from": "14:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-13",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "14:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-20",
+            "intervals": [
+              {
+                "from": "11:30",
+                "to": "12:30"
+              },
+              {
+                "from": "14:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-07-27",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "12:00"
+              },
+              {
+                "from": "14:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-08-03",
+            "intervals": [
+              {
+                "from": "11:00",
+                "to": "12:00"
+              },
+              {
+                "from": "15:00",
+                "to": "17:00"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "date": "2026-08-10",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-17",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-24",
+            "intervals": []
+          },
+          {
+            "type": "date",
+            "date": "2026-08-31",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/3971cddb-41e4-4f12-9c08-42e8d6eec1ec",
+        "user": "https://api.calendly.com/users/b7377d28-f0ea-4a4f-8eda-3c194260ed5c"
+      }
+    ]
+  },
+  {
+    "doctor_id": 783,
+    "email": "studiopsicologia.malizia@gmail.com",
+    "name": "Genoveffa Malizia",
+    "calendly_user_uri": "https://api.calendly.com/users/abdce5b3-d8ab-45c0-9408-df5289019b39",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/af69b6bb-699a-4455-a35a-9b71790d5536",
+        "user": "https://api.calendly.com/users/abdce5b3-d8ab-45c0-9408-df5289019b39"
+      }
+    ]
+  },
+  {
+    "doctor_id": 7526,
+    "email": "carlottaconfuortopsicologa@gmail.com",
+    "name": "Carlotta Confuorto",
+    "calendly_user_uri": "https://api.calendly.com/users/741862a8-933c-47a7-b042-e3456bcaba72",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              },
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              },
+              {
+                "from": "13:00",
+                "to": "15:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              },
+              {
+                "from": "13:00",
+                "to": "18:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/d3a4d1b0-670f-42a6-aac2-ec75474d890c",
+        "user": "https://api.calendly.com/users/741862a8-933c-47a7-b042-e3456bcaba72"
+      }
+    ]
+  },
+  {
+    "doctor_id": 11654,
+    "email": "ilaria.guala@libero.it",
+    "name": "Ilaria Guala",
+    "calendly_user_uri": "https://api.calendly.com/users/4320c226-4893-4f3f-a2ed-0c84ede500e2",
+    "availability_schedules": [
+      {
+        "default": true,
+        "name": "Working hours",
+        "rules": [
+          {
+            "type": "wday",
+            "wday": "sunday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "monday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "tuesday",
+            "intervals": [
+              {
+                "from": "08:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "wednesday",
+            "intervals": [
+              {
+                "from": "10:00",
+                "to": "16:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "thursday",
+            "intervals": []
+          },
+          {
+            "type": "wday",
+            "wday": "friday",
+            "intervals": [
+              {
+                "from": "09:00",
+                "to": "13:00"
+              }
+            ]
+          },
+          {
+            "type": "wday",
+            "wday": "saturday",
+            "intervals": []
+          }
+        ],
+        "timezone": "Europe/Berlin",
+        "uri": "https://api.calendly.com/user_availability_schedules/ead5bc73-95b6-456d-8d6b-470d4271ada4",
+        "user": "https://api.calendly.com/users/4320c226-4893-4f3f-a2ed-0c84ede500e2"
+      }
+    ]
+  }
+]

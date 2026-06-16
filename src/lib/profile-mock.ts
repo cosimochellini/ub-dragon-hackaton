@@ -8,10 +8,11 @@ import type {
 } from './types'
 
 /**
- * Deterministic mock for the rich profile fields. Like `directory-mock`, this
- * is **pure** — every value is derived from the therapist's stable id via the
- * shared avalanche `hash` (no `Math.random`, no `Date.now`), so SSR markup and
- * client hydration agree and a given therapist always shows the same profile.
+ * Deterministic mock for the rich profile fields not present in the real data
+ * export (bio, orientation, topics, education, register no., …). It is **pure**
+ * — every value is derived from the therapist's stable id via the shared
+ * avalanche `hash` (no `Math.random`, no `Date.now`), so SSR markup and client
+ * hydration agree and a given therapist always shows the same profile.
  *
  * Production-swap point: replace `buildProfile` with the real profile fields
  * coming back from the API/DB.
@@ -167,7 +168,9 @@ export function buildProfile(
   const first = record.name.split(' ', 1)[0]
   const alboRegion = 'Lombardy'
   const alboNumber = String(1000 + (hash(seed * 7 + 1) % 9000))
-  const age = 30 + (hash(seed * 11 + 2) % 29) // 30–58
+  // Prefer the real age when the source provides one; otherwise derive a stable
+  // plausible age (30–58) from the seed.
+  const age = record.age ?? 30 + (hash(seed * 11 + 2) % 29)
   const expCap = Math.min(20, age - 25) // ≥5, keeps experience plausible vs age
   const yearsExperience = 3 + (hash(seed * 13 + 4) % Math.max(1, expCap - 2))
   const peopleHelped = 12 + (hash(seed * 19 + 5) % 238) // 12–249

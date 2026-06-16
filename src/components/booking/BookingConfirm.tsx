@@ -25,7 +25,12 @@ export function BookingConfirm({
   return (
     <div>
       <div className="mb-4 flex items-center gap-3">
-        <Avatar initials={t.initials} variant={t.avatar} size="md" />
+        <Avatar
+          initials={t.initials}
+          variant={t.avatar}
+          imageUrl={t.photoUrl}
+          size="md"
+        />
         <div>
           <div
             id="booking-sheet-title"

@@ -25,7 +25,12 @@ export function MapCard({
         aria-label={`View ${t.name}'s profile`}
         className="-m-1 flex items-center gap-[11px] rounded-[14px] p-1 transition-colors hover:bg-grey-50"
       >
-        <Avatar initials={t.initials} variant={t.avatar} size="md" />
+        <Avatar
+          initials={t.initials}
+          variant={t.avatar}
+          imageUrl={t.photoUrl}
+          size="md"
+        />
         <div className="min-w-0 flex-1">
           <div className="font-display text-[15.5px] font-bold leading-[1.1] text-grey-900">
             {t.name}
