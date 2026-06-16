@@ -30,8 +30,11 @@ function isStepValid(q: QuestionDef, value: unknown): boolean {
     }
     case 'number': {
       if (typeof value !== 'string' || value.trim() === '') return !q.required
-      const n = Number(value)
-      if (!Number.isInteger(n)) return false
+      const trimmed = value.trim()
+      // Plain digits only: rejects decimals and scientific notation (e.g. "1e2"),
+      // which `<input type=number>` allows but `parseInt` would silently mangle.
+      if (!/^\d+$/.test(trimmed)) return false
+      const n = Number(trimmed)
       if (q.min !== undefined && n < q.min) return false
       if (q.max !== undefined && n > q.max) return false
       return true

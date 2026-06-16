@@ -51,6 +51,18 @@ describe('Questionnaire', () => {
     expect(none).toHaveAttribute('aria-pressed', 'false')
   })
 
+  it('rejects a non-integer age', async () => {
+    const user = userEvent.setup()
+    render(<Questionnaire onComplete={vi.fn()} />)
+
+    await user.click(screen.getByRole('button', { name: 'Individual' }))
+    await user.click(ok())
+
+    const age = screen.getByRole('spinbutton')
+    await user.type(age, '12.5')
+    expect(ok()).toBeDisabled()
+  })
+
   it('walks every step and reports the assembled answers', async () => {
     const user = userEvent.setup()
     const onComplete = vi.fn<(a: OnboardingAnswers) => void>()

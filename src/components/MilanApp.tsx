@@ -7,6 +7,7 @@ import { MapCarousel } from './MapCarousel'
 import { BookingSheet } from './booking/BookingSheet'
 import { useBooking } from '@/hooks/useBooking'
 import { filterTherapists } from '@/lib/filter'
+import { ZONE_LABELS } from '@/lib/onboarding'
 import type { Zone } from '@/lib/onboarding'
 import type { GenderFilter, ServiceType, Studio, Therapist } from '@/lib/types'
 
@@ -54,18 +55,18 @@ export function MilanApp({
   const [view, setView] = useState<View>('list')
   const [service, setService] = useState<ServiceType>(initialService)
   const [gender, setGender] = useState<GenderFilter>(initialGender)
+  // The onboarding area starts as the (silent) pre-filter but is clearable, so
+  // a stranded combination (e.g. Couples in an area with no couples studios)
+  // isn't a dead end — the empty state offers "Show all areas".
+  const [zone, setZone] = useState<Zone | null>(initialZone)
   const [selectedMapId, setSelectedMapId] = useState<string | null>(
     therapists[0]?.id ?? null,
   )
   const { booking, booked, pick, confirm, closeSheet } = useBooking()
 
   const list = useMemo(
-    () =>
-      filterTherapists(therapists, service, gender, {
-        zone: initialZone,
-        studios,
-      }),
-    [therapists, service, gender, initialZone, studios],
+    () => filterTherapists(therapists, service, gender, { zone, studios }),
+    [therapists, service, gender, zone, studios],
   )
   const effectiveSelectedId = effectiveSelection(list, selectedMapId)
 
@@ -83,10 +84,12 @@ export function MilanApp({
       <div className="relative flex-1 overflow-hidden">
         {view === 'list' ? (
           <TherapistList
-            key={`${service}-${gender}-${initialZone ?? 'all'}`}
+            key={`${service}-${gender}-${zone ?? 'all'}`}
             list={list}
             studios={studios}
             onPick={pick}
+            areaLabel={zone ? ZONE_LABELS[zone] : undefined}
+            onClearArea={zone ? () => setZone(null) : undefined}
           />
         ) : (
           <>

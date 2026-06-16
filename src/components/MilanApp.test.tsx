@@ -52,6 +52,25 @@ describe('MilanApp booking flow', () => {
     expect(screen.getByText('4 found')).toBeInTheDocument()
   })
 
+  it('clears a stranding area pre-filter from the empty state', async () => {
+    const user = userEvent.setup()
+    // sw maps to areas none of the test studios use → empty for any selection.
+    renderWithRouter(
+      <MilanApp
+        therapists={testTherapists}
+        studios={testStudios}
+        initialZone="sw"
+      />,
+    )
+
+    expect(screen.getByText('0 found')).toBeInTheDocument()
+    expect(screen.getByText('No therapists match')).toBeInTheDocument()
+    expect(screen.getByText(/South-West/)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Show all areas' }))
+    expect(screen.getByText('6 found')).toBeInTheDocument()
+  })
+
   it('closes the sheet on Escape', async () => {
     const user = userEvent.setup()
     renderWithRouter(<MilanApp therapists={testTherapists} studios={testStudios} />)

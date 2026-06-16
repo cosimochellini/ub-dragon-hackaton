@@ -133,6 +133,14 @@ export function clearOnboarding(): void {
   }
 }
 
+/** Short, human-readable label per zone (for UI affordances). */
+export const ZONE_LABELS: Record<Zone, string> = {
+  sw: 'South-West',
+  ne: 'North-East',
+  se: 'South-East',
+  nw: 'North-West',
+}
+
 /** Milan-area buckets per zone, mapped onto the directory's studio areas. */
 export const ZONE_AREAS: Record<Zone, readonly string[]> = {
   sw: ['Navigli', 'Ticinese', 'San Siro', 'Washington'],

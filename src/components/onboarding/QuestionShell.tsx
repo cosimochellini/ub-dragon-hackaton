@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/Button'
 import type { ReactNode } from 'react'
 import type { QuestionDef } from './questions'
@@ -5,7 +6,7 @@ import type { QuestionDef } from './questions'
 /**
  * Chrome for a single questionnaire screen: progress bar, numbered title,
  * description, the answer control (passed as children), and the Back/Ok footer.
- * Submitting the form (Ok or Enter) advances via `onNext`.
+ * "Ok" (or Enter inside a field) advances via `onNext`.
  */
 export function QuestionShell({
   index,
@@ -28,6 +29,13 @@ export function QuestionShell({
 }) {
   const pct = Math.round(((index + 1) / total) * 100)
   const titleId = `onboarding-q-${question.id}`
+
+  // Move focus to the new question's heading on each step change so keyboard and
+  // screen-reader users follow the flow and hear the new question announced.
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  useEffect(() => {
+    headingRef.current?.focus()
+  }, [question.id])
 
   return (
     <div className="flex h-full flex-col bg-cream">
@@ -52,7 +60,9 @@ export function QuestionShell({
           </span>
           <h2
             id={titleId}
-            className="font-display text-[22px] font-bold leading-[1.18] tracking-[-0.01em] text-grey-900"
+            ref={headingRef}
+            tabIndex={-1}
+            className="font-display text-[22px] font-bold leading-[1.18] tracking-[-0.01em] text-grey-900 outline-none"
           >
             {question.title}
             {question.required ? (
