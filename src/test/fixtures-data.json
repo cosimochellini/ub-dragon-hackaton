@@ -3,7 +3,7 @@
     "ub_romana": {
       "id": "ub_romana",
       "type": "unobravo",
-      "name": "Unobravo studio",
+      "name": "Clinica Unobravo",
       "area": "Porta Romana",
       "map": { "x": 50, "y": 38 },
       "coords": { "lat": 45.4498, "lng": 9.203 }
