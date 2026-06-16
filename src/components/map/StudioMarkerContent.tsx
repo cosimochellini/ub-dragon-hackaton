@@ -58,10 +58,15 @@ export function StudioMarkerContent({
         className="relative"
         style={{ filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.18))' }}
       >
+        {/*
+          Initials only (no real photo) on purpose: the Leaflet map renders this
+          via `renderToStaticMarkup`, which strips React handlers — so Avatar's
+          `onError` photo→initials fallback can't run here and a 404 would leave
+          a broken image. The illustrated avatar always renders.
+        */}
         <Avatar
           initials={selected.initials}
           variant={selected.avatar}
-          imageUrl={selected.photoUrl}
           size={CENTER_PX.active}
         />
         {count > 1 ? (

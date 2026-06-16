@@ -32,16 +32,18 @@ export function Avatar({
 }: AvatarProps) {
   const px = typeof size === 'number' ? size : NAMED_SIZE[size]
   // The photo can 404 (S3) — fall back to the initials avatar on load error.
-  const [imageFailed, setImageFailed] = useState(false)
+  // Track the failed URL (not a boolean) so the latch resets automatically if
+  // the same Avatar instance is later reused with a different `imageUrl`.
+  const [failedUrl, setFailedUrl] = useState<string | null>(null)
 
-  if (imageUrl && !imageFailed) {
+  if (imageUrl && failedUrl !== imageUrl) {
     return (
       <img
         // Decorative: the therapist's name is always shown alongside the avatar.
         alt=""
         src={imageUrl}
         loading="lazy"
-        onError={() => setImageFailed(true)}
+        onError={() => setFailedUrl(imageUrl)}
         className={`shrink-0 rounded-full border border-[rgba(35,35,35,0.08)] object-cover ${className ?? ''}`}
         style={{ width: px, height: px, ...style }}
       />

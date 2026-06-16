@@ -55,7 +55,9 @@ function toMinutes(hhmm: string): number | null {
   if (!m) return null
   const h = Number(m[1])
   const min = Number(m[2])
-  if (h > 23 || min > 59) return null
+  // Accept "24:00" as end-of-day (1440), which Calendly emits for intervals
+  // that run to midnight; reject anything else out of range.
+  if (h > 24 || (h === 24 && min > 0) || min > 59) return null
   return h * 60 + min
 }
 

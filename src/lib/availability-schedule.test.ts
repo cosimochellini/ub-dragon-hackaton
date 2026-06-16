@@ -105,6 +105,21 @@ describe('resolveWeek', () => {
     expect(week[1]).toEqual([])
   })
 
+  it('treats a "24:00" interval end as midnight (end-of-day)', () => {
+    const week = resolveWeek(
+      entry([
+        {
+          default: true,
+          rules: [
+            { type: 'wday', wday: 'tuesday', intervals: [{ from: '22:00', to: '24:00' }] },
+          ],
+        },
+      ]),
+      REF,
+    )
+    expect(week[0]).toEqual(['22:00', '23:00'])
+  })
+
   it('uses the default schedule when several are present', () => {
     const week = resolveWeek(
       entry([
