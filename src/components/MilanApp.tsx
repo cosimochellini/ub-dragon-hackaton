@@ -136,7 +136,10 @@ export function MilanApp({
                 studios={studios}
                 selectedId={effectiveSelectedId}
                 onPick={pick}
-                focused={focusGroupIds != null}
+                // Drive the pill off whether the strip is actually narrowed, not
+                // raw focus state — so the stale-focus fallback in `focusedList`
+                // never shows a "Showing N of N" pill over an already-full list.
+                focused={focusedList.length < list.length}
                 totalCount={list.length}
                 onShowAll={() => setFocusGroupIds(null)}
               />
