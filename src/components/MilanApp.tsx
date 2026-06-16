@@ -7,6 +7,7 @@ import { MapCarousel } from './MapCarousel'
 import { BookingSheet } from './booking/BookingSheet'
 import { useBooking } from '@/hooks/useBooking'
 import { filterTherapists } from '@/lib/filter'
+import type { Zone } from '@/lib/onboarding'
 import type { GenderFilter, ServiceType, Studio, Therapist } from '@/lib/types'
 
 type View = 'list' | 'map'
@@ -34,21 +35,37 @@ function effectiveSelection(
 export function MilanApp({
   therapists,
   studios,
+  initialService = 'individual',
+  initialGender = 'any',
+  initialZone = null,
+  onEditPreferences,
 }: {
   therapists: Therapist[]
   studios: Record<string, Studio>
+  /** Pre-seed the visible Service filter (from onboarding). */
+  initialService?: ServiceType
+  /** Pre-seed the visible Gender filter (from onboarding). */
+  initialGender?: GenderFilter
+  /** Silent zone pre-filter (from onboarding); not user-editable here. */
+  initialZone?: Zone | null
+  /** Re-open the onboarding questionnaire, if mounted behind a gate. */
+  onEditPreferences?: () => void
 }) {
   const [view, setView] = useState<View>('list')
-  const [service, setService] = useState<ServiceType>('individual')
-  const [gender, setGender] = useState<GenderFilter>('any')
+  const [service, setService] = useState<ServiceType>(initialService)
+  const [gender, setGender] = useState<GenderFilter>(initialGender)
   const [selectedMapId, setSelectedMapId] = useState<string | null>(
     therapists[0]?.id ?? null,
   )
   const { booking, booked, pick, confirm, closeSheet } = useBooking()
 
   const list = useMemo(
-    () => filterTherapists(therapists, service, gender),
-    [therapists, service, gender],
+    () =>
+      filterTherapists(therapists, service, gender, {
+        zone: initialZone,
+        studios,
+      }),
+    [therapists, service, gender, initialZone, studios],
   )
   const effectiveSelectedId = effectiveSelection(list, selectedMapId)
 
@@ -60,12 +77,13 @@ export function MilanApp({
         gender={gender}
         setGender={setGender}
         count={list.length}
+        onEditPreferences={onEditPreferences}
       />
 
       <div className="relative flex-1 overflow-hidden">
         {view === 'list' ? (
           <TherapistList
-            key={`${service}-${gender}`}
+            key={`${service}-${gender}-${initialZone ?? 'all'}`}
             list={list}
             studios={studios}
             onPick={pick}
