@@ -112,14 +112,16 @@ export function MapCarousel({
         </button>
       ) : null}
 
-      <div className="relative w-[90%]">
+      {/* Arrows sit BESIDE the strip (not overlaid) so they never cover a card,
+          and the whole row is padded in from the frame so nothing overflows. */}
+      <div className="flex w-full items-center gap-1.5 px-2">
         {showArrows ? (
           <button
             type="button"
             onClick={() => scrollByCards(-1)}
             aria-disabled={edges.start}
             aria-label="Previous"
-            className={`absolute top-1/2 left-2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border-0 bg-white shadow-md transition-opacity ${
+            className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border-0 bg-white shadow-md transition-opacity ${
               edges.start ? 'cursor-default opacity-40' : 'cursor-pointer'
             }`}
           >
@@ -130,7 +132,7 @@ export function MapCarousel({
         <div
           ref={scrollerRef}
           onScroll={updateEdges}
-          className="no-sb flex gap-3 overflow-x-auto"
+          className="no-sb flex min-w-0 flex-1 gap-3 overflow-x-auto"
           style={{ scrollSnapType: 'x mandatory' }}
         >
           {list.map((t) => (
@@ -154,7 +156,7 @@ export function MapCarousel({
             onClick={() => scrollByCards(1)}
             aria-disabled={edges.end}
             aria-label="Next"
-            className={`absolute top-1/2 right-2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border-0 bg-white shadow-md transition-opacity ${
+            className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border-0 bg-white shadow-md transition-opacity ${
               edges.end ? 'cursor-default opacity-40' : 'cursor-pointer'
             }`}
           >
