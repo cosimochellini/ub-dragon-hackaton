@@ -64,8 +64,16 @@ export function MapCarousel({
     const sc = scrollerRef.current
     const el = cardElementsRef.current[selectedId]
     if (sc && el && typeof sc.scrollTo === 'function') {
+      // Align the card to the scroller's left edge using live rects, not
+      // `offsetLeft` (which is measured from the nearest positioned ancestor —
+      // the absolute column — so it would include the arrow/padding offset and
+      // over-scroll, letting a neighbouring card peek through).
+      const target =
+        sc.scrollLeft +
+        el.getBoundingClientRect().left -
+        sc.getBoundingClientRect().left
       sc.scrollTo({
-        left: el.offsetLeft,
+        left: Math.max(0, target),
         behavior: prefersReducedMotion() ? 'auto' : 'smooth',
       })
     }
