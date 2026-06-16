@@ -52,9 +52,9 @@ describe('MilanApp booking flow', () => {
     expect(screen.getByText('4 found')).toBeInTheDocument()
   })
 
-  it('clears a stranding area pre-filter from the empty state', async () => {
-    const user = userEvent.setup()
-    // sw maps to areas none of the test studios use → empty for any selection.
+  it('drops the area pre-filter when it would strand the first screen', async () => {
+    // sw maps to areas none of the test studios use → seeding it would show 0;
+    // the gate-equivalent fallback skips the zone so the screen isn't empty.
     renderWithRouter(
       <MilanApp
         therapists={testTherapists}
@@ -63,12 +63,29 @@ describe('MilanApp booking flow', () => {
       />,
     )
 
-    expect(screen.getByText('0 found')).toBeInTheDocument()
+    expect(screen.getByText('6 found')).toBeInTheDocument()
+    expect(screen.queryByText('No therapists match')).toBeNull()
+  })
+
+  it('clears the area filter from the empty state once a filter change empties it', async () => {
+    const user = userEvent.setup()
+    // nw = Brera (t2) + Isola (t4), both male, so it seeds fine for Individual +
+    // Any, then empties when the user switches Gender to Female.
+    renderWithRouter(
+      <MilanApp
+        therapists={testTherapists}
+        studios={testStudios}
+        initialZone="nw"
+      />,
+    )
+    expect(screen.getByText('2 found')).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Female' }))
     expect(screen.getByText('No therapists match')).toBeInTheDocument()
-    expect(screen.getByText(/South-West/)).toBeInTheDocument()
+    expect(screen.getByText(/North-West/)).toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: 'Show all areas' }))
-    expect(screen.getByText('6 found')).toBeInTheDocument()
+    expect(screen.getByText('3 found')).toBeInTheDocument()
   })
 
   it('closes the sheet on Escape', async () => {
