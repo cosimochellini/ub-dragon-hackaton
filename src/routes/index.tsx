@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { therapistsQueryOptions } from '@/query/therapists'
 import { PhoneFrame } from '@/components/shell/PhoneFrame'
-import { MilanApp } from '@/components/MilanApp'
+import { OnboardingGate } from '@/components/onboarding/OnboardingGate'
 import { SITE_URL } from '@/lib/site'
 
 export const Route = createFileRoute('/')({
@@ -18,7 +18,7 @@ function Home() {
   const { data } = useSuspenseQuery(therapistsQueryOptions())
   return (
     <PhoneFrame>
-      <MilanApp therapists={data.therapists} studios={data.studios} />
+      <OnboardingGate therapists={data.therapists} studios={data.studios} />
     </PhoneFrame>
   )
 }

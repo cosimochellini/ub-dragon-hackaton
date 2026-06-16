@@ -18,12 +18,15 @@ export function Header({
   gender,
   setGender,
   count,
+  onEditPreferences,
 }: {
   service: ServiceType
   setService: (s: ServiceType) => void
   gender: GenderFilter
   setGender: (g: GenderFilter) => void
   count: number
+  /** When provided, shows an "Edit preferences" control to re-run onboarding. */
+  onEditPreferences?: () => void
 }) {
   return (
     <div className="z-[6] flex-none border-b border-grey-200 bg-white pt-[max(14px,env(safe-area-inset-top))]">
@@ -33,9 +36,20 @@ export function Header({
           alt="Unobravo"
           className="block h-[15px]"
         />
-        <div className="flex items-center gap-1.5 text-[11.5px] font-medium text-grey-600">
-          <Icon name="pin-filled" size={14} color="var(--color-candy-600)" />
-          Milan
+        <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-1.5 text-[11.5px] font-medium text-grey-600">
+            <Icon name="pin-filled" size={14} color="var(--color-candy-600)" />
+            Milan
+          </div>
+          {onEditPreferences ? (
+            <button
+              type="button"
+              onClick={onEditPreferences}
+              className="cursor-pointer rounded-full px-2 py-1 text-[11.5px] font-semibold text-candy-600 transition-colors hover:bg-candy-50"
+            >
+              Edit preferences
+            </button>
+          ) : null}
         </div>
       </div>
 

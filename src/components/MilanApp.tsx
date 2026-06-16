@@ -34,13 +34,22 @@ function effectiveSelection(
 export function MilanApp({
   therapists,
   studios,
+  initialService = 'individual',
+  initialGender = 'any',
+  onEditPreferences,
 }: {
   therapists: Therapist[]
   studios: Record<string, Studio>
+  /** Pre-seed the visible Service filter (from onboarding). */
+  initialService?: ServiceType
+  /** Pre-seed the visible Gender filter (from onboarding). */
+  initialGender?: GenderFilter
+  /** Re-open the onboarding questionnaire, if mounted behind a gate. */
+  onEditPreferences?: () => void
 }) {
   const [view, setView] = useState<View>('list')
-  const [service, setService] = useState<ServiceType>('individual')
-  const [gender, setGender] = useState<GenderFilter>('any')
+  const [service, setService] = useState<ServiceType>(initialService)
+  const [gender, setGender] = useState<GenderFilter>(initialGender)
   const [selectedMapId, setSelectedMapId] = useState<string | null>(
     therapists[0]?.id ?? null,
   )
@@ -60,6 +69,7 @@ export function MilanApp({
         gender={gender}
         setGender={setGender}
         count={list.length}
+        onEditPreferences={onEditPreferences}
       />
 
       <div className="relative flex-1 overflow-hidden">
