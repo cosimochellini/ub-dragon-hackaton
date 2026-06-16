@@ -106,7 +106,7 @@ function buttonIcon(content: ReactNode, label: string, size: number) {
 function studioMarker(
   g: StudioGroup,
   selectedId: string | null,
-  onSelect: (id: string) => void,
+  onSelect: (id: string, groupTherapistIds?: string[]) => void,
 ) {
   const { studio, therapists: members } = g
   const count = members.length
@@ -126,7 +126,13 @@ function studioMarker(
       keyboard={false}
       zIndexOffset={active ? 1000 : 0}
       eventHandlers={{
-        click: () => onSelect(selectedTherapistOf(g, selectedId).id),
+        // Pass every therapist in the studio so a multi-therapist pin focuses
+        // the carousel on its group; a single-therapist pin sends one id.
+        click: () =>
+          onSelect(
+            selectedTherapistOf(g, selectedId).id,
+            members.map((t) => t.id),
+          ),
       }}
     />
   )
@@ -146,7 +152,7 @@ function ClusterLayer({
 }: {
   groups: StudioGroup[]
   selectedId: string | null
-  onSelect: (id: string) => void
+  onSelect: (id: string, groupTherapistIds?: string[]) => void
 }) {
   const map = useMap()
   const [zoom, setZoom] = useState(() => map.getZoom())
@@ -172,20 +178,26 @@ function ClusterLayer({
     [groups, map, zoom],
   )
 
-  // Expand a cluster on click: zoom in toward it. Once we can't zoom further
-  // (studios share near-identical coords), fall back to selecting a member so
-  // the click — and keyboard activation — is never a dead no-op.
+  // Click a cluster: focus the carousel on every therapist behind it (selecting
+  // the first), then zoom in toward it to spread its pins. Once we can't zoom
+  // further (studios share near-identical coords) the focus alone keeps the
+  // click — and keyboard activation — from being a dead no-op.
   const expandOrSelect = useCallback(
     (cluster: MapCluster) => {
-      if (map.getZoom() >= EXPAND_MAX_ZOOM) {
-        onSelect(cluster.groups[0].therapists[0].id)
-        return
-      }
+      const ids = cluster.groups.flatMap((g) =>
+        g.therapists.map((t) => t.id),
+      )
+      onSelect(ids[0], ids)
+      if (map.getZoom() >= EXPAND_MAX_ZOOM) return
       const reduceMotion = globalThis.matchMedia(
         '(prefers-reduced-motion: reduce)',
       ).matches
       const targetZoom = Math.min(map.getZoom() + 2, EXPAND_MAX_ZOOM)
-      map.setView([cluster.lat, cluster.lng], targetZoom, {
+      // Center on the selected member's studio (not the centroid) so the
+      // follow-up RecenterOnSelect pan to that studio lands on the same point,
+      // avoiding a visible zoom-then-pan double move.
+      const focus = cluster.groups[0].studio.coords
+      map.setView([focus.lat, focus.lng], targetZoom, {
         animate: !reduceMotion,
       })
     },

@@ -9,7 +9,7 @@ export function StudioCircle({
 }: {
   group: StudioGroup
   selectedId: string | null
-  onSelect: (id: string) => void
+  onSelect: (id: string, groupTherapistIds?: string[]) => void
 }) {
   const { studio, therapists } = group
   const count = therapists.length
@@ -19,7 +19,12 @@ export function StudioCircle({
   return (
     <button
       type="button"
-      onClick={() => onSelect(selected.id)}
+      onClick={() =>
+        onSelect(
+          selected.id,
+          therapists.map((t) => t.id),
+        )
+      }
       aria-label={`${isUnobravo ? 'Clinica Unobravo' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`}
       className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer border-0 bg-transparent p-0"
       style={{

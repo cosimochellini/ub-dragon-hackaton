@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Header } from './shell/Header'
 import { FloatingToggle } from './shell/FloatingToggle'
 import { TherapistList } from './therapist/TherapistList'
@@ -53,6 +53,9 @@ export function MilanApp({
   const [selectedMapId, setSelectedMapId] = useState<string | null>(
     therapists[0]?.id ?? null,
   )
+  // The therapists behind the tapped map group (cluster or multi-therapist
+  // studio). When set, the carousel narrows to them; `null` shows the full list.
+  const [focusGroupIds, setFocusGroupIds] = useState<string[] | null>(null)
   const { booking, booked, pick, confirm, closeSheet } = useBooking()
 
   const list = useMemo(
@@ -61,13 +64,48 @@ export function MilanApp({
   )
   const effectiveSelectedId = effectiveSelection(list, selectedMapId)
 
+  // A map tap selects a therapist and, when the pin stands for more than one,
+  // focuses the carousel on that group. A lone pin (≤1 id) clears the focus so
+  // the full list returns.
+  const handleSelect = useCallback(
+    (id: string, groupTherapistIds?: string[]) => {
+      setSelectedMapId(id)
+      setFocusGroupIds(
+        groupTherapistIds && groupTherapistIds.length > 1
+          ? groupTherapistIds
+          : null,
+      )
+    },
+    [],
+  )
+
+  // The carousel's list: the focused group when one is set, otherwise the whole
+  // filtered list. Guard against a stale focus that no longer intersects the
+  // list (resets below should prevent it, but never render an empty strip).
+  const focusedList = useMemo(() => {
+    if (!focusGroupIds) return list
+    const set = new Set(focusGroupIds)
+    const sub = list.filter((t) => set.has(t.id))
+    return sub.length > 0 ? sub : list
+  }, [list, focusGroupIds])
+
+  // Changing a filter (or switching to the list) abandons the group focus.
+  const changeService = useCallback((s: ServiceType) => {
+    setService(s)
+    setFocusGroupIds(null)
+  }, [])
+  const changeGender = useCallback((g: GenderFilter) => {
+    setGender(g)
+    setFocusGroupIds(null)
+  }, [])
+
   return (
     <div className="relative flex h-full flex-col overflow-hidden bg-white">
       <Header
         service={service}
-        setService={setService}
+        setService={changeService}
         gender={gender}
-        setGender={setGender}
+        setGender={changeGender}
         count={list.length}
         onEditPreferences={onEditPreferences}
       />
@@ -86,14 +124,21 @@ export function MilanApp({
               therapists={list}
               studios={studios}
               selectedId={effectiveSelectedId}
-              onSelect={setSelectedMapId}
+              onSelect={handleSelect}
             />
             {list.length > 0 ? (
               <MapCarousel
-                list={list}
+                // Remount per focus group so the strip resets to its first card
+                // (and the arrow states reset) when the focus changes — no
+                // syncing effect, matching the TherapistList pattern.
+                key={focusGroupIds ? focusGroupIds.join('|') : 'all'}
+                list={focusedList}
                 studios={studios}
                 selectedId={effectiveSelectedId}
                 onPick={pick}
+                focused={focusGroupIds != null}
+                totalCount={list.length}
+                onShowAll={() => setFocusGroupIds(null)}
               />
             ) : null}
           </>
@@ -102,7 +147,10 @@ export function MilanApp({
 
       <FloatingToggle
         view={view}
-        onToggle={() => setView((v) => (v === 'list' ? 'map' : 'list'))}
+        onToggle={() => {
+          setView((v) => (v === 'list' ? 'map' : 'list'))
+          setFocusGroupIds(null)
+        }}
       />
       <BookingSheet
         booking={booking}
