@@ -113,7 +113,7 @@ function studioMarker(
   const active = members.some((t) => t.id === selectedId)
   const isUnobravo = studio.type === 'unobravo'
   const size = studioMarkerSize(g, selectedId)
-  const label = `${isUnobravo ? 'Unobravo studio' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`
+  const label = `${isUnobravo ? 'Clinica Unobravo' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`
   return (
     <Marker
       key={studio.id}

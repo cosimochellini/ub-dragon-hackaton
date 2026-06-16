@@ -20,7 +20,7 @@ export function StudioCircle({
     <button
       type="button"
       onClick={() => onSelect(selected.id)}
-      aria-label={`${isUnobravo ? 'Unobravo studio' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`}
+      aria-label={`${isUnobravo ? 'Clinica Unobravo' : 'Private studio'} in ${studio.area} — ${count} therapist${count > 1 ? 's' : ''}`}
       className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer border-0 bg-transparent p-0"
       style={{
         left: `${studio.map.x}%`,

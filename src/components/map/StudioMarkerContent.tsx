@@ -123,7 +123,7 @@ export function StudioMarkerContent({
         }}
       >
         <Icon name={isUnobravo ? 'office' : 'pin-empty'} size={11} />
-        {isUnobravo ? 'Unobravo studio' : studio.area}
+        {isUnobravo ? 'Clinica Unobravo' : studio.area}
       </div>
     </div>
   )
