@@ -65,7 +65,7 @@ export function MapCarousel({
     const el = cardElementsRef.current[selectedId]
     if (sc && el && typeof sc.scrollTo === 'function') {
       sc.scrollTo({
-        left: Math.max(0, el.offsetLeft - 18),
+        left: el.offsetLeft,
         behavior: prefersReducedMotion() ? 'auto' : 'smooth',
       })
     }
@@ -112,7 +112,7 @@ export function MapCarousel({
         </button>
       ) : null}
 
-      <div className="relative w-full">
+      <div className="relative w-[90%]">
         {showArrows ? (
           <button
             type="button"
@@ -130,7 +130,7 @@ export function MapCarousel({
         <div
           ref={scrollerRef}
           onScroll={updateEdges}
-          className="no-sb flex gap-3 overflow-x-auto px-[18px]"
+          className="no-sb flex gap-3 overflow-x-auto"
           style={{ scrollSnapType: 'x mandatory' }}
         >
           {list.map((t) => (
@@ -140,7 +140,7 @@ export function MapCarousel({
               ref={(el) => {
                 cardElementsRef.current[t.id] = el
               }}
-              className="shrink-0 basis-[90%]"
+              className="shrink-0 basis-full"
               style={{ scrollSnapAlign: 'start' }}
             >
               <MapCard t={t} studios={studios} onPick={onPick} />
