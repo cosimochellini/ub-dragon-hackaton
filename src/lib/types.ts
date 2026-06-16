@@ -13,7 +13,7 @@ export interface Studio {
   area: string
   /** Position on the stylized map, in percentages (0–100). */
   map: { x: number; y: number }
-  /** Real-world location for the Leaflet map (approximate neighborhood centroid). */
+  /** Real-world location for the Leaflet map (the studio's exact coordinates). */
   coords: { lat: number; lng: number }
 }
 

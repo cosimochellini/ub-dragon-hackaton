@@ -61,6 +61,7 @@ export function StudioMarkerContent({
         <Avatar
           initials={selected.initials}
           variant={selected.avatar}
+          imageUrl={selected.photoUrl}
           size={CENTER_PX.active}
         />
         {count > 1 ? (
