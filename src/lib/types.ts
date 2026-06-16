@@ -17,7 +17,7 @@ export interface Studio {
   coords: { lat: number; lng: number }
 }
 
-/** Raw therapist as stored in the mock JSON (production-swap point). */
+/** Raw therapist as stored in the JSON source (production-swap point). */
 export interface TherapistRecord {
   id: string
   name: string
@@ -26,7 +26,12 @@ export interface TherapistRecord {
   gender: Gender
   services: ServiceType[]
   studio: string
+  /** Illustrated fallback avatar (used when `photoUrl` is absent or fails). */
   avatar: AvatarVariant
+  /** Real profile photo, when available; falls back to the initials avatar. */
+  photoUrl?: string
+  /** Real age, when known; otherwise derived deterministically in the profile. */
+  age?: number
   /** 7 entries (dayOffset 0..6 from "today"), each a list of "HH:MM" slots. */
   availability: string[][]
 }

@@ -19,23 +19,33 @@ const MONTHS = [
 const DAY_MS = 24 * 60 * 60 * 1000
 
 /**
+ * The 7 day anchors (offsets 0..6 from "today" in Rome) as `Date`s at noon UTC
+ * on each Rome calendar day. Built once so any caller mapping availability onto
+ * the next week — `buildDays` here and the Calendly schedule resolver — reads
+ * the *same* calendar dates/weekdays and can never drift apart.
+ *
+ * Noon-UTC anchoring means adding whole days never crosses a DST boundary into
+ * the wrong calendar date; UTC getters then read back the intended day/weekday
+ * deterministically. `referenceDate` is injectable so output stays pure.
+ */
+export function weekAnchors(referenceDate: Date = new Date()): Date[] {
+  const { year, month, day } = romeDayParts(referenceDate)
+  const anchorMs = Date.UTC(year, month - 1, day, 12, 0, 0)
+  return Array.from({ length: 7 }, (_, i) => new Date(anchorMs + i * DAY_MS))
+}
+
+/**
  * Resolve a 7-entry availability pattern (dayOffset 0..6) into concrete `Day`s
  * relative to `referenceDate` ("today" in Rome).
- *
- * The anchor is built at noon UTC on the Rome calendar day, so adding whole
- * days never crosses a DST boundary into the wrong calendar date; UTC getters
- * then read back the intended day/weekday deterministically. `referenceDate`
- * is injectable so the output is pure and testable.
  */
 export function buildDays(
   pattern: string[][],
   referenceDate: Date = new Date(),
 ): Day[] {
-  const { year, month, day } = romeDayParts(referenceDate)
-  const anchorMs = Date.UTC(year, month - 1, day, 12, 0, 0)
+  const anchors = weekAnchors(referenceDate)
 
   return pattern.map((slots, i) => {
-    const d = new Date(anchorMs + i * DAY_MS)
+    const d = anchors[i]
     const dow = WEEKDAYS[d.getUTCDay()]
     const dayNum = d.getUTCDate()
     const monthAbbr = MONTHS[d.getUTCMonth()]

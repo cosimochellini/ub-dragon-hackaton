@@ -18,7 +18,10 @@ export function DayStrip({ t, onPick }: { t: Therapist; onPick: PickHandler }) {
   })
   const day = t.days.at(activeIndex) ?? t.days.at(0)
 
-  if (!day) {
+  // Real calendars can be fully booked for the week; show a clear message
+  // rather than a strip of disabled days.
+  const hasAnySlot = t.days.some((d) => d.slots.length > 0)
+  if (!day || !hasAnySlot) {
     return (
       <span className="text-[12.5px] text-grey-500">
         No availability this week.

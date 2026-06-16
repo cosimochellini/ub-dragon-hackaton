@@ -20,7 +20,12 @@ export function CardHead({ t }: { t: Therapist }) {
       aria-label={`View ${t.name}'s profile`}
       className="-m-1 flex items-start gap-3 rounded-[16px] p-1 transition-colors hover:bg-grey-50"
     >
-      <Avatar initials={t.initials} variant={t.avatar} size="lg" />
+      <Avatar
+        initials={t.initials}
+        variant={t.avatar}
+        imageUrl={t.photoUrl}
+        size="lg"
+      />
       <div className="min-w-0 flex-1">
         <div className="font-display text-[17px] font-bold leading-[1.15] tracking-[-0.01em] text-grey-900">
           {t.name}

@@ -7,7 +7,12 @@ export function ProfileHeader({ t }: { t: Therapist }) {
   const { profile } = t
   return (
     <div className="flex flex-col items-start gap-3">
-      <Avatar initials={t.initials} variant={t.avatar} size="xl" />
+      <Avatar
+        initials={t.initials}
+        variant={t.avatar}
+        imageUrl={t.photoUrl}
+        size="xl"
+      />
       <div>
         <h1 className="font-display text-[22px] font-bold leading-[1.15] tracking-[-0.01em] text-grey-900">
           {t.name}
