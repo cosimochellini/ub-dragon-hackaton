@@ -44,5 +44,18 @@ describe('OnboardingGate', () => {
       await screen.findByRole('button', { name: 'Edit preferences' }),
     ).toBeInTheDocument()
     expect(screen.getByText('Therapists in Milan')).toBeInTheDocument()
+
+    // Saved answers pre-seed the visible filter chips…
+    expect(screen.getByRole('button', { name: 'Couples' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
+    expect(screen.getByRole('button', { name: 'Female' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
+    // …and the silent zone (se → Porta Romana) is applied: couples + female in
+    // se = Sara (t1) + Giulia (t3).
+    expect(screen.getByText('2 found')).toBeInTheDocument()
   })
 })
