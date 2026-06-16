@@ -23,15 +23,10 @@ export function TherapistList({
   list,
   studios,
   onPick,
-  areaLabel,
-  onClearArea,
 }: {
   list: Therapist[]
   studios: Record<string, Studio>
   onPick: PickHandler
-  /** When set, the empty state names this area and offers to clear it. */
-  areaLabel?: string
-  onClearArea?: () => void
 }) {
   const [visible, setVisible] = useState(INITIAL)
   const scrollRef = useRef<HTMLDivElement | null>(null)
@@ -74,7 +69,7 @@ export function TherapistList({
       className="no-sb h-full overflow-y-auto px-[18px] pt-3.5 pb-[120px]"
     >
       {total === 0 ? (
-        <EmptyState areaLabel={areaLabel} onClearArea={onClearArea} />
+        <EmptyState />
       ) : (
         <div className="flex flex-col gap-3.5">
           {list.slice(0, shown).map((t) => (

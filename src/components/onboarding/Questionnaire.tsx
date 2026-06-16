@@ -11,7 +11,6 @@ import type {
   PathChoice,
   PriorTherapyChoice,
   ReasonChoice,
-  Zone,
 } from '@/lib/onboarding'
 
 type Draft = Record<string, unknown>
@@ -70,7 +69,6 @@ function assembleAnswers(draft: Draft): OnboardingAnswers {
     duration: draft.duration as DurationChoice,
     priorTherapy: prior,
     city: draft.city as CityChoice,
-    zone: draft.zone as Zone,
     genderPref: draft.genderPref as GenderPrefChoice,
   }
 }

@@ -113,29 +113,6 @@ export const QUESTIONS: QuestionDef[] = [
     options: [{ id: 'milan', label: 'Milan' }],
   },
   {
-    id: 'zone',
-    type: 'single',
-    required: true,
-    title: 'Which area of Milan would you like for in-person sessions?',
-    options: [
-      {
-        id: 'sw',
-        label: "South-West (Pagano, Famagosta, Sant'Ambrogio, Bande Nere, Navigli)",
-      },
-      {
-        id: 'ne',
-        label:
-          'North-East (Caiazzo, Repubblica, Porta Venezia, Maggiolina, Loreto, Argonne, Città Studi)',
-      },
-      {
-        id: 'se',
-        label:
-          'South-East (Città Studi, Loreto, Argonne, Porta Venezia, Porta Romana, Calvairate)',
-      },
-      { id: 'nw', label: 'North-West (Wagner, Sempione, Affori)' },
-    ],
-  },
-  {
     id: 'genderPref',
     type: 'single',
     required: true,

@@ -4,7 +4,6 @@ import {
   answersToFilters,
   clearOnboarding,
   loadOnboarding,
-  matchesZone,
   saveOnboarding,
 } from './onboarding'
 import type { OnboardingAnswers } from './onboarding'
@@ -17,7 +16,6 @@ const sample: OnboardingAnswers = {
   duration: 'one_year',
   priorTherapy: 'first',
   city: 'milan',
-  zone: 'se',
   genderPref: 'female',
 }
 
@@ -57,18 +55,17 @@ describe('onboarding storage', () => {
   it('discards answers that fail validation', () => {
     globalThis.localStorage.setItem(
       ONBOARDING_STORAGE_KEY,
-      JSON.stringify({ version: 1, answers: { ...sample, zone: 'nowhere' } }),
+      JSON.stringify({ version: 1, answers: { ...sample, path: 'nope' } }),
     )
     expect(loadOnboarding()).toBeNull()
   })
 })
 
 describe('answersToFilters', () => {
-  it('maps couples + female + zone', () => {
+  it('maps couples + female', () => {
     expect(answersToFilters(sample)).toEqual({
       service: 'couples',
       gender: 'female',
-      zone: 'se',
     })
   })
 
@@ -83,17 +80,5 @@ describe('answersToFilters', () => {
       'male',
     )
     expect(answersToFilters({ ...sample, genderPref: 'any' }).gender).toBe('any')
-  })
-})
-
-describe('matchesZone', () => {
-  it('matches areas inside the zone', () => {
-    expect(matchesZone('Brera', 'nw')).toBe(true)
-    expect(matchesZone('Navigli', 'sw')).toBe(true)
-  })
-
-  it('rejects areas outside the zone', () => {
-    expect(matchesZone('Brera', 'sw')).toBe(false)
-    expect(matchesZone('Unknown', 'ne')).toBe(false)
   })
 })

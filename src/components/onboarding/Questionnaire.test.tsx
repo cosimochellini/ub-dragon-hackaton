@@ -93,10 +93,7 @@ describe('Questionnaire', () => {
     // 7 city
     await user.click(screen.getByRole('button', { name: 'Milan' }))
     await user.click(ok())
-    // 8 zone
-    await user.click(screen.getByRole('button', { name: /South-East/ }))
-    await user.click(ok())
-    // 9 gender preference
+    // 8 gender preference
     await user.click(screen.getByRole('button', { name: 'Woman' }))
     await user.click(ok())
 
@@ -109,7 +106,6 @@ describe('Questionnaire', () => {
       duration: 'one_year',
       priorTherapy: 'first',
       city: 'milan',
-      zone: 'se',
       genderPref: 'female',
     })
   })

@@ -87,7 +87,6 @@ export function OnboardingGate({
       studios={studios}
       initialService={filters?.service}
       initialGender={filters?.gender}
-      initialZone={filters?.zone ?? null}
       onEditPreferences={() => {
         clearOnboarding()
         setState({ status: 'questionnaire', answers: null })

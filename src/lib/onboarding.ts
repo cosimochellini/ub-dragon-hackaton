@@ -22,7 +22,6 @@ export type DurationChoice =
   | 'unsure'
 export type PriorTherapyChoice = 'past' | 'current' | 'first'
 export type CityChoice = 'milan'
-export type Zone = 'sw' | 'ne' | 'se' | 'nw'
 export type GenderPrefChoice = 'female' | 'male' | 'any'
 
 /** The full set of questionnaire answers we persist for a user. */
@@ -36,7 +35,6 @@ export interface OnboardingAnswers {
   duration: DurationChoice
   priorTherapy?: PriorTherapyChoice
   city: CityChoice
-  zone: Zone
   genderPref: GenderPrefChoice
 }
 
@@ -67,7 +65,6 @@ const DURATIONS = new Set<DurationChoice>([
   'unsure',
 ])
 const PRIOR_THERAPY = new Set<PriorTherapyChoice>(['past', 'current', 'first'])
-const ZONES = new Set<Zone>(['sw', 'ne', 'se', 'nw'])
 const GENDER_PREFS = new Set<GenderPrefChoice>(['female', 'male', 'any'])
 
 function isAnswers(value: unknown): value is OnboardingAnswers {
@@ -84,7 +81,6 @@ function isAnswers(value: unknown): value is OnboardingAnswers {
     (a.priorTherapy === undefined ||
       PRIOR_THERAPY.has(a.priorTherapy as PriorTherapyChoice)) &&
     a.city === 'milan' &&
-    ZONES.has(a.zone as Zone) &&
     GENDER_PREFS.has(a.genderPref as GenderPrefChoice)
   )
 }
@@ -133,37 +129,15 @@ export function clearOnboarding(): void {
   }
 }
 
-/** Short, human-readable label per zone (for UI affordances). */
-export const ZONE_LABELS: Record<Zone, string> = {
-  sw: 'South-West',
-  ne: 'North-East',
-  se: 'South-East',
-  nw: 'North-West',
-}
-
-/** Milan-area buckets per zone, mapped onto the directory's studio areas. */
-export const ZONE_AREAS: Record<Zone, readonly string[]> = {
-  sw: ['Navigli', 'Ticinese', 'San Siro', 'Washington'],
-  ne: ['Porta Venezia', 'Loreto', 'Città Studi', 'Centrale', 'Bicocca'],
-  se: ['Porta Romana', 'Città Studi', 'Lambrate', 'Loreto'],
-  nw: ['Sempione', 'Brera', 'Garibaldi', 'Isola'],
-}
-
-/** Whether a studio `area` falls inside the selected `zone`. */
-export function matchesZone(area: string, zone: Zone): boolean {
-  return ZONE_AREAS[zone].includes(area)
-}
-
 export interface OnboardingFilters {
   service: ServiceType
   gender: GenderFilter
-  zone: Zone
 }
 
 /**
- * Map questionnaire answers onto the directory's filter dimensions. Only three
- * answers drive the (fictitious) filtering: `path`→service, `genderPref`→gender,
- * `zone`→studio area. Everything else is stored for demo/context only.
+ * Map questionnaire answers onto the directory's filter dimensions. Only two
+ * answers drive the (fictitious) filtering: `path`→service and
+ * `genderPref`→gender. Everything else is stored for demo/context only.
  */
 export function answersToFilters(answers: OnboardingAnswers): OnboardingFilters {
   return {
@@ -174,6 +148,5 @@ export function answersToFilters(answers: OnboardingAnswers): OnboardingFilters 
         : answers.genderPref === 'male'
           ? 'male'
           : 'any',
-    zone: answers.zone,
   }
 }

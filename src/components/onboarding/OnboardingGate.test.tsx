@@ -12,7 +12,6 @@ const sample: OnboardingAnswers = {
   reasons: ['anxiety'],
   duration: 'one_year',
   city: 'milan',
-  zone: 'se',
   genderPref: 'female',
 }
 
@@ -54,8 +53,8 @@ describe('OnboardingGate', () => {
       'aria-pressed',
       'true',
     )
-    // …and the silent zone (se → Porta Romana) is applied: couples + female in
-    // se = Sara (t1) + Giulia (t3).
+    // …and the filtered count reflects them: couples + female = Sara (t1) +
+    // Giulia (t3).
     expect(screen.getByText('2 found')).toBeInTheDocument()
   })
 })
