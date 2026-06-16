@@ -86,7 +86,8 @@ PR on `lint` + `typecheck` + `test`.
 ## Architecture
 
 - `src/data/therapists.json` — **mock data** (4 studios, 6 therapists). Availability
-  is stored as a 7‑day offset pattern (`dayOffset 0..6 → ["HH:MM", …]`). **This is
+  is stored as a 7‑day offset pattern (`dayOffset 1..7 → ["HH:MM", …]`, starting
+  tomorrow — same‑day booking is excluded). **This is
   the production‑swap point** — replace the read in `src/lib/therapists-data.ts`
   with a real API/DB call returning the same `DirectoryData` shape.
 - `src/lib/therapists-data.ts` — a TanStack Start `createServerFn` that reads the

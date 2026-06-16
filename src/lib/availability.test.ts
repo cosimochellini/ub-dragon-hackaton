@@ -4,7 +4,7 @@ import { buildProfile } from './profile-mock'
 import type { Therapist, TherapistRecord } from './types'
 
 const PATTERN = [['09:00'], [], ['10:00', '11:00'], [], [], [], []]
-// Thu 11 Jun 2026, 09:00 Rome time.
+// Thu 11 Jun 2026, 09:00 Rome time — the window starts the next day, Fri 12 Jun.
 const REF = new Date('2026-06-11T09:00:00+02:00')
 
 describe('buildDays', () => {
@@ -14,22 +14,22 @@ describe('buildDays', () => {
     expect(days).toHaveLength(7)
   })
 
-  it('labels the first two days Today / Tomorrow', () => {
-    expect(days[0].label).toBe('Today')
-    expect(days[1].label).toBe('Tomorrow')
+  it('labels the first day Tomorrow', () => {
+    expect(days[0].label).toBe('Tomorrow')
+    expect(days[1].label).toBe('Sat')
   })
 
   it('labels later days by weekday', () => {
-    expect(days[2].label).toBe('Sat')
-    expect(days[2].dow).toBe('Sat')
+    expect(days[2].label).toBe('Sun')
+    expect(days[2].dow).toBe('Sun')
   })
 
   it('computes day, month and composed dateLabel', () => {
-    expect(days[0].day).toBe(11)
+    expect(days[0].day).toBe(12)
     expect(days[0].month).toBe('Jun')
-    expect(days[0].dateLabel).toBe('Thu 11 Jun')
-    expect(days[1].dateLabel).toBe('Fri 12 Jun')
-    expect(days[2].dateLabel).toBe('Sat 13 Jun')
+    expect(days[0].dateLabel).toBe('Fri 12 Jun')
+    expect(days[1].dateLabel).toBe('Sat 13 Jun')
+    expect(days[2].dateLabel).toBe('Sun 14 Jun')
   })
 
   it('carries slots through unchanged', () => {
@@ -43,11 +43,12 @@ describe('buildDays', () => {
   })
 
   it('resolves the Rome calendar day near midnight UTC (no off-by-one)', () => {
-    // 23:30 UTC on 11 Jun is 01:30 on 12 Jun in Rome (CEST, +2).
+    // 23:30 UTC on 11 Jun is 01:30 on 12 Jun in Rome (CEST, +2); the window then
+    // starts the next day, 13 Jun.
     const lateUtc = new Date('2026-06-11T23:30:00Z')
     const d = buildDays(PATTERN, lateUtc)
-    expect(d[0].day).toBe(12)
-    expect(d[0].dateLabel).toBe('Fri 12 Jun')
+    expect(d[0].day).toBe(13)
+    expect(d[0].dateLabel).toBe('Sat 13 Jun')
   })
 })
 

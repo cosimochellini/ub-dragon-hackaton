@@ -1,5 +1,6 @@
 // Resolve a Calendly-style availability export into the directory's 7-day,
-// offset-indexed slot pattern (`string[][]`, dayOffset 0..6 from "today").
+// offset-indexed slot pattern (`string[][]`, dayOffset 1..7 — the window starts
+// tomorrow, excluding same-day booking).
 //
 // Pure and deterministic given `referenceDate`: it reuses `weekAnchors` so the
 // calendar days it resolves against are exactly the ones `buildDays` will later
@@ -93,7 +94,8 @@ function defaultSchedule(
 }
 
 /**
- * Resolve the next 7 days (offsets 0..6 from "today" in Rome) into sorted,
+ * Resolve the next 7 days (offsets 1..7 from "today" in Rome — starting
+ * tomorrow, excluding same-day booking) into sorted,
  * de-duplicated "HH:MM" slot lists. For each day a **date-specific** rule, when
  * present, overrides the recurring **weekday** rule (Calendly semantics — an
  * empty date rule therefore means "day off"). Returns 7 empty days when the

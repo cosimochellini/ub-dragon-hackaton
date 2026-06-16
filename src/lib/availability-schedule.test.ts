@@ -2,10 +2,10 @@ import { describe, expect, it } from 'vitest'
 import { resolveWeek } from './availability-schedule'
 import type { CalendlyAvailability } from './availability-schedule'
 
-// Tuesday 2026-06-16 in Rome → offsets map to:
+// Monday 2026-06-15 in Rome; availability starts tomorrow → offsets map to:
 //   0 Tue 06-16 · 1 Wed 06-17 · 2 Thu 06-18 · 3 Fri 06-19 ·
 //   4 Sat 06-20 · 5 Sun 06-21 · 6 Mon 06-22
-const REF = new Date('2026-06-16T09:00:00+02:00')
+const REF = new Date('2026-06-15T09:00:00+02:00')
 
 function entry(rules: CalendlyAvailability['availability_schedules']) {
   return { doctor_id: 1, availability_schedules: rules } as CalendlyAvailability
@@ -29,7 +29,7 @@ describe('resolveWeek', () => {
       ]),
       REF,
     )
-    // Today is Tuesday → offset 0. 09:00–12:00 fits 09, 10, 11 (12:00 would run to 13:00).
+    // Tomorrow is Tuesday → offset 0. 09:00–12:00 fits 09, 10, 11 (12:00 would run to 13:00).
     expect(week[0]).toEqual(['09:00', '10:00', '11:00'])
     expect(week.slice(1)).toEqual([[], [], [], [], [], []])
   })

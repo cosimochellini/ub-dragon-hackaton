@@ -5,7 +5,6 @@ import type { Day, Therapist } from '@/lib/types'
 export type PickHandler = (t: Therapist, day: Day, slot: string) => void
 
 function dayShortLabel(day: Day): string {
-  if (day.label === 'Today') return 'Today'
   if (day.label === 'Tomorrow') return 'Tmrw'
   return day.dow
 }

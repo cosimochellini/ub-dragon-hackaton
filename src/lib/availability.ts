@@ -17,12 +17,19 @@ const MONTHS = [
   'Dec',
 ]
 const DAY_MS = 24 * 60 * 60 * 1000
+/**
+ * Availability starts **tomorrow** — same-day ("today") booking is excluded —
+ * so the window spans offsets 1..7 from "today" in Rome.
+ */
+const START_OFFSET = 1
+const WINDOW_DAYS = 7
 
 /**
- * The 7 day anchors (offsets 0..6 from "today" in Rome) as `Date`s at noon UTC
- * on each Rome calendar day. Built once so any caller mapping availability onto
- * the next week — `buildDays` here and the Calendly schedule resolver — reads
- * the *same* calendar dates/weekdays and can never drift apart.
+ * The 7 day anchors (offsets 1..7 from "today" in Rome — the window starts
+ * **tomorrow**, excluding same-day booking) as `Date`s at noon UTC on each Rome
+ * calendar day. Built once so any caller mapping availability onto the next week
+ * — `buildDays` here and the Calendly schedule resolver — reads the *same*
+ * calendar dates/weekdays and can never drift apart.
  *
  * Noon-UTC anchoring means adding whole days never crosses a DST boundary into
  * the wrong calendar date; UTC getters then read back the intended day/weekday
@@ -31,12 +38,15 @@ const DAY_MS = 24 * 60 * 60 * 1000
 export function weekAnchors(referenceDate: Date = new Date()): Date[] {
   const { year, month, day } = romeDayParts(referenceDate)
   const anchorMs = Date.UTC(year, month - 1, day, 12, 0, 0)
-  return Array.from({ length: 7 }, (_, i) => new Date(anchorMs + i * DAY_MS))
+  return Array.from(
+    { length: WINDOW_DAYS },
+    (_, i) => new Date(anchorMs + (i + START_OFFSET) * DAY_MS),
+  )
 }
 
 /**
- * Resolve a 7-entry availability pattern (dayOffset 0..6) into concrete `Day`s
- * relative to `referenceDate` ("today" in Rome).
+ * Resolve a 7-entry availability pattern (dayOffset 1..7, starting **tomorrow**)
+ * into concrete `Day`s relative to `referenceDate` ("today" in Rome).
  */
 export function buildDays(
   pattern: string[][],
@@ -49,7 +59,7 @@ export function buildDays(
     const dow = WEEKDAYS[d.getUTCDay()]
     const dayNum = d.getUTCDate()
     const monthAbbr = MONTHS[d.getUTCMonth()]
-    const label = i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : dow
+    const label = i === 0 ? 'Tomorrow' : dow
     return {
       key: i,
       label,

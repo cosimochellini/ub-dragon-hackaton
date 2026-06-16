@@ -32,14 +32,14 @@ export interface TherapistRecord {
   photoUrl?: string
   /** Real age, when known; otherwise derived deterministically in the profile. */
   age?: number
-  /** 7 entries (dayOffset 0..6 from "today"), each a list of "HH:MM" slots. */
+  /** 7 entries (dayOffset 1..7 from "today" — starting tomorrow), each a list of "HH:MM" slots. */
   availability: string[][]
 }
 
 /** A single bookable day after availability has been resolved to real dates. */
 export interface Day {
   key: number
-  /** "Today" | "Tomorrow" | weekday abbreviation. */
+  /** "Tomorrow" | weekday abbreviation. */
   label: string
   /** Weekday abbreviation, e.g. "Mon". */
   dow: string
