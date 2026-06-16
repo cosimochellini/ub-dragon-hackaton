@@ -36,8 +36,9 @@ describe('MapCarousel', () => {
     const next = screen.getByRole('button', { name: 'Next' })
     expect(prev).toBeInTheDocument()
     expect(next).toBeInTheDocument()
-    // The strip starts scrolled to the first card.
-    expect(prev).toBeDisabled()
+    // The strip starts scrolled to the first card. The arrow uses aria-disabled
+    // (not the native attribute) so it stays focusable for keyboard users.
+    expect(prev).toHaveAttribute('aria-disabled', 'true')
   })
 
   it('hides the scroll buttons when there is a single card', () => {

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { MapCard } from './therapist/MapCard'
 import type { PickHandler } from './therapist/DayStrip'
 import { Icon } from '@/components/icon/Icon'
+import { prefersReducedMotion } from '@/lib/motion'
 import type { Studio, Therapist } from '@/lib/types'
 
 /** Flex `gap-3` between cards, in px — used to size one scroll step. */
@@ -63,12 +64,9 @@ export function MapCarousel({
     const sc = scrollerRef.current
     const el = cardElementsRef.current[selectedId]
     if (sc && el && typeof sc.scrollTo === 'function') {
-      const reduceMotion = globalThis.matchMedia(
-        '(prefers-reduced-motion: reduce)',
-      ).matches
       sc.scrollTo({
         left: Math.max(0, el.offsetLeft - 18),
-        behavior: reduceMotion ? 'auto' : 'smooth',
+        behavior: prefersReducedMotion() ? 'auto' : 'smooth',
       })
     }
   }, [selectedId])
@@ -76,12 +74,18 @@ export function MapCarousel({
   const scrollByCards = useCallback((dir: 1 | -1) => {
     const sc = scrollerRef.current
     if (!sc) return
+    // No-op at the matching edge by reading live scroll position (not the
+    // `edges` state), so the arrows can stay focusable — toggling the native
+    // `disabled` attribute mid-interaction would blur a keyboard user's focus.
+    const max = sc.scrollWidth - sc.clientWidth
+    if (dir < 0 && sc.scrollLeft <= 1) return
+    if (dir > 0 && sc.scrollLeft >= max - 1) return
     const card = sc.querySelector<HTMLElement>('[data-card]')
     const step = (card?.offsetWidth ?? sc.clientWidth * 0.9) + CARD_GAP
-    const reduceMotion = globalThis.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches
-    sc.scrollBy({ left: dir * step, behavior: reduceMotion ? 'auto' : 'smooth' })
+    sc.scrollBy({
+      left: dir * step,
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+    })
   }, [])
 
   const showArrows = list.length > 1
@@ -93,13 +97,13 @@ export function MapCarousel({
           type="button"
           onClick={onShowAll}
           aria-label={`Showing ${list.length}${
-            totalCount ? ` of ${totalCount}` : ''
+            typeof totalCount === 'number' ? ` of ${totalCount}` : ''
           } — show all therapists`}
           className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border-0 bg-white px-[14px] py-[7px] text-[12.5px] font-semibold text-grey-900 shadow-md transition-colors hover:bg-grey-50"
         >
           <span>
             Showing {list.length}
-            {totalCount ? ` of ${totalCount}` : ''}
+            {typeof totalCount === 'number' ? ` of ${totalCount}` : ''}
           </span>
           <span className="text-grey-400" aria-hidden="true">
             ·
@@ -113,7 +117,7 @@ export function MapCarousel({
           <button
             type="button"
             onClick={() => scrollByCards(-1)}
-            disabled={edges.start}
+            aria-disabled={edges.start}
             aria-label="Previous"
             className={`absolute top-1/2 left-2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border-0 bg-white shadow-md transition-opacity ${
               edges.start ? 'cursor-default opacity-40' : 'cursor-pointer'
@@ -148,7 +152,7 @@ export function MapCarousel({
           <button
             type="button"
             onClick={() => scrollByCards(1)}
-            disabled={edges.end}
+            aria-disabled={edges.end}
             aria-label="Next"
             className={`absolute top-1/2 right-2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border-0 bg-white shadow-md transition-opacity ${
               edges.end ? 'cursor-default opacity-40' : 'cursor-pointer'

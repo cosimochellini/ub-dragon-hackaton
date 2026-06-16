@@ -12,6 +12,7 @@ import { groupStudios, selectedTherapistOf } from '@/lib/studios'
 import type { StudioGroup } from '@/lib/studios'
 import { clusterGroups } from '@/lib/cluster'
 import type { MapCluster } from '@/lib/cluster'
+import { prefersReducedMotion } from '@/lib/motion'
 import type { Studio, Therapist } from '@/lib/types'
 
 /** Map centre when nothing is selected — roughly central Milan. */
@@ -67,10 +68,7 @@ function RecenterOnSelect({
     const { therapists: ts, studios: ss } = dataRef.current
     const coords = selectedStudioCoords(selectedId, ts, ss)
     if (!coords) return
-    const reduceMotion = globalThis.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches
-    map.panTo(coords, { animate: !reduceMotion })
+    map.panTo(coords, { animate: !prefersReducedMotion() })
   }, [selectedId, map])
   return null
 }
@@ -189,16 +187,13 @@ function ClusterLayer({
       )
       onSelect(ids[0], ids)
       if (map.getZoom() >= EXPAND_MAX_ZOOM) return
-      const reduceMotion = globalThis.matchMedia(
-        '(prefers-reduced-motion: reduce)',
-      ).matches
       const targetZoom = Math.min(map.getZoom() + 2, EXPAND_MAX_ZOOM)
       // Center on the selected member's studio (not the centroid) so the
       // follow-up RecenterOnSelect pan to that studio lands on the same point,
       // avoiding a visible zoom-then-pan double move.
       const focus = cluster.groups[0].studio.coords
       map.setView([focus.lat, focus.lng], targetZoom, {
-        animate: !reduceMotion,
+        animate: !prefersReducedMotion(),
       })
     },
     [map, onSelect],
